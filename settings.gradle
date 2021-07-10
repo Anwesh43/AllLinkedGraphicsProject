@@ -1,0 +1,3 @@
+rootProject.name = "AllGraphicsProject"
+include ':app'
+include ':vtoupsideview'
