@@ -207,4 +207,12 @@ class VToUpSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : VToUpSideView {
+            val view : VToUpSideView = VToUpSideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
