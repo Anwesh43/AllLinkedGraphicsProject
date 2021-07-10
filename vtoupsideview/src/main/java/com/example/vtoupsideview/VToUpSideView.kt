@@ -18,7 +18,7 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 3.4f
 val delay : Long = 20
@@ -39,6 +39,7 @@ fun Canvas.drawVToUpSide(scale : Float, w : Float, h : Float, paint : Paint) {
     translate(w / 2, h / 2)
     for (j in 0..1) {
         save()
+        scale(1f - 2 * j, 1f)
         translate((w / 2) * sc4, (h / 2) * (1 - sc2))
         rotate(deg * (1f - sc3))
         drawLine(0f, 0f, size * sc1, 0f, paint)
