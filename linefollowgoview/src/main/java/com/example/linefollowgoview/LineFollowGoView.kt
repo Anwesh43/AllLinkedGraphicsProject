@@ -41,9 +41,11 @@ fun Canvas.drawLineFollowGo(scale : Float, w : Float, h : Float, paint : Paint) 
         val sc1j : Float = sc1.divideScale(j, lines)
         val sc2j : Float = sc2.divideScale(j, lines)
         save()
-        translate(0f, h / 2)
-        rotate(deg * sc1j * j)
-        drawLine(-size / 2, -size * sc2j, -size / 2, -size * sc1j, paint)
+        translate(0f, h / 2 - size / 2)
+        rotate(deg  * j)
+        if (sc1j  > 0 && sc2j < 1) {
+            drawLine(-size / 2, size / 2 - size * sc2j, -size / 2, size / 2 - size * sc1j, paint)
+        }
         restore()
     }
     restore()
