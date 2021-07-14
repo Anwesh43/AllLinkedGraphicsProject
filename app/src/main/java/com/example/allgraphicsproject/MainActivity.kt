@@ -3,12 +3,13 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linefollowgoview.LineFollowGoView
 import com.example.vtoupsideview.VToUpSideView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        VToUpSideView.create(this)
+        LineFollowGoView.create(this)
         fullScreen()
     }
 }
