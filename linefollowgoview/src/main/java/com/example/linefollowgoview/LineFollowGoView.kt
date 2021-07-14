@@ -207,4 +207,27 @@ class LineFollowGoView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineFollowGoView) {
+
+        private val animator : Animator = Animator(view)
+        private val lfg : LineFollowGo = LineFollowGo(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lfg.draw(canvas, paint)
+            animator.animate {
+                lfg.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lfg.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
