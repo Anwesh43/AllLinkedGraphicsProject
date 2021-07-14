@@ -232,4 +232,13 @@ class LineFollowGoView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineFollowGoView {
+            val view : LineFollowGoView = LineFollowGoView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
