@@ -20,7 +20,7 @@ val colors : Array<Int> = arrayOf(
 }.toTypedArray()
 val parts : Int = 4
 val concs : Int = 2
-val scGap : Float = 0.02f / (parts * concs)
+val scGap : Float = 0.08f / (parts * concs)
 val delay : Long = 20
 val r1Factor : Float = 5.2f
 val r2Factor : Float = 3.2f
@@ -49,8 +49,12 @@ fun Canvas.drawConcArcLineJoin(scale : Float, w : Float, h : Float, paint : Pain
         val yEnd : Float = r2 * (1 -  j % 2) + r1 * (j % 2)
         save()
         rotate(deg * j)
-        drawArc(RectF(-r, -r, r, r), 0f, deg * sfj1, false, paint)
-        drawLine(0f, yStart, 0f, yStart + (yEnd - yStart) * sfj2, paint)
+        if (sfj1 > 0f) {
+            drawArc(RectF(-r, -r, r, r), 0f, deg * sfj1, false, paint)
+        }
+        if (sfj2 > 0f) {
+            drawLine(0f, yStart, 0f, yStart + (yEnd - yStart) * sfj2, paint)
+        }
         restore()
     }
     restore()
@@ -62,6 +66,7 @@ fun Canvas.drawCALJNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
+    paint.style = Paint.Style.STROKE
     drawConcArcLineJoin(scale, w, h, paint)
 }
 
