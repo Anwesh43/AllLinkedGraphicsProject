@@ -214,4 +214,13 @@ class ConcArcLineJoinerView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ConcArcLineJoinerView {
+            val view : ConcArcLineJoinerView = ConcArcLineJoinerView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
