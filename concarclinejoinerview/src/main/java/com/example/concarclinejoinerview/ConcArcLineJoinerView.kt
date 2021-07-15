@@ -25,8 +25,41 @@ val delay : Long = 20
 val r1Factor : Float = 5.2f
 val r2Factor : Float = 3.2f
 val backColor : Int = Color.parseColor("#BDBDBD")
+val deg : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 fun Float.sinify() : Float = Math.sin(this * Math.PI).toFloat()
+
+fun Canvas.drawConcArcLineJoin(scale : Float, w : Float, h : Float, paint : Paint) {
+    val r1 : Float = Math.min(w, h) / r1Factor
+    val r2 : Float = Math.min(w, h) / r2Factor
+    val sf : Float = scale.sinify()
+
+    save()
+    translate(w / 2, h / 2)
+    for (j in 0..(parts - 1)) {
+        val sfj : Float = sf.divideScale(j, parts)
+        val sfj1 : Float = sfj.divideScale(0, concs)
+        val sfj2 : Float = sfj.divideScale(1, concs)
+        var r : Float = r1 * (1 - (j % 2)) + r2 * (j % 2)
+        val yStart : Float = r1 * (1 - (j % 2)) + r2 * (j % 2)
+        val yEnd : Float = r2 * (1 -  j % 2) + r1 * (j % 2)
+        save()
+        rotate(deg * j)
+        drawArc(RectF(-r, -r, r, r), 0f, deg * sfj1, false, paint)
+        drawLine(0f, yStart, 0f, yStart + (yEnd - yStart) * sfj2, paint)
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawCALJNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawConcArcLineJoin(scale, w, h, paint)
+}
