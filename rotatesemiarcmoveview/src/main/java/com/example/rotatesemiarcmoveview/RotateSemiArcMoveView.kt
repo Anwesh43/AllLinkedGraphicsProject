@@ -222,4 +222,13 @@ class RotateSemiArcMoveView(ctx: Context) : View(ctx) {
         }
     }
 
+    companion object {
+
+        fun create(activity : Activity) : RotateSemiArcMoveView {
+            val view : RotateSemiArcMoveView = RotateSemiArcMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
+
 }
