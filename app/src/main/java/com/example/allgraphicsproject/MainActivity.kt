@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.view.WindowManager
 import com.example.concarclinejoinerview.ConcArcLineJoinerView
 import com.example.createsteptomoveview.CreateStepToMoveView
+import com.example.rotatesemiarcmoveview.RotateSemiArcMoveView
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        CreateStepToMoveView.create(this)
+         RotateSemiArcMoveView.create(this)
         fullScreen()
     }
 }

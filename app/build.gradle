@@ -45,4 +45,5 @@ dependencies {
     implementation project(":createsteptomoveview")
     implementation project(":linefollowgoview")
     implementation project(":concarclinejoinerview")
+    implementation project(":rotatesemiarcmoveview")
 }
