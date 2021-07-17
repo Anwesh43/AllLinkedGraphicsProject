@@ -212,4 +212,13 @@ class CreateStepToMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CreateStepToMoveView {
+            val view : CreateStepToMoveView = CreateStepToMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
