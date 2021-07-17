@@ -192,5 +192,28 @@ class RotateSemiArcMoveView(ctx : Context) : View(ctx) {
                 curr.startUpdating(cb)
             }
         }
+
+        data class Renderer(var view : RotateSemiArcMoveView) {
+
+            private val animator : Animator = Animator(view)
+            private val rsam : RotateSemiArcMove = RotateSemiArcMove(0)
+            private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+            fun render(canvas : Canvas) {
+                canvas.drawColor(backColor)
+                rsam.draw(canvas, paint)
+                animator.animate {
+                    rsam.update {
+                        animator.stop()
+                    }
+                }
+            }
+
+            fun handleTap() {
+                rsam.startUpdating {
+                    animator.start()
+                }
+            }
+        }
     }
 }
