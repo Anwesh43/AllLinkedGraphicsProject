@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import com.example.concarclinejoinerview.ConcArcLineJoinerView
-import com.example.linefollowgoview.LineFollowGoView
-import com.example.vtoupsideview.VToUpSideView
+import com.example.createsteptomoveview.CreateStepToMoveView
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ConcArcLineJoinerView.create(this)
+        CreateStepToMoveView.create(this)
         fullScreen()
     }
 }
