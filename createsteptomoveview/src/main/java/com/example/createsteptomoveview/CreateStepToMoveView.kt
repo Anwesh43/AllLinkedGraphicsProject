@@ -46,9 +46,31 @@ fun Canvas.drawCreateStepToMove(scale : Float, w : Float, h : Float, paint : Pai
         val scj2 : Float = scj.divideScale(1, 2)
         save()
         translate(-size / 2 + xGap * j, size / 2 - xGap * j)
-        drawLine(0f, 0f, 0f, -xGap * scj1, paint)
-        drawLine(0f, -xGap, xGap * scj2, -xGap, paint)
+        if (scj1 > 0f) {
+            drawLine(0f, 0f, 0f, -xGap * scj1, paint)
+        }
+        if (scj2 > 0f) {
+            drawLine(0f, -xGap, xGap * scj2, -xGap, paint)
+        }
         restore()
+    }
+    if (sc4 > 0f) {
+        drawLine(
+            size / 2,
+            -size / 2,
+            size / 2,
+            -size / 2 + size * sc4,
+            paint
+        )
+    }
+    if (sc5 > 0f) {
+        drawLine(
+            size / 2,
+            size / 2,
+            size / 2 - size * sc5,
+            size / 2,
+            paint
+        )
     }
     restore()
 }
