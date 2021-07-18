@@ -20,7 +20,7 @@ val colors : Array<Int> = arrayOf(
 }.toTypedArray()
 val parts : Int = 4
 val scGap : Float = 0.02f / parts
-val rot : Float = 45f
+val rot : Float = 60f
 val delay : Long = 20
 val sizeFactor : Float = 3.2f
 val sizeHFactor : Float = 7.8f
@@ -44,7 +44,7 @@ fun Canvas.drawReactLogoEllip(scale : Float, w : Float, h : Float, paint : Paint
     translate(w / 2, h / 2 + (h / 2 + rw) * sc4)
     for (j in 0..2) {
         save()
-        rotate(rot * (1 - 2 * j) * sc2)
+        rotate(rot * (1 - j) * sc2)
         paint.style = Paint.Style.STROKE
         drawArc(RectF(-rw, -rh, rw, rh), 0f, 360f * sc1, false, paint)
         restore()
