@@ -214,4 +214,13 @@ class ReactLogoEllipView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : ReactLogoEllipView {
+            val view : ReactLogoEllipView = ReactLogoEllipView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
