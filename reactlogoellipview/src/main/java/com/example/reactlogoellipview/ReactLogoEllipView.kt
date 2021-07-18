@@ -26,7 +26,39 @@ val sizeFactor : Float = 3.2f
 val sizeHFactor : Float = 7.8f
 val rFactor : Float = 12.8f
 val backColor : Int = Color.parseColor("#BDBDBD")
+val strokeFactor : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawReactLogoEllip(scale : Float, w : Float, h : Float, paint : Paint) {
+    val rw : Float = Math.min(w, h) / sizeFactor
+    val rh : Float = Math.min(w, h) / sizeHFactor
+    val r : Float = Math.min(w, h) / rFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2, h / 2 + (h / 2 + rw) * sc4)
+    for (j in 0..2) {
+        save()
+        rotate(rot * (1 - 2 * j) * sc2)
+        paint.style = Paint.Style.STROKE
+        drawArc(RectF(-rw, -rh, rw, rh), 0f, 360f * sc1, false, paint)
+        restore()
+    }
+    paint.style = Paint.Style.FILL
+    drawCircle(0f, 0f, r * sc3, paint)
+    restore()
+}
+
+fun Canvas.drawRLENode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawReactLogoEllip(scale, w, h, paint)
+}
