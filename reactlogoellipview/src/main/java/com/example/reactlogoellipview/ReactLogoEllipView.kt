@@ -125,4 +125,45 @@ class ReactLogoEllipView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class RLENode(var i : Int, val state : State = State()) {
+
+        private var next : RLENode? = null
+        private var prev : RLENode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = RLENode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawRLENode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : RLENode {
+            var curr : RLENode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
