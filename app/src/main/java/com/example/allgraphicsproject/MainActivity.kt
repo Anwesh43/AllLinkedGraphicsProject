@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.reactlogoellipview.ReactLogoEllipView
+import com.example.rectchairlineview.RectChairLineView
+
+//import com.example.reactlogoellipview.ReactLogoEllipView
 
 //import com.example.concarclinejoinerview.ConcArcLineJoinerView
 //import com.example.createsteptomoveview.CreateStepToMoveView
@@ -14,7 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
          //RotateSemiArcMoveView.create(this)
-        ReactLogoEllipView.create(this)
+        //ReactLogoEllipView.create(this)
+        RectChairLineView.create(this)
         fullScreen()
     }
 }

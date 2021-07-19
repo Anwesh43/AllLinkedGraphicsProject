@@ -46,5 +46,6 @@ dependencies {
 //    implementation project(":linefollowgoview")
 //    implementation project(":concarclinejoinerview")
 //    implementation project(":rotatesemiarcmoveview")
-    implementation project(":reactlogoellipview")
+//    implementation project(":reactlogoellipview")
+    implementation project(":rectchairlineview")
 }
