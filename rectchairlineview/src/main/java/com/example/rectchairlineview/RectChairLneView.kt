@@ -214,4 +214,13 @@ class RectChairLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RectChairLineView {
+            val view : RectChairLineView = RectChairLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
