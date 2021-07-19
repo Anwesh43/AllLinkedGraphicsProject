@@ -46,8 +46,13 @@ fun Canvas.drawRectChairLine(scale : Float, w : Float, h : Float, paint : Paint)
     drawRect(RectF(0f, -(rh) * sc1, rw, 0f), paint)
     for (j in 0..1) {
         save()
-        translate(rw * j, 0f)
-        drawLine(0f, 0f, 0f, -rh * sc2, paint)
+        translate(
+            rw * j + (1 - 2 * j) *  (paint.strokeWidth / 2),
+            -rh
+        )
+        if (sc2 > 0f) {
+            drawLine(0f, 0f, 0f, -rw * sc2, paint)
+        }
         restore()
     }
     restore()
