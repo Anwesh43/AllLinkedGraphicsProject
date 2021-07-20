@@ -188,4 +188,27 @@ class PieToTMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : PieToTMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val pttm : PieToTMove = PieToTMove(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            pttm.draw(canvas, paint)
+            animator.animate {
+                pttm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            pttm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
