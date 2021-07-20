@@ -213,4 +213,13 @@ class PieToTMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : PieToTMoveView {
+            val view : PieToTMoveView = PieToTMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
