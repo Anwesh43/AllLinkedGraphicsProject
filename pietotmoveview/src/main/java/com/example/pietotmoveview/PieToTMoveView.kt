@@ -61,3 +61,19 @@ fun Canvas.drawPTTMNode(i : Int, scale : Float, paint : Paint) {
     paint.strokeWidth = Math.min(w, h) /strokeFactor
     drawPieToMove(scale, w, h, paint)
 }
+
+class PieToTMoveView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
