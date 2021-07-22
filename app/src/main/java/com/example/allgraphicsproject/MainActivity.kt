@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.pietotmoveview.PieToTMoveView
+//import com.example.pietotmoveview.PieToTMoveView
 
 //import com.example.rectchairlineview.RectChairLineView
 
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
          //RotateSemiArcMoveView.create(this)
         //ReactLogoEllipView.create(this)
         //RectChairLineView.create(this)
-        PieToTMoveView.create(this)
+        //PieToTMoveView.create(this)
         fullScreen()
     }
 }
