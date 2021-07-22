@@ -21,7 +21,7 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 4
 val scGap : Float = 0.02f / parts
 val strokeFactor : Float = 90f
-val sizeFactor : Float = 2.9f
+val sizeFactor : Float = 7.9f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val rot : Float = 90f
@@ -40,17 +40,18 @@ fun Canvas.drawBiLineArcWheel(scale : Float, w : Float, h : Float, paint : Paint
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + size) * sc4, h / 2)
+    rotate(sweep * sc4)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
-        translate(0f, h / 2 - (h / 2 - size) * sc2)
         save()
-        rotate(sweep * sc3)
+        rotate(sweep * sc3 * (1 - 2 * j))
+        translate(0f, h / 2 - (h / 2 - size) * sc2)
         drawLine(0f, 0f, 0f, -size * sc1, paint)
         restore()
-        drawArc(RectF(-size, -size, size, size), rot, sweep * sc3, false, paint)
         restore()
+        drawArc(RectF(-size, -size, size, size), rot + sweep * j,  sweep * sc3, false, paint)
     }
     restore()
 }
