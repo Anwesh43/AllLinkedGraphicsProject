@@ -19,7 +19,7 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 7.9f
 val delay : Long = 20
