@@ -191,4 +191,27 @@ class BiLineArcWheelView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiLineArcWheelView) {
+
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val blaw : BiLineArcWheel = BiLineArcWheel(0)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            blaw.draw(canvas, paint)
+            animator.animate {
+                blaw.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            blaw.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
