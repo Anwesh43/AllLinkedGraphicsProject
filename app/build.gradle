@@ -49,5 +49,6 @@ dependencies {
 //    implementation project(":reactlogoellipview")
  //   implementation project(":rectchairlineview")
     //implementation project(":pietotmoveview")
-    implementation project(":bilinearcwheelview")
+    //implementation project(":bilinearcwheelview")
+    implementation project(":pauserotlineview")
 }

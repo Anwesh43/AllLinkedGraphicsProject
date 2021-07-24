@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bilinearcwheelview.BiLineArcWheelView
+import com.example.pauserotlineview.PauseRotLineView
+
+//import com.example.bilinearcwheelview.BiLineArcWheelView
 
 //import com.example.pietotmoveview.PieToTMoveView
 
@@ -23,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         //ReactLogoEllipView.create(this)
         //RectChairLineView.create(this)
         //PieToTMoveView.create(this)
-        BiLineArcWheelView.create(this)
+        //BiLineArcWheelView.create(this)
+        PauseRotLineView.create(this)
         fullScreen()
     }
 }
