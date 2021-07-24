@@ -210,4 +210,12 @@ class PauseRotLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(actvity : Activity) : PauseRotLineView {
+            val view : PauseRotLineView = PauseRotLineView(actvity)
+            actvity.setContentView(view)
+            return view
+        }
+    }
 }
