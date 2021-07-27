@@ -210,4 +210,13 @@ class BlockRotateDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BlockRotateDownView {
+            val view : BlockRotateDownView = BlockRotateDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
