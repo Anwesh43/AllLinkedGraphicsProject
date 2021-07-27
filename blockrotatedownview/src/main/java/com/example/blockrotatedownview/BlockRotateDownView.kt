@@ -19,12 +19,12 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.2f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
-val rot : Float = 180f
+val rot : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -39,7 +39,7 @@ fun Canvas.drawBlockRotateDown(scale : Float, w : Float, h : Float, paint : Pain
     save()
     translate(
         w / 2 + (-w / 2 - size) * (1 - sc1),
-        h / 2 + (h / 2 + size / 2) * sc4
+        h / 2 + (h / 2 + 3 * size / 2) * sc4
     )
     rotate(rot * sc3)
     drawRect(RectF(0f, -size / 2, size, size / 2), paint)
