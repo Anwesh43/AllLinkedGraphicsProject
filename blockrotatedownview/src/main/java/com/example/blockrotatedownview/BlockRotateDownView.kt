@@ -187,4 +187,27 @@ class BlockRotateDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BlockRotateDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val brd : BlockRotateDown = BlockRotateDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            brd.draw(canvas, paint)
+            animator.animate {
+                brd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            brd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
