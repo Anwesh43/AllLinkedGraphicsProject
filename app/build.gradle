@@ -51,4 +51,5 @@ dependencies {
     //implementation project(":pietotmoveview")
     //implementation project(":bilinearcwheelview")
     implementation project(":pauserotlineview")
+    implementation project(":blockrotatedownview")
 }
