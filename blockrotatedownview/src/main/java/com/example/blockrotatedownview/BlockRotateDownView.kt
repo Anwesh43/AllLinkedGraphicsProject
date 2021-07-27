@@ -45,7 +45,7 @@ fun Canvas.drawBlockRotateDown(scale : Float, w : Float, h : Float, paint : Pain
     drawRect(RectF(0f, -size / 2, size, size / 2), paint)
     for (j in 0..1) {
         save()
-        translate(0f, -size / 2 + size * j)
+        translate(0f, -size / 2 + paint.strokeWidth / 2 + (size - paint.strokeWidth / 2) * j)
         drawLine(0f, 0f, -size * sc2, 0f, paint)
         restore()
     }
