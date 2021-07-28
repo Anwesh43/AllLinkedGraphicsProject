@@ -39,7 +39,7 @@ fun Canvas.drawBallFromDiagDown(scale : Float, w : Float, h : Float, paint : Pai
     for (j in 0..1) {
         save()
         rotate(deg * j)
-        drawCircle(w / 2 + r + (h / 2 - w / 2) * j, 0f, r * sc1, paint)
+        drawCircle((w / 2 + r + (h / 2 - w / 2) * j) * sc3, 0f, r * sc1, paint)
         restore()
     }
     restore()
