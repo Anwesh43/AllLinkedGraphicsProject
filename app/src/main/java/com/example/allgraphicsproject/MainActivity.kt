@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.blockrotatedownview.BlockRotateDownView
+import com.example.ballfromdiagdownupview.BallFromDiagDownUpView
+
+//import com.example.blockrotatedownview.BlockRotateDownView
 
 //import com.example.pauserotlineview.PauseRotLineView
 
@@ -29,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         //PieToTMoveView.create(this)
         //BiLineArcWheelView.create(this)
         //PauseRotLineView.create(this)
-        BlockRotateDownView.create(this)
+        //BlockRotateDownView.create(this)
+        BallFromDiagDownUpView.create(this)
         fullScreen()
     }
 }
