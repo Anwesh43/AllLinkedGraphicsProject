@@ -203,4 +203,12 @@ class BallFromDiagDownUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : BallFromDiagDownUpView {
+            val view : BallFromDiagDownUpView = BallFromDiagDownUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
