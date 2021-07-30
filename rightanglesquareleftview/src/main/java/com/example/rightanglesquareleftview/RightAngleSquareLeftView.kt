@@ -208,4 +208,13 @@ class RightAngleSquareLeftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : RightAngleSquareLeftView {
+            val view : RightAngleSquareLeftView = RightAngleSquareLeftView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
