@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.ballfromdiagdownupview.BallFromDiagDownUpView
+import com.example.rightanglesquareleftview.RightAngleSquareLeftView
+
+//import com.example.ballfromdiagdownupview.BallFromDiagDownUpView
 
 //import com.example.blockrotatedownview.BlockRotateDownView
 
@@ -32,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         //BiLineArcWheelView.create(this)
         //PauseRotLineView.create(this)
         //BlockRotateDownView.create(this)
-        BallFromDiagDownUpView.create(this)
+        //BallFromDiagDownUpView.create(this)
+        RightAngleSquareLeftView.create(this)
         fullScreen()
     }
 }
