@@ -53,5 +53,6 @@ dependencies {
     //implementation project(":pauserotlineview")
     //implementation project(":blockrotatedownview")
     //implementation project(":ballfromdiagdownupview")
-    implementation project(":rightanglesquareleftview")
+    //implementation project(":rightanglesquareleftview")
+    implementation project(":squaresrotpushlineview")
 }
