@@ -190,4 +190,27 @@ class SquaresRotPushLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SquaresRotPushLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val srpl : SquaresRotPushLine = SquaresRotPushLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            srpl.draw(canvas, paint)
+            animator.animate {
+                srpl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            srpl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
