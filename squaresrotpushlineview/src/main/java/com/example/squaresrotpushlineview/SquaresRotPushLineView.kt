@@ -215,4 +215,13 @@ class SquaresRotPushLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquaresRotPushLineView {
+            val view : SquaresRotPushLineView = SquaresRotPushLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
