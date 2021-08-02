@@ -197,4 +197,13 @@ class BarSlideUpVanishView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarSlideUpVanishView {
+            val view : BarSlideUpVanishView = BarSlideUpVanishView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
