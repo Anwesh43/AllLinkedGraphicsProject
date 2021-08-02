@@ -34,7 +34,7 @@ fun Canvas.drawBarSlideUpVanish(scale : Float, w : Float, h : Float, paint : Pai
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     save()
-    translate(w / 2, (h - size) * (1 - sc2))
+    translate(0f, (h - size) * (1 - sc2))
     drawRect(RectF(w * sc3, 0f, w * sc1, size), paint)
     restore()
 }
