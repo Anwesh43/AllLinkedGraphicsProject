@@ -55,4 +55,5 @@ dependencies {
     //implementation project(":ballfromdiagdownupview")
     //implementation project(":rightanglesquareleftview")
     implementation project(":squaresrotpushlineview")
+    implementation project(":barslideupvanishview")
 }

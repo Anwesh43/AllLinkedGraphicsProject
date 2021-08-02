@@ -3,6 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.barslideupvanishview.BarSlideUpVanishView
 import com.example.squaresrotpushlineview.SquaresRotPushLineView
 
 //import com.example.rightanglesquareleftview.RightAngleSquareLeftView
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         //BlockRotateDownView.create(this)
         //BallFromDiagDownUpView.create(this)
         //RightAngleSquareLeftView.create(this)
-        SquaresRotPushLineView.create(this)
+        BarSlideUpVanishView.create(this)
         fullScreen()
     }
 }
