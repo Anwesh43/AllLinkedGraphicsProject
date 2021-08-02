@@ -172,4 +172,27 @@ class BarSlideUpVanishView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarSlideUpVanishView) {
+
+        private val animator : Animator = Animator(view)
+        private val bsuv : BarSlideUpVanish = BarSlideUpVanish(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bsuv.draw(canvas, paint)
+            animator.animate {
+                bsuv.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bsuv.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
