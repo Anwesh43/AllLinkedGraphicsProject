@@ -38,10 +38,14 @@ fun Canvas.drawBiSquareMergeSquare(scale : Float, w : Float, h : Float, paint : 
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(-(w / 2) + (w / 2 - size) * sc3, (h / 2 + size / 2) * (1 - sc1))
+        translate(-(w / 2), (h / 2 + size / 2) * (1 - sc1))
         drawRect(
             RectF(
-                0f, -size / 2, size + (w - size) * sc2, size / 2),
+                w * 0.5f * sc3,
+                -size / 2,
+                size + (w / 2 - size) * sc2,
+                size / 2
+            ),
             paint
         )
         restore()
