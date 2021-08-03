@@ -207,4 +207,13 @@ class BiSquareMergeSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiSquareMergeSquareView {
+            val view : BiSquareMergeSquareView = BiSquareMergeSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
