@@ -182,4 +182,27 @@ class BiSquareMergeSquareView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiSquareMergeSquareView) {
+
+        private val animator : Animator = Animator(view)
+        private val bsms : BiSquareMergeSquare = BiSquareMergeSquare(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bsms.draw(canvas, paint)
+            animator.animate {
+                bsms.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bsms.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
