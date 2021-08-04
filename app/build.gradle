@@ -56,5 +56,6 @@ dependencies {
     //implementation project(":rightanglesquareleftview")
 //    implementation project(":squaresrotpushlineview")
 //    implementation project(":barslideupvanishview")
-    implementation project(":bisquaremergesquareview")
+    //implementation project(":bisquaremergesquareview")
+    implementation project(":lineslidesweepboxview")
 }
