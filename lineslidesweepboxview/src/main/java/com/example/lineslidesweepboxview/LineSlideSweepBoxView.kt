@@ -115,4 +115,45 @@ class LineSlideSweepBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class LSSBNode(var i : Int, val state : State = State()) {
+
+        private var prev : LSSBNode? = null
+        private var next : LSSBNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LSSBNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLSSBNode(i, state.scale, paint)
+        }
+
+        fun update(cb : () -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LSSBNode {
+            var curr : LSSBNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
