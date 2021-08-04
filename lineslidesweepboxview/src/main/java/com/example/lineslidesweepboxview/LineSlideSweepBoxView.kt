@@ -179,4 +179,27 @@ class LineSlideSweepBoxView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineSlideSweepBoxView) {
+
+        private val animator : Animator = Animator(view)
+        private val lssb : LineSlideSweepBox = LineSlideSweepBox(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lssb.draw(canvas, paint)
+            animator.animate {
+                lssb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lssb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
