@@ -38,7 +38,7 @@ fun Canvas.drawLineSlideSweepBox(scale : Float, w : Float, h : Float, paint : Pa
         save()
         scale(1f - 2 * j, 1f - 2 * j)
         drawLine(-w * 0.5f * sc3, h / 2, -w * 0.5f * sc3, h * 0.5f * (1f - sc1), paint)
-        drawRect(RectF(-w * 0.5f * sc2,0f, h / 2, -w * 0.5f * sc3), paint)
+        drawRect(RectF(-w * 0.5f * sc2,0f, -w * 0.5f * sc3, h / 2), paint)
         restore()
     }
     restore()
