@@ -204,4 +204,13 @@ class LineSlideSweepBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineSlideSweepBoxView {
+            val view : LineSlideSweepBoxView = LineSlideSweepBoxView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
