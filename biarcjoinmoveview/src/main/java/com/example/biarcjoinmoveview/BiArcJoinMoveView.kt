@@ -204,4 +204,13 @@ class BiArcJoinMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiArcJoinMoveView {
+            val view : BiArcJoinMoveView = BiArcJoinMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
