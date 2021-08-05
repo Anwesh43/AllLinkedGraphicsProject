@@ -52,7 +52,7 @@ fun Canvas.drawBAJMNode(i : Int, scale : Float, paint : Paint) {
     val w : Float = width.toFloat()
     val h : Float = height.toFloat()
     paint.color = colors[i]
-    drawBAJMNode(i, scale, paint)
+    drawBiArcJoinMove( scale, w, h, paint)
 }
 
 class BiArcJoinMoveView(ctx : Context) : View(ctx) {
@@ -202,7 +202,7 @@ class BiArcJoinMoveView(ctx : Context) : View(ctx) {
 
         fun handleTap() {
             bajm.startUpdating {
-                animator.stop()
+                animator.start()
             }
         }
     }
