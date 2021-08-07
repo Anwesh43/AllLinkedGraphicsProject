@@ -8,6 +8,7 @@ import android.graphics.Paint
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.RectF
+import android.util.Log
 
 val colors : Array<Int> = arrayOf(
     "#1A237E",
@@ -16,7 +17,7 @@ val colors : Array<Int> = arrayOf(
     "#C51162",
     "#00C853"
 ).map {
-    Color.parseColor("#BDBDBD")
+    Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
@@ -35,12 +36,13 @@ fun Canvas.drawBiArcJoinThenDivide(scale : Float, w : Float, h : Float, paint : 
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
+    Log.d("scale", "$sc1, $sc2, $sc3, $sc4")
     save()
     translate(w / 2, h / 2)
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 1f - 2 * j)
-        translate((w / 2 - size) * (1 - sc2 + sc3), 0f)
+        scale(1f - 2 * j, 1f)
+        translate((w / 2 - size / 2) * (1 - sc2 + sc3) + size * sc3, 0f)
         rotate(deg * sc3)
         drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), -deg / 2, deg * (sc1 - sc4), true, paint)
         restore()
