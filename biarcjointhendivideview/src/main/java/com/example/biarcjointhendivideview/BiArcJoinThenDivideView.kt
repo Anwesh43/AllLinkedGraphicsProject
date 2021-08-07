@@ -181,4 +181,27 @@ class BiArcJoinThenDivideView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiArcJoinThenDivideView) {
+
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val bajtd : BiArcJoinThenDivide = BiArcJoinThenDivide(0)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bajtd.draw(canvas, paint)
+            animator.animate {
+                bajtd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bajtd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
