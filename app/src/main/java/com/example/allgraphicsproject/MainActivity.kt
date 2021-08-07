@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.biarcjoinmoveview.BiArcJoinMoveView
+import com.example.biarcjointhendivideview.BiArcJoinThenDivideView
+
+//import com.example.biarcjoinmoveview.BiArcJoinMoveView
 
 //import com.example.lineslidesweepboxview.LineSlideSweepBoxView
 
@@ -48,7 +50,8 @@ class MainActivity : AppCompatActivity() {
         //BarSlideUpVanishView.create(this)
         //BiSquareMergeSquareView.create(this)
         //LineSlideSweepBoxView.create(this)
-        BiArcJoinMoveView.create(this)
+        // BiArcJoinMoveView.create(this)
+        BiArcJoinThenDivideView.create(this)
         fullScreen()
     }
 }

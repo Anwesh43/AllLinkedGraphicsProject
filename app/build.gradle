@@ -58,6 +58,6 @@ dependencies {
 //    implementation project(":barslideupvanishview")
     //implementation project(":bisquaremergesquareview")
     //implementation project(":lineslidesweepboxview")
-    implementation project(":biarcjoinmoveview")
-
+    //implementation project(":biarcjoinmoveview")
+    implementation project(":biarcjointhendivideview")
 }
