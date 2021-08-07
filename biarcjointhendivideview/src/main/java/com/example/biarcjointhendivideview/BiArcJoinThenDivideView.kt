@@ -42,7 +42,7 @@ fun Canvas.drawBiArcJoinThenDivide(scale : Float, w : Float, h : Float, paint : 
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate((w / 2 - size / 2) * (1 - sc2 + sc3) + size * sc3, 0f)
+        translate((w / 2 - size / 2) * (1 - sc2 + sc3) + size * 0.5f*  sc3, 0f)
         rotate(deg * sc3)
         drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), -deg / 2, deg * (sc1 - sc4), true, paint)
         restore()
