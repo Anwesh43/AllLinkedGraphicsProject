@@ -206,4 +206,13 @@ class BiArcJoinThenDivideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiArcJoinThenDivideView {
+            val view : BiArcJoinThenDivideView = BiArcJoinThenDivideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
