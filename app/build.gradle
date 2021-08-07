@@ -59,5 +59,6 @@ dependencies {
     //implementation project(":bisquaremergesquareview")
     //implementation project(":lineslidesweepboxview")
     //implementation project(":biarcjoinmoveview")
-    implementation project(":biarcjointhendivideview")
+    //implementation project(":biarcjointhendivideview")
+    implementation project(":tripathtosquareview")
 }
