@@ -218,4 +218,12 @@ class TriPathToSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : TriPathToSquareView {
+            val view : TriPathToSquareView = TriPathToSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
