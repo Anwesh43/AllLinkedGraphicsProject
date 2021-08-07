@@ -50,9 +50,7 @@ fun Canvas.drawTriPathToSquare(scale : Float, w : Float, h : Float, paint : Pain
         drawAt(0f, size / 2) {
             drawLine(-x, 0f, x, 0f, paint)
             for (j in 0..1) {
-                drawAt(x * (1f - 2 * j), 0f) {
-                    drawLine(0f, 0f, 0f, -size * sc2, paint)
-                }
+                drawLine(x * (1f - 2 * j), 0f, size * 0.5f * (1f - 2 * j) * sc1, -size * sc1, paint)
             }
         }
     }
@@ -200,7 +198,7 @@ class TriPathToSquareView(ctx : Context) : View(ctx) {
 
         private val animator : Animator = Animator(view)
         private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        private val tpts : TPTSNode = TPTSNode(0)
+        private val tpts : TriPathToSquare = TriPathToSquare(0)
 
         fun render(canvas : Canvas) {
             canvas.drawColor(backColor)
