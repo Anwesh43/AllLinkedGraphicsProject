@@ -40,11 +40,11 @@ fun Canvas.drawTrapPath(scale : Float, w : Float, h : Float, paint : Paint) {
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(w * 0.5f * sc3, 0f)
+        translate(-w * 0.5f * sc3, 0f)
         drawLine(0f, 0f, 0f, -size * 0.5f * sc1, paint)
         drawLine(-size / 2, 0f, -size / 2, -size * sc1, paint)
         drawLine(0f, 0f, -size * 0.5f * sc2, 0f, paint)
-        drawLine(0f, -size / 2, -size * 0.5f * sc3, -size / 2 - size * 0.5f * sc3, paint)
+        drawLine(0f, -size / 2, -size * 0.5f * sc2, -size / 2 - size * 0.5f * sc2, paint)
         restore()
     }
     restore()
