@@ -210,4 +210,13 @@ class TrapPathMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TrapPathMoveView {
+            val view : TrapPathMoveView = TrapPathMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
