@@ -185,4 +185,27 @@ class TrapPathMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TrapPathMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val tpm : TrapPathMove = TrapPathMove(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tpm.draw(canvas, paint)
+            animator.animate {
+                tpm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tpm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
