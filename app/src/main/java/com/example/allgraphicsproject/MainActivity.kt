@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.tripathtosquareview.TriPathToSquareView
+import com.example.trappathmoveview.TrapPathMoveView
+
+//import com.example.tripathtosquareview.TriPathToSquareView
 
 //import com.example.biarcjointhendivideview.BiArcJoinThenDivideView
 
@@ -54,7 +56,8 @@ class MainActivity : AppCompatActivity() {
         //LineSlideSweepBoxView.create(this)
         // BiArcJoinMoveView.create(this)
         //BiArcJoinThenDivideView.create(this)
-        TriPathToSquareView.create(this)
+        //TriPathToSquareView.create(this)
+        TrapPathMoveView.create(this)
         fullScreen()
     }
 }

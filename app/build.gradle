@@ -60,5 +60,6 @@ dependencies {
     //implementation project(":lineslidesweepboxview")
     //implementation project(":biarcjoinmoveview")
     //implementation project(":biarcjointhendivideview")
-    implementation project(":tripathtosquareview")
+    //implementation project(":tripathtosquareview")
+    implementation project(":trappathmoveview")
 }
