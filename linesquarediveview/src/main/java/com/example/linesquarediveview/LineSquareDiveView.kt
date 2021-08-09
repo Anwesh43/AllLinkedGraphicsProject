@@ -30,3 +30,32 @@ val rot : Float = 90f
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawLineSquarDive(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    val sqSize : Float = sc2 * (Math.min(w, h) / squareFactor)
+    save()
+    translate(w / 2, h / 2)
+    for (j in 0..1) {
+        save()
+        scale(1f, 1f - 2 * j)
+        rotate(rot * sc3)
+        drawLine(0f, 0f, 0f, size * sc1, paint)
+        restore()
+    }
+    drawRect(RectF(-sqSize / 2, -sqSize / 2, sqSize / 2, sqSize), paint)
+    restore()
+}
+
+fun Canvas.drawLSDNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawLineSquarDive(scale, w, h, paint)
+}
