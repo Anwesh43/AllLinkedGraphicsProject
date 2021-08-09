@@ -25,7 +25,7 @@ val sizeFactor : Float = 4.9f
 val squareFactor : Float = 11.2f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
-val rot : Float = 90f
+val rot : Float = 45f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -39,7 +39,7 @@ fun Canvas.drawLineSquarDive(scale : Float, w : Float, h : Float, paint : Paint)
     val sc4 : Float = scale.divideScale(3, parts)
     val sqSize : Float = sc2 * (Math.min(w, h) / squareFactor)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + size) * sc4, h / 2)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
@@ -47,7 +47,7 @@ fun Canvas.drawLineSquarDive(scale : Float, w : Float, h : Float, paint : Paint)
         drawLine(0f, 0f, 0f, size * sc1, paint)
         restore()
     }
-    drawRect(RectF(-sqSize / 2, -sqSize / 2, sqSize / 2, sqSize), paint)
+    drawRect(RectF(-sqSize / 2, -sqSize / 2, sqSize / 2, sqSize / 2), paint)
     restore()
 }
 
