@@ -210,4 +210,13 @@ class LineSquareDiveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineSquareDiveView {
+            val view : LineSquareDiveView = LineSquareDiveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
