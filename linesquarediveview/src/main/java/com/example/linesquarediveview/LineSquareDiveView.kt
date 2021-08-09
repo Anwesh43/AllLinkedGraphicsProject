@@ -185,4 +185,27 @@ class LineSquareDiveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineSquareDiveView) {
+
+        private val animator : Animator = Animator(view)
+        private val lsd : LineSquareDive = LineSquareDive(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lsd.draw(canvas, paint)
+            animator.animate {
+                lsd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lsd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
