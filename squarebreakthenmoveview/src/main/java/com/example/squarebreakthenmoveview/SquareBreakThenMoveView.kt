@@ -122,5 +122,46 @@ class SquareBreakThenMoveView(ctx : Context) : View(ctx) {
                 }
             }
         }
+
+        data class SBTMNode(var i : Int, val state : State = State()) {
+
+            private var prev : SBTMNode? = null
+            private var next : SBTMNode? = null
+
+            init {
+                addNeighbor()
+            }
+
+            fun addNeighbor() {
+                if (i < colors.size - 1) {
+                    next = SBTMNode(i + 1)
+                    next?.prev = this
+                }
+            }
+
+            fun draw(canvas : Canvas, paint : Paint) {
+                canvas.drawSBTMNode(i, state.scale, paint)
+            }
+
+            fun update(cb : (Float) -> Unit) {
+                state.update(cb)
+            }
+
+            fun startUpdating(cb : () -> Unit) {
+                state.startUpdating(cb)
+            }
+
+            fun getNext(dir : Int, cb : () -> Unit) : SBTMNode {
+                var curr : SBTMNode? = prev
+                if (dir == 1) {
+                    curr = next
+                }
+                if (curr != null) {
+                    return curr
+                }
+                cb()
+                return this
+            }
+        }
     }
 }
