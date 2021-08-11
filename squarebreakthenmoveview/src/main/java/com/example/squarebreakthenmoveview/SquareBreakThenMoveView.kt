@@ -186,5 +186,28 @@ class SquareBreakThenMoveView(ctx : Context) : View(ctx) {
                 curr.startUpdating(cb)
             }
         }
+
+        data class Renderer(var view : SquareBreakThenMoveView) {
+
+            private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+            private val sbtm : SquareBreakThenMove = SquareBreakThenMove(0)
+            private val animator : Animator = Animator(view)
+
+            fun render(canvas : Canvas) {
+                canvas.drawColor(backColor)
+                sbtm.draw(canvas, paint)
+                animator.animate {
+                    sbtm.update {
+                        animator.stop()
+                    }
+                }
+            }
+
+            fun handleTap() {
+                sbtm.startUpdating {
+                    animator.start()
+                }
+            }
+        }
     }
 }
