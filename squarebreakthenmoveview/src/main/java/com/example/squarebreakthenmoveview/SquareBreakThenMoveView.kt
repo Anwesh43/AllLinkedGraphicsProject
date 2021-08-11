@@ -212,4 +212,13 @@ class SquareBreakThenMoveView(ctx: Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareBreakThenMoveView {
+            val view : SquareBreakThenMoveView = SquareBreakThenMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
