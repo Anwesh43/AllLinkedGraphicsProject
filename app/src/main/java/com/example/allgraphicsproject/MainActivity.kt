@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import com.example.linesquarediveview.LineSquareDiveView
+import com.example.squarebreakthenmoveview.SquareBreakThenMoveView
 
 //import com.example.trappathmoveview.TrapPathMoveView
 
@@ -60,7 +61,8 @@ class MainActivity : AppCompatActivity() {
         //BiArcJoinThenDivideView.create(this)
         //TriPathToSquareView.create(this)
         //TrapPathMoveView.create(this)
-        LineSquareDiveView.create(this)
+        //LineSquareDiveView.create(this)
+        SquareBreakThenMoveView.create(this)
         fullScreen()
     }
 }

@@ -63,4 +63,5 @@ dependencies {
     //implementation project(":tripathtosquareview")
     //implementation project(":trappathmoveview")
     implementation project(":linesquarediveview")
+    implementation project(":squarebreakthenmoveview")
 }
