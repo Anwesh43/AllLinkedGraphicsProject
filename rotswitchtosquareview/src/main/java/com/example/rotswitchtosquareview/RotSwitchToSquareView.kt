@@ -35,19 +35,20 @@ fun Canvas.drawRotSwitchToSquare(scale : Float, w : Float, h : Float, paint : Pa
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     val size : Float = Math.min(w, h) / sizeFactor
+    val y : Float = size / 2 - size * 0.25f * sc3
     save()
     translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
-        translate(0f, size / 4)
-        rotate(rot * sc3)
-        drawLine(-size * 0.5f * sc1, -size / 4, size * 0.5f * sc1, -size / 4, paint)
+        translate(0f, y)
+        rotate(-rot * sc3)
+        drawLine(-size * 0.5f * sc1, -y, size * 0.5f * sc1, -y, paint)
         for (k in 0..1) {
             save()
             scale(1f - 2 * k, 1f)
-            translate(0f, -size / 4)
-            drawLine(0f, 0f, 0f, -size * 0.5f * sc2, paint)
+            translate(-size / 2, -y)
+            drawLine(0f, 0f, 0f, size * 0.5f * sc2, paint)
             restore()
         }
         restore()
