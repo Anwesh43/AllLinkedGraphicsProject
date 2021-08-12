@@ -213,4 +213,13 @@ class RotSwitchToSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RotSwitchToSquareView {
+            val view : RotSwitchToSquareView = RotSwitchToSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
