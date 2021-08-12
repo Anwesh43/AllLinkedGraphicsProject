@@ -62,6 +62,7 @@ dependencies {
     //implementation project(":biarcjointhendivideview")
     //implementation project(":tripathtosquareview")
     //implementation project(":trappathmoveview")
-    implementation project(":linesquarediveview")
-    implementation project(":squarebreakthenmoveview")
+//    implementation project(":linesquarediveview")
+//    implementation project(":squarebreakthenmoveview")
+    implementation project(":rotswitchtosquareview")
 }
