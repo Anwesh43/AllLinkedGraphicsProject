@@ -188,4 +188,27 @@ class RotSwitchToSquareView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RotSwitchToSquareView) {
+
+        private val animator : Animator = Animator(view)
+        private val rotSwitchToSquare : RotSwitchToSquare = RotSwitchToSquare(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rotSwitchToSquare.draw(canvas, paint)
+            animator.animate {
+                rotSwitchToSquare.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rotSwitchToSquare.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
