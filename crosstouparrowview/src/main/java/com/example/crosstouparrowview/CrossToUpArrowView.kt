@@ -17,10 +17,10 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
+val parts : Int = 3
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.2f
-val scGap : Float = 0.04f / parts
+val scGap : Float = 0.03f / parts
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val rot : Float = 180f
@@ -34,14 +34,13 @@ fun Canvas.drawCrossToUpArrow(scale : Float, w : Float, h : Float, paint : Paint
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
-    val sc4 : Float = scale.divideScale(3, parts)
     val y : Float = size * 0.25f
     save()
     translate(w / 2, h / 2)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
-        translate(0f, -y)
+        translate(0f, -y - (h / 2 + size) * sc3)
         rotate(180f * sc2)
         drawLine(0f, y, -size * 0.5f * sc1, y - size * 0.5f * sc1, paint)
         drawLine(0f, y, size * 0.5f * sc1, y - size * 0.5f * sc1, paint)
