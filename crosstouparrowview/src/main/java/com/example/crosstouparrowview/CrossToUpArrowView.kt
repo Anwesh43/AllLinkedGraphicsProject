@@ -185,4 +185,27 @@ class CrossToUpArrowView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : CrossToUpArrowView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val ctua : CrossToUpArrow = CrossToUpArrow(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ctua.draw(canvas, paint)
+            animator.animate {
+                ctua.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ctua.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
