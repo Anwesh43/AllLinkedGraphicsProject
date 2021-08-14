@@ -215,4 +215,13 @@ class BiFillCircToLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiFillCircToLineView {
+            val view : BiFillCircToLineView = BiFillCircToLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
