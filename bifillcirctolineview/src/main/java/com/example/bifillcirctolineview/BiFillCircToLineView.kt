@@ -42,11 +42,11 @@ fun Canvas.drawBiFillCircToLine(scale : Float, w : Float, h : Float, paint : Pai
     rotate(rot * sc3)
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 1f)
-        translate((w / 2 + size) * sc4, 0f)
+        rotate(deg * j)
+        translate((h / 2 + size) * sc4, 0f)
         drawArc(RectF(-size / 2,-size /2, size / 2, size / 2), -deg / 2, deg * sc1, false, paint)
         if (sc2 > 0f) {
-            drawLine(0f, 0f, size * sc2, 0f, paint)
+            drawLine(0f, 0f, size * 0.5f * sc2, 0f, paint)
         }
         restore()
     }
