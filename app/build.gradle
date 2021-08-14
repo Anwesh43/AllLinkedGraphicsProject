@@ -65,4 +65,5 @@ dependencies {
 //    implementation project(":linesquarediveview")
 //    implementation project(":squarebreakthenmoveview")
     implementation project(":rotswitchtosquareview")
+    implementation project(":crosstouparrowview")
 }

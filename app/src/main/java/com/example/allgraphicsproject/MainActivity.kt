@@ -3,6 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.crosstouparrowview.CrossToUpArrowView
 import com.example.rotswitchtosquareview.RotSwitchToSquareView
 
 //import com.example.linesquarediveview.LineSquareDiveView
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         //TrapPathMoveView.create(this)
         //LineSquareDiveView.create(this)
         //SquareBreakThenMoveView.create(this)
-        RotSwitchToSquareView.create(this)
+        CrossToUpArrowView.create(this)
         fullScreen()
     }
 }
