@@ -41,7 +41,7 @@ fun Canvas.drawCrossToUpArrow(scale : Float, w : Float, h : Float, paint : Paint
         save()
         scale(1f, 1f - 2 * j)
         translate(0f, -y - (h / 2 + size) * sc3)
-        rotate(180f * sc2)
+        rotate(rot * sc2)
         drawLine(0f, y, -size * 0.5f * sc1, y - size * 0.5f * sc1, paint)
         drawLine(0f, y, size * 0.5f * sc1, y - size * 0.5f * sc1, paint)
         restore()
