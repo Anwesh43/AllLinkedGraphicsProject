@@ -10,11 +10,11 @@ import android.graphics.RectF
 import android.graphics.Canvas
 
 val colors : Array<Int> = arrayOf(
-    "",
-    "",
-    "",
-    "",
-    ""
+    "#1A237E",
+    "#EF5350",
+    "#AA00FF",
+    "#C51162",
+    "#00C853"
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
