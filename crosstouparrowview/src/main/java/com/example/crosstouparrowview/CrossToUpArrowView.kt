@@ -209,4 +209,13 @@ class CrossToUpArrowView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CrossToUpArrowView {
+            val view : CrossToUpArrowView = CrossToUpArrowView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
