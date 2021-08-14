@@ -3,8 +3,10 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.crosstouparrowview.CrossToUpArrowView
-import com.example.rotswitchtosquareview.RotSwitchToSquareView
+import com.example.bifillcirctolineview.BiFillCircToLineView
+
+//import com.example.crosstouparrowview.CrossToUpArrowView
+//import com.example.rotswitchtosquareview.RotSwitchToSquareView
 
 //import com.example.linesquarediveview.LineSquareDiveView
 //import com.example.squarebreakthenmoveview.SquareBreakThenMoveView
@@ -66,7 +68,8 @@ class MainActivity : AppCompatActivity() {
         //TrapPathMoveView.create(this)
         //LineSquareDiveView.create(this)
         //SquareBreakThenMoveView.create(this)
-        CrossToUpArrowView.create(this)
+        //CrossToUpArrowView.create(this)
+        BiFillCircToLineView.create(this)
         fullScreen()
     }
 }
