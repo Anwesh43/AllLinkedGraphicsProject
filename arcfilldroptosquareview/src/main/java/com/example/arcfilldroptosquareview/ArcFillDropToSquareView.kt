@@ -96,7 +96,7 @@ class ArcFillDropToSquareView(ctx : Context) : View(ctx) {
 
     data class Animator(var view : View, var animated : Boolean = false) {
 
-        fun animated(cb : () -> Unit) {
+        fun animate(cb : () -> Unit) {
             if (animated) {
                 cb()
                 try {
@@ -183,6 +183,29 @@ class ArcFillDropToSquareView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : ArcFillDropToSquareView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val afdts : ArcFillDropToSquare = ArcFillDropToSquare(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            afdts.draw(canvas, paint)
+            animator.animate {
+                afdts.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            afdts.startUpdating {
+                animator.start()
+            }
         }
     }
 }
