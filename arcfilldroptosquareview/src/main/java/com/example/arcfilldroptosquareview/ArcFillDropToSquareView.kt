@@ -41,7 +41,7 @@ fun Canvas.drawArcFillDropToSquare(scale : Float, w : Float, h : Float, paint : 
     for (j in 0..1){
         save()
         scale(1f - 2 * j, 1f)
-        translate((w / 2 - size) * (1 - sc2), -h / 2 + size / 2 + (h / 2 - size) * sc3 - (h / 2 - size * 1.5f) * sc4)
+        translate((w / 2 - size) * (1 - sc2), -h / 2 + size / 2 + (h / 2 - size) * sc3 - (h / 2 + size * 1.5f) * sc4)
         drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), -deg / 2, deg * sc1, true, paint)
         restore()
     }

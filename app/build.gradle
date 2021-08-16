@@ -66,5 +66,6 @@ dependencies {
 //    implementation project(":squarebreakthenmoveview")
 //    implementation project(":rotswitchtosquareview")
 //    implementation project(":crosstouparrowview")
-    implementation project(":bifillcirctolineview")
+    //implementation project(":bifillcirctolineview")
+    implementation project(":arcfilldroptosquareview")
 }
