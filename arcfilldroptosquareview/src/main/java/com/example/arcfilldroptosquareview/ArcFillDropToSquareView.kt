@@ -210,4 +210,13 @@ class ArcFillDropToSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcFillDropToSquareView {
+            val view : ArcFillDropToSquareView = ArcFillDropToSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
