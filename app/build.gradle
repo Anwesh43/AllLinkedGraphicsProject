@@ -67,5 +67,6 @@ dependencies {
 //    implementation project(":rotswitchtosquareview")
 //    implementation project(":crosstouparrowview")
     //implementation project(":bifillcirctolineview")
-    implementation project(":arcfilldroptosquareview")
+    //implementation project(":arcfilldroptosquareview")
+    implementation project(":piestrokethenfillview")
 }
