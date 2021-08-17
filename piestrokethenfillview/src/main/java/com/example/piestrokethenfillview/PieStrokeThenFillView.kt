@@ -208,4 +208,13 @@ class PieStrokeThenFillView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : PieStrokeThenFillView {
+            val view : PieStrokeThenFillView = PieStrokeThenFillView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
