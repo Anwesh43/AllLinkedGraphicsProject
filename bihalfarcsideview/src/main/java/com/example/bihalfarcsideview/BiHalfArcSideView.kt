@@ -183,4 +183,27 @@ class BiHalfArcSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class Renderer(var view : BiHalfArcSideView) {
+
+        private val animator : Animator = Animator(view)
+        private val bhas : BiHalfArcSide = BiHalfArcSide(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bhas.draw(canvas, paint)
+            animator.animate {
+                bhas.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bhas.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
