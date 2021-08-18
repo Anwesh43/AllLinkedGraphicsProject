@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.piestrokethenfillview.PieStrokeThenFillView
+//import com.example.piestrokethenfillview.PieStrokeThenFillView
 
 //import com.example.arcfilldroptosquareview.ArcFillDropToSquareView
 
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         //CrossToUpArrowView.create(this)
         //BiFillCircToLineView.create(this)
         //ArcFillDropToSquareView.create(this)
-        PieStrokeThenFillView.create(this)
+        //PieStrokeThenFillView.create(this)
         fullScreen()
     }
 }
