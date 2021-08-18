@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.bihalfarcsideview.BiHalfArcSideView
+
 //import com.example.piestrokethenfillview.PieStrokeThenFillView
 
 //import com.example.arcfilldroptosquareview.ArcFillDropToSquareView
@@ -76,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         //BiFillCircToLineView.create(this)
         //ArcFillDropToSquareView.create(this)
         //PieStrokeThenFillView.create(this)
+        BiHalfArcSideView.create(this)
         fullScreen()
     }
 }
