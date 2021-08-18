@@ -41,7 +41,7 @@ fun Canvas.drawBiHalfArcSide(scale : Float, w : Float, h : Float, paint : Paint)
         translate(size * 0.5f * (1 - 2 * j) * (1 - sc3), 0f)
         drawArc(
             RectF(-size / 2, -size / 2, size / 2, size / 2),
-            180f * j, 180f * scale.divideScale(j, parts),
+            deg * j, deg * scale.divideScale(j, parts),
             true,
             paint
         )
@@ -59,14 +59,16 @@ fun Canvas.drawBHASNode(i : Int, scale : Float, paint : Paint) {
 
 class BiHalfArcSideView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    private val renderer : Renderer = Renderer(this)
 
+    override fun onDraw(canvas : Canvas) {
+        renderer.render(canvas)
     }
 
     override fun onTouchEvent(event : MotionEvent) : Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-
+                renderer.handleTap()
             }
         }
         return true
