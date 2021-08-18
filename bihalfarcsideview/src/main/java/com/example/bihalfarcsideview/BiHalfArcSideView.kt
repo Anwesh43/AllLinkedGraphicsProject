@@ -208,4 +208,13 @@ class BiHalfArcSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiHalfArcSideView {
+            val view : BiHalfArcSideView = BiHalfArcSideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
