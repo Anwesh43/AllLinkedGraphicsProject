@@ -18,8 +18,8 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 7
-val scGap : Float = 0.06f / parts
+val parts : Int = 11
+val scGap : Float = 0.11f / parts
 val delay : Long = 20
 val sizeFactor : Float = 3.2f
 val backColor : Int = Color.parseColor("#BDBDBD")
@@ -43,7 +43,7 @@ fun Canvas.drawSquareCreateDrop(scale : Float, w : Float, h : Float, paint : Pai
         translate(size / 2, size / 2)
         save()
         rotate(90f * (j / 3) * sc2)
-        drawLine(0f, 0f, 0f, -size * scale.divideScale(j, parts), paint)
+        drawLine(0f, -size * scale.divideScale(7 + j, parts), 0f, -size * scale.divideScale(j, parts), paint)
         restore()
         restore()
     }
@@ -61,6 +61,7 @@ fun Canvas.drawSCDNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawSquareCreateDrop(scale, w, h, paint)
 }
 
 class SquareCreateDropView(ctx : Context) : View(ctx) {
