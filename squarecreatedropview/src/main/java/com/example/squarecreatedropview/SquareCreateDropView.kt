@@ -18,7 +18,7 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 6
+val parts : Int = 7
 val scGap : Float = 0.06f / parts
 val delay : Long = 20
 val sizeFactor : Float = 3.2f
@@ -29,3 +29,36 @@ val strokeFactor : Float = 90f
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawSquareCreateDrop(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(4, parts)
+    val sc2 : Float = scale.divideScale(5, parts)
+    val sc3 : Float = scale.divideScale(6, parts)
+    save()
+    translate(w / 2, h / 2)
+    for (j in 0..3) {
+        save()
+        rotate(-90f * j)
+        translate(size / 2, size / 2)
+        save()
+        rotate(90f * (j / 3) * sc2)
+        drawLine(0f, 0f, 0f, -size * scale.divideScale(j, parts), paint)
+        restore()
+        restore()
+    }
+    val rSize : Float = size * sc1
+    save()
+    translate(0f, (h / 2 + size) * sc3)
+    drawRect(RectF(-rSize / 2, -rSize / 2, rSize / 2, rSize / 2), paint)
+    restore()
+    restore()
+}
+
+fun Canvas.drawSCDNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+}
