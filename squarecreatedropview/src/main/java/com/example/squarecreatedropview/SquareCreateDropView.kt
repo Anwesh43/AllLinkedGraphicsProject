@@ -214,4 +214,13 @@ class SquareCreateDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareCreateDropView {
+            val view : SquareCreateDropView = SquareCreateDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
