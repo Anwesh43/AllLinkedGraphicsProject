@@ -69,5 +69,6 @@ dependencies {
     //implementation project(":bifillcirctolineview")
     //implementation project(":arcfilldroptosquareview")
     //implementation project(":piestrokethenfillview")
-    implementation project(":bihalfarcsideview")
+    //implementation project(":bihalfarcsideview")
+    implementation project(":squarecreatedropview")
 }
