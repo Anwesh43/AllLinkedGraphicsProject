@@ -183,4 +183,27 @@ class HorizLineToSquareDropView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HorizLineToSquareDropView) {
+
+        private val animator : Animator = Animator(view)
+        private val hltsd : HorizLineToSquareDrop = HorizLineToSquareDrop(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            hltsd.draw(canvas, paint)
+            animator.animate {
+                hltsd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hltsd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
