@@ -208,4 +208,13 @@ class HorizLineToSquareDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HorizLineToSquareDropView {
+            val view : HorizLineToSquareDropView = HorizLineToSquareDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
