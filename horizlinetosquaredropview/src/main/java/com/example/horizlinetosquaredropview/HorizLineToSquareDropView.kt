@@ -57,3 +57,18 @@ fun Canvas.drawHLTDNode(i : Int, scale : Float, paint : Paint) {
     drawHorizLineToSquare(scale, w, h, paint)
 }
 
+class HorizLineToSquareDropView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
