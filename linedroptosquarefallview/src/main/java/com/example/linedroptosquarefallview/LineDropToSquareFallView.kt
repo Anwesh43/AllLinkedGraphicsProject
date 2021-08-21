@@ -21,7 +21,7 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
-val sizeFactor : Float = 90f
+val sizeFactor : Float = 4.4f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 
@@ -42,7 +42,9 @@ fun Canvas.drawLineDropSquareFall(scale : Float, w : Float, h : Float, paint : P
     translate(0f, -h / 2 + (h / 2) * sc1)
     drawLine(0f, 0f, 0f, -size * (1 - sc2), paint)
     restore()
-    drawLine(-size * 0.5f * sc2, 0f, size * 0.5f * sc2, 0f, paint)
+    if (sc2 > 0f) {
+        drawLine(-size * 0.5f * sc2, 0f, size * 0.5f * sc2, 0f, paint)
+    }
     drawRect(RectF(-rSize / 2, -rSize * sc3, rSize / 2, 0f), paint)
     restore()
 }
@@ -127,7 +129,7 @@ class LineDropToSquareFallView(ctx : Context) : View(ctx) {
         private var prev : LDTSFNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
