@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.horizlinetosquaredropview.HorizLineToSquareDropView
+import com.example.linedroptosquarefallview.LineDropToSquareFallView
+
+//import com.example.horizlinetosquaredropview.HorizLineToSquareDropView
 
 //import com.example.squarecreatedropview.SquareCreateDropView
 
@@ -84,7 +86,8 @@ class MainActivity : AppCompatActivity() {
         //PieStrokeThenFillView.create(this)
         //BiHalfArcSideView.create(this)
         //SquareCreateDropView.create(this)
-        HorizLineToSquareDropView.create(this)
+        //HorizLineToSquareDropView.create(this)
+        LineDropToSquareFallView.create(this)
         fullScreen()
     }
 }
