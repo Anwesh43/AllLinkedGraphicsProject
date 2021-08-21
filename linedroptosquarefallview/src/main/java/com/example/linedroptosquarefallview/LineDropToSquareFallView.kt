@@ -207,4 +207,13 @@ class LineDropToSquareFallView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineDropToSquareFallView {
+            val view : LineDropToSquareFallView = LineDropToSquareFallView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
