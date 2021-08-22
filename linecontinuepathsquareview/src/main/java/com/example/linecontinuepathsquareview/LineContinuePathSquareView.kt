@@ -192,4 +192,27 @@ class LineContinuePathSquareView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineContinuePathSquareView) {
+
+        private val animator : Animator = Animator(view)
+        private val lcs : LineContinuePathSquare = LineContinuePathSquare(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lcs.draw(canvas, paint)
+            animator.animate {
+                lcs.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lcs.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
