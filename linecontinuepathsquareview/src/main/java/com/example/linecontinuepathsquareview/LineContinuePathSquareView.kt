@@ -40,7 +40,7 @@ fun Canvas.drawLineContinuePathSquare(scale : Float, w : Float, h : Float, paint
     for (j in 0..(lines - 1)) {
         val scj : Float = scale.divideScale(j, parts)
         save()
-        rotate(deg * j)
+        rotate(-deg * j)
         drawLine(
             size / 2,
             size / 2,
@@ -51,7 +51,7 @@ fun Canvas.drawLineContinuePathSquare(scale : Float, w : Float, h : Float, paint
         restore()
     }
     save()
-    translate(0f, -(h / 2 + size / 2) * (1 - sc4))
+    translate(0f, (h / 2 + size / 2) * (1 - sc4))
     drawRect(RectF(-size / 2, -size / 2, size / 2, size / 2), paint)
     restore()
     restore()
@@ -137,7 +137,7 @@ class LineContinuePathSquareView(ctx : Context) : View(ctx) {
         private var prev : LCPSNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
@@ -224,7 +224,6 @@ class LineContinuePathSquareView(ctx : Context) : View(ctx) {
             val view : LineContinuePathSquareView = LineContinuePathSquareView(activity)
             activity.setContentView(view)
             return view
-
         }
     }
 }
