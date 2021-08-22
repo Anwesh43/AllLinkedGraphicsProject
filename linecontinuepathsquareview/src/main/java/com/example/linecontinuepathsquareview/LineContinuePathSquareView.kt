@@ -217,4 +217,14 @@ class LineContinuePathSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : LineContinuePathSquareView {
+            val view : LineContinuePathSquareView = LineContinuePathSquareView(activity)
+            activity.setContentView(view)
+            return view
+
+        }
+    }
 }
