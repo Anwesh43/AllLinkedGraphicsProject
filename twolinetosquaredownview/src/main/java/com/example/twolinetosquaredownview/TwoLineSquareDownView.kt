@@ -186,4 +186,27 @@ class TwoLineSquareDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TwoLineSquareDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val tlsd : TwoLineSquareDown = TwoLineSquareDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tlsd.draw(canvas, paint)
+            animator.animate {
+                tlsd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tlsd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
