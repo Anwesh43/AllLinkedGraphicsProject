@@ -37,13 +37,13 @@ fun Canvas.drawTwoLineSquareDown(scale : Float, w : Float, h : Float, paint : Pa
     val sc4 : Float = scale.divideScale(3, parts)
     save()
     translate(w / 2, h / 2 + (h / 2 + size) * sc4)
-    drawLine(0f, -size * 0.5f * sc1, 0f, size * 0.5f * sc1, paint)
+    drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     save()
-    translate(0f, -size + (h / 2 + size) * sc2)
+    translate(0f, -size - h / 2+ (h / 2 + size) * sc2)
     for (j in 0..1) {
         save()
         translate(size * 0.5f * (1f - 2 * j), 0f)
-        drawLine(0f, 0f, 0f, size, paint)
+        drawLine(0f, 0f, 0f, -size, paint)
         restore()
     }
     restore()
@@ -131,7 +131,7 @@ class TwoLineSquareDownView(ctx : Context) : View(ctx) {
         private var prev : TLSDNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
