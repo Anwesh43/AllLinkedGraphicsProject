@@ -28,3 +28,34 @@ val backColor : Int = Color.parseColor("#BDBDBD")
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawTwoLineSquareDown(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
+    drawLine(0f, -size * 0.5f * sc1, 0f, size * 0.5f * sc1, paint)
+    save()
+    translate(0f, -size + (h / 2 + size) * sc2)
+    for (j in 0..1) {
+        save()
+        translate(size * 0.5f * (1f - 2 * j), 0f)
+        drawLine(0f, 0f, 0f, size, paint)
+        restore()
+    }
+    restore()
+    drawRect(RectF(-size / 2, -size * sc3, size / 2, 0f), paint)
+    restore()
+}
+
+fun Canvas.drawTLSDNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawTwoLineSquareDown(scale, w, h, paint)
+}
