@@ -65,3 +65,19 @@ fun Canvas.drawLLANode(i : Int, scale : Float, paint : Paint) {
     drawLLineArc(scale, w, h, paint)
 }
 
+class LLineArcView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
+
