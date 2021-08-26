@@ -217,5 +217,14 @@ class LLineArcView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LLineArcView {
+            val view : LLineArcView = LLineArcView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
 
