@@ -189,4 +189,27 @@ class BallDownFromDiagView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BallDownFromDiagView) {
+
+        private val bdd : BallDownFromDiag = BallDownFromDiag(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bdd.draw(canvas, paint)
+            animator.animate {
+                bdd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bdd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
