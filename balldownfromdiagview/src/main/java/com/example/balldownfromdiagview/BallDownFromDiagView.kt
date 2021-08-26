@@ -62,3 +62,19 @@ fun Canvas.drawBDFDNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     drawBallDownFromDiag(scale, w, h, paint)
 }
+
+class BallDownFromDiagView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
