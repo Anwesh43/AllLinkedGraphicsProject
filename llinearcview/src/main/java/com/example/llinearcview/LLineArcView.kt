@@ -42,7 +42,7 @@ fun Canvas.drawLLineArc(scale : Float, w : Float, h : Float, paint : Paint) {
     save()
     translate(w / 2 + (w / 2) * sc4, h / 2 - (h / 2) * sc4)
     for (j in 0..1) {
-        val sweep : Float = -rot * (1 - 2 * j) * sc2
+        val sweep : Float = -rot * (1 - 2 * j) * (sc2 - sc3)
         val start : Float =  -deg * j - (1 - 2 * j) * rot * sc3
         save()
         rotate(-deg * j  - (45f * sc3) * (1f - 2 * j))
@@ -62,6 +62,7 @@ fun Canvas.drawLLANode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
+    paint.style = Paint.Style.STROKE
     drawLLineArc(scale, w, h, paint)
 }
 
