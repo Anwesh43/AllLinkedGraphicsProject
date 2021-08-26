@@ -192,5 +192,28 @@ class LLineArcView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LLineArcView) {
+
+        private val animator : Animator = Animator(view)
+        private val lla : LLineArc = LLineArc(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lla.draw(canvas, paint)
+            animator.animate {
+                lla.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lla.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
 
