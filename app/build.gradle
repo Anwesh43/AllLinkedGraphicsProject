@@ -74,5 +74,6 @@ dependencies {
     //implementation project(":horizlinetosquaredropview")
     //implementation project(":linedroptosquarefallview")
     //implementation project(":linecontinuepathsquareview")
-    implementation project(":twolinetosquaredownview")
+    //implementation project(":twolinetosquaredownview")
+    implementation project(":llinearcview")
 }
