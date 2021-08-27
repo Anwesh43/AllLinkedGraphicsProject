@@ -55,7 +55,6 @@ fun Canvas.drawSquareShooterBall(scale : Float, w : Float, h : Float, paint : Pa
 fun Canvas.drawSSBNode(i : Int, scale : Float, paint : Paint) {
     val w : Float = width.toFloat()
     val h : Float = height.toFloat()
-    val size : Float = Math.min(w, h) / sizeFactor
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
@@ -211,6 +210,15 @@ class SquareShooterBallView(ctx : Context) : View(ctx) {
             ssb.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareShooterBallView {
+            val view : SquareShooterBallView = SquareShooterBallView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
