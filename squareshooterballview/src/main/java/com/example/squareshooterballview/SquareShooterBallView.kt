@@ -175,7 +175,7 @@ class SquareShooterBallView(ctx : Context) : View(ctx) {
             curr.draw(canvas, paint)
         }
 
-        fun uppdate(cb : (Float) -> Unit) {
+        fun update(cb : (Float) -> Unit) {
             curr.update {
                 curr = curr.getNext(dir) {
                     dir *= -1
@@ -186,6 +186,29 @@ class SquareShooterBallView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : SquareShooterBallView) {
+
+        private val animator : Animator = Animator(view)
+        private val ssb : SquareShooterBall = SquareShooterBall(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ssb.draw(canvas, paint)
+            animator.animate {
+                ssb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ssb.startUpdating {
+                animator.start()
+            }
         }
     }
 }
