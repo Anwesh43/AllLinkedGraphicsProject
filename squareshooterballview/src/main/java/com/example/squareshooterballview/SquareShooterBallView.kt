@@ -37,14 +37,14 @@ fun Canvas.drawSquareShooterBall(scale : Float, w : Float, h : Float, paint : Pa
     val r : Float = Math.min(w, h) / rFactor
     save()
     translate(w / 2, h / 2)
-    drawRect(RectF(-size / 2 + size * sc4, -size / 2, -size + size * sc1, size / 2), paint)
+    drawRect(RectF(-size / 2 + size * sc4, -size / 2, -size / 2 + size * sc1, size / 2), paint)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
         drawCircle(
             0f,
-            (w / 2 + r) * scale.divideScale(j + 1, parts),
-            r,
+            (h / 2 + r) * scale.divideScale(j + 1, parts),
+            r * Math.floor(sc1.toDouble()).toFloat(),
             paint
         )
         restore()
