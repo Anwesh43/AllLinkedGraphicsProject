@@ -207,4 +207,13 @@ class DropSquareToLeftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DropSquareToLeftView {
+            val view : DropSquareToLeftView = DropSquareToLeftView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
