@@ -18,8 +18,8 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
-val scGap : Float = 0.04f / parts
+val parts : Int = 3
+val scGap : Float = 0.03f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val backColor : Int = Color.parseColor("#BDBDBD")
@@ -28,3 +28,31 @@ val delay : Long = 20
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawDropSquareToLeft(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    save()
+    translate(w / 2, h / 2  + (h / 2 + size) * sc3)
+    save()
+    translate(-w / 2 - size / 2 + (w / 2 + size / 2) * sc1, 0f)
+    drawRect(RectF(-size / 2, -size / 2, size / 2, size / 2), paint)
+    restore()
+    save()
+    translate(0f, -h / 2 - size + (h / 2 + size / 2) * sc2)
+    drawLine(0f, -size / 2, 0f, size / 2, paint)
+    restore()
+    restore()
+}
+
+fun Canvas.drawDSTLNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawDropSquareToLeft(scale, w, h, paint)
+}
+
