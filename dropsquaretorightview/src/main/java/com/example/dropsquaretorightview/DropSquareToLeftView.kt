@@ -152,7 +152,7 @@ class DropSquareToLeftView(ctx : Context) : View(ctx) {
         fun getNext(dir : Int, cb : () -> Unit) : DSTLNode {
             var curr : DSTLNode? = prev
             if (dir == 1) {
-                curr = prev
+                curr = next
             }
             if (curr != null) {
                 return curr
