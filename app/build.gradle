@@ -77,5 +77,5 @@ dependencies {
     //implementation project(":twolinetosquaredownview")
     //implementation project(":llinearcview")
     //implementation project(":balldownfromdiagview")
-    implementation project(":squareshooterballview")
+    //implementation project(":squareshooterballview")
 }

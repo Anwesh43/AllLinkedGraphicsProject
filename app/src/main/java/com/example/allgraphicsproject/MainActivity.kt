@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.squareshooterballview.SquareShooterBallView
+//import com.example.squareshooterballview.SquareShooterBallView
 
 //import com.example.balldownfromdiagview.BallDownFromDiagView
 
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         //TwoLineSquareDownView.create(this)
         //LLineArcView.create(this)
         //BallDownFromDiagView.create(this)
-        SquareShooterBallView.create(this)
+        //SquareShooterBallView.create(this)
         fullScreen()
     }
 }
