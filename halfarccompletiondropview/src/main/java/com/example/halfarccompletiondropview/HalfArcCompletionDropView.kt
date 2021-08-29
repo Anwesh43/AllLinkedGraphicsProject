@@ -38,7 +38,7 @@ fun Canvas.drawHalfArcCompletionDrop(scale : Float, w : Float, h : Float, paint 
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + size / 2)  * sc4)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
@@ -47,16 +47,18 @@ fun Canvas.drawHalfArcCompletionDrop(scale : Float, w : Float, h : Float, paint 
         drawArc(
             RectF(-size / 2, -size / 2, size / 2, size / 2),
             start,
-            deg * sc2,
+            deg * sc1,
             false,
             paint
         )
         restore()
-        for (k in 0..1) {
-            save()
-            translate(0f, -size / 2 + size * k)
-            drawLine(0f, 0f, size * (sc2 - sc3), 0f, paint)
-            restore()
+        if (sc2 > 0f) {
+            for (k in 0..1) {
+                save()
+                translate(0f, -size / 2 + size * k)
+                drawLine(0f, 0f, (w / 2 - size / 2) * (sc2 - sc3), 0f, paint)
+                restore()
+            }
         }
         restore()
     }
@@ -69,6 +71,7 @@ fun Canvas.drawHACDNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
+    paint.style = Paint.Style.STROKE
     drawHalfArcCompletionDrop(scale, w, h, paint)
 }
 
