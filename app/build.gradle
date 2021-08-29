@@ -78,5 +78,6 @@ dependencies {
     //implementation project(":llinearcview")
     //implementation project(":balldownfromdiagview")
     //implementation project(":squareshooterballview")
-    implementation project(":dropsquaretorightview")
+    //implementation project(":dropsquaretorightview")
+    implementation project(":halfarccompletiondropview")
 }
