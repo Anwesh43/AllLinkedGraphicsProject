@@ -223,4 +223,13 @@ class HalfArcCompletionDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HalfArcCompletionDropView {
+            val view : HalfArcCompletionDropView = HalfArcCompletionDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
