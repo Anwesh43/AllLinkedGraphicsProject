@@ -116,4 +116,45 @@ class CircularSqJoinerDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class CSJDNode(var i : Int, val state : State = State()) {
+
+        private var prev : CSJDNode? = null
+        private var next : CSJDNode? = null
+
+        init {
+            addNeighor()
+        }
+
+        fun addNeighor() {
+            if (i < colors.size - 1) {
+                next = CSJDNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawCSJDNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : CSJDNode {
+            var curr : CSJDNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
