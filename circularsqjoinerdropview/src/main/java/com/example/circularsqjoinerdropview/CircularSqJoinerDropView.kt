@@ -180,4 +180,27 @@ class CircularSqJoinerDropView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : CircularSqJoinerDropView) {
+
+        private val animator : Animator = Animator(view)
+        private val csdj : CircularSqJoinerDrop = CircularSqJoinerDrop(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            csdj.draw(canvas, paint)
+            animator.animate {
+                csdj.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            csdj.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
