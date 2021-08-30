@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.halfarccompletiondropview.HalfArcCompletionDropView
+//import com.example.halfarccompletiondropview.HalfArcCompletionDropView
 
 //import com.example.dropsquaretorightview.DropSquareToLeftView
 
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         //BallDownFromDiagView.create(this)
         //SquareShooterBallView.create(this)
         //DropSquareToLeftView.create(this)
-        HalfArcCompletionDropView.create(this)
+        //HalfArcCompletionDropView.create(this)
         fullScreen()
     }
 }
