@@ -5,6 +5,7 @@ import android.view.MotionEvent
 import android.app.Activity
 import android.content.Context
 import android.graphics.*
+import androidx.core.view.MotionEventCompat
 
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
@@ -51,4 +52,20 @@ fun Canvas.drawCSJDNode(i : Int, scale : Float, paint : Paint) {
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     drawCircularSqJoinerDrop(scale, w , h, paint)
+}
+
+class CircularSqJoinerDropView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
 }
