@@ -205,4 +205,13 @@ class CircularSqJoinerDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CircularSqJoinerDropView {
+            val view : CircularSqJoinerDropView = CircularSqJoinerDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
