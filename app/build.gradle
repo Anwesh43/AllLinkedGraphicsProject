@@ -80,5 +80,5 @@ dependencies {
     //implementation project(":squareshooterballview")
     //implementation project(":dropsquaretorightview")
     //implementation project(":halfarccompletiondropview")
-    implementation project(":circularsqjoinerdropview")
+    //implementation project(":circularsqjoinerdropview")
 }

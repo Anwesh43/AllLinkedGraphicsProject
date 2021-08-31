@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.circularsqjoinerdropview.CircularSqJoinerDropView
+//import com.example.circularsqjoinerdropview.CircularSqJoinerDropView
 
 //import com.example.halfarccompletiondropview.HalfArcCompletionDropView
 
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
         //SquareShooterBallView.create(this)
         //DropSquareToLeftView.create(this)
         //HalfArcCompletionDropView.create(this)
-        CircularSqJoinerDropView.create(this)
+        //CircularSqJoinerDropView.create(this)
         fullScreen()
     }
 }
