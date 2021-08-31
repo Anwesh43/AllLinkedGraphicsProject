@@ -185,4 +185,27 @@ class LineBarDropEndView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineBarDropEndView) {
+
+        private val animator : Animator = Animator(view)
+        private val lbde : LineBarDropEnd = LineBarDropEnd(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lbde.draw(canvas, paint)
+            animator.animate {
+                lbde.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lbde.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
