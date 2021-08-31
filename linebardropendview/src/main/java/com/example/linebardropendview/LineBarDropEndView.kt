@@ -41,12 +41,15 @@ fun Canvas.drawLineBarDropEnd(scale : Float, w : Float, h : Float, paint : Paint
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f - 2 * j)
+        save()
         translate(0f, h * 0.5f * sc4)
         rotate(deg * sc2)
         drawLine(0f, 0f, 0f, -size * sc1, paint)
         restore()
+        drawRect(RectF(0f, h * 0.5f * sc4, size, h * 0.5f * sc3), paint)
+        restore()
     }
-    drawRect(RectF(0f, h * 0.5f * sc4, size, h * 0.5f * sc3), paint)
+
     restore()
 }
 
