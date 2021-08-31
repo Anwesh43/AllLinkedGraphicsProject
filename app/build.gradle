@@ -81,4 +81,5 @@ dependencies {
     //implementation project(":dropsquaretorightview")
     //implementation project(":halfarccompletiondropview")
     //implementation project(":circularsqjoinerdropview")
+    implementation project(":linebardropendview")
 }

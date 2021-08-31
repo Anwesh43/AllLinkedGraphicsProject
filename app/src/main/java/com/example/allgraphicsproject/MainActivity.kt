@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linebardropendview.LineBarDropEndView
+
 //import com.example.circularsqjoinerdropview.CircularSqJoinerDropView
 
 //import com.example.halfarccompletiondropview.HalfArcCompletionDropView
@@ -112,6 +114,7 @@ class MainActivity : AppCompatActivity() {
         //DropSquareToLeftView.create(this)
         //HalfArcCompletionDropView.create(this)
         //CircularSqJoinerDropView.create(this)
+        LineBarDropEndView.create(this)
         fullScreen()
     }
 }
