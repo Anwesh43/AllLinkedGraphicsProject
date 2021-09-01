@@ -179,4 +179,27 @@ class LineAttachLineDropView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineAttachLineDropView) {
+
+        private val animator : Animator = Animator(view)
+        private val ladl : LineAttachDropLine = LineAttachDropLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ladl.draw(canvas, paint)
+            animator.animate {
+                ladl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ladl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
