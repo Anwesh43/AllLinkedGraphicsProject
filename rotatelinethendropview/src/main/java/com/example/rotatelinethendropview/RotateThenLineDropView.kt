@@ -205,4 +205,13 @@ class RotateThenLineDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RotateThenLineDropView {
+            val view : RotateThenLineDropView = RotateThenLineDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
