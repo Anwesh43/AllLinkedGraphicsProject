@@ -83,5 +83,6 @@ dependencies {
     //implementation project(":circularsqjoinerdropview")
     //implementation project(":linebardropendview")
     //implementation project(":lineattachdroplineview")
-    implementation project(":rotatelinethendropview")
+    //implementation project(":rotatelinethendropview")
+    implementation project(":dropsquaremovetosideview")
 }
