@@ -38,8 +38,8 @@ fun Canvas.drawDropSquareMoveToSide(scale : Float, w : Float, h : Float, paint :
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate((w / 2 - size) * sc2, (h / 2 + size) * sc3)
-        drawRect(RectF(-size / 2, -size / 2, size / 2, size / 2), paint)
+        translate((w / 2 - size / 2) * sc2, (h / 2 + size) * sc3)
+        drawRect(RectF(-size / 2, -size / 2, size / 2, -size / 2 + size * sc1), paint)
         restore()
     }
     restore()
