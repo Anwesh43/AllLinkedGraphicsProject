@@ -202,4 +202,13 @@ class DropSquareMoveToSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DropSquareMoveToSideView {
+            val view : DropSquareMoveToSideView = DropSquareMoveToSideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
