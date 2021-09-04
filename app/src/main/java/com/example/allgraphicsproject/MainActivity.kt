@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.dropsquaremovetosideview.DropSquareMoveToSideView
+
 //import com.example.rotatelinethendropview.RotateThenLineDropView
 
 //import com.example.lineattachdroplineview.LineAttachLineDropView
@@ -121,6 +123,7 @@ class MainActivity : AppCompatActivity() {
         //LineBarDropEndView.create(this)
         //LineAttachLineDropView.create(this)
         //RotateThenLineDropView.create(this)
+        DropSquareMoveToSideView.create(this)
         fullScreen()
     }
 }
