@@ -22,3 +22,7 @@ val scGap : Float = 0.06f / parts
 val strokeFactor : Float = 90f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
+
+fun Int.inverse() : Float = 1f / this
+fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
+fun Float.dividScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
