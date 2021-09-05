@@ -60,11 +60,11 @@ fun Canvas.drawTLCENode(i : Int, scale : Float, paint : Paint) {
 
 class TriLineCreateEndView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    override fun onDraw(canvas: Canvas) {
 
     }
 
-    override fun onTouchEvent(event : MotionEvent) : Boolean {
+    override fun onTouchEvent(event: MotionEvent): Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
 
@@ -73,9 +73,9 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
         return true
     }
 
-    data class State(var scale : Float = 0f, var dir : Float = 0f, var prevScale : Float = 0f) {
+    data class State(var scale: Float = 0f, var dir: Float = 0f, var prevScale: Float = 0f) {
 
-        fun update(cb : (Float) -> Unit) {
+        fun update(cb: (Float) -> Unit) {
             scale += scGap * dir
             if (Math.abs(scale - prevScale) > 1) {
                 scale = prevScale + dir
@@ -85,7 +85,7 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun startUpdating(cb : () -> Unit) {
+        fun startUpdating(cb: () -> Unit) {
             if (dir == 0f) {
                 dir = 1f - 2 * prevScale
                 cb()
@@ -93,15 +93,15 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
         }
     }
 
-    data class Animator(var view : View, var animated : Boolean = false) {
+    data class Animator(var view: View, var animated: Boolean = false) {
 
-        fun animate(cb : () -> Unit) {
+        fun animate(cb: () -> Unit) {
             if (animated) {
                 cb()
                 try {
                     Thread.sleep(delay)
                     view.invalidate()
-                } catch(ex : Exception) {
+                } catch (ex: Exception) {
 
                 }
             }
@@ -121,10 +121,10 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
         }
     }
 
-    data class TLCENode(var i : Int, val state : State = State()) {
+    data class TLCENode(var i: Int, val state: State = State()) {
 
-        private var next : TLCENode? = null
-        private var prev : TLCENode? = null
+        private var next: TLCENode? = null
+        private var prev: TLCENode? = null
 
         init {
 
@@ -137,19 +137,19 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun draw(canvas : Canvas, paint : Paint) {
+        fun draw(canvas: Canvas, paint: Paint) {
             canvas.drawTLCENode(i, state.scale, paint)
         }
 
-        fun update(cb : (Float) -> Unit) {
+        fun update(cb: (Float) -> Unit) {
             state.update(cb)
         }
 
-        fun startUpdating(cb : () -> Unit) {
+        fun startUpdating(cb: () -> Unit) {
             state.startUpdating(cb)
         }
 
-        fun getNext(dir : Int, cb : () -> Unit) : TLCENode {
+        fun getNext(dir: Int, cb: () -> Unit): TLCENode {
             var curr: TLCENode? = prev
             if (dir == 1) {
                 curr = next
@@ -162,16 +162,16 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
         }
     }
 
-    data class TriLineCreateEnd(var i : Int) {
+    data class TriLineCreateEnd(var i: Int) {
 
-        private var curr : TLCENode = TLCENode(0)
-        private var dir : Int = 1
+        private var curr: TLCENode = TLCENode(0)
+        private var dir: Int = 1
 
-        fun draw(canvas : Canvas, paint : Paint) {
+        fun draw(canvas: Canvas, paint: Paint) {
             curr.draw(canvas, paint)
         }
 
-        fun update(cb : (Float) -> Unit) {
+        fun update(cb: (Float) -> Unit) {
             curr.update {
                 curr = curr.getNext(dir) {
                     dir *= -1
@@ -180,8 +180,31 @@ class TriLineCreateEndView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun startUpdating(cb : () -> Unit) {
+        fun startUpdating(cb: () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : TriLineCreateEndView) {
+
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+        private val tlce : TriLineCreateEnd = TriLineCreateEnd(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tlce.draw(canvas, paint)
+            animator.animate {
+                tlce.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tlce.startUpdating {
+                animator.start()
+            }
         }
     }
 }
