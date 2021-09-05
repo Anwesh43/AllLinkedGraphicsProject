@@ -84,5 +84,6 @@ dependencies {
     //implementation project(":linebardropendview")
     //implementation project(":lineattachdroplineview")
     //implementation project(":rotatelinethendropview")
-    implementation project(":dropsquaremovetosideview")
+    //implementation project(":dropsquaremovetosideview")
+    implementation project(":trilinecreateendview")
 }
