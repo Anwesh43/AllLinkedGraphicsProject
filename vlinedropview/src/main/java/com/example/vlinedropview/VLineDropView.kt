@@ -180,4 +180,27 @@ class VLineDropView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : VLineDropView) {
+
+        private val animator : Animator = Animator(view)
+        private val vld : VLineDrop = VLineDrop(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            vld.draw(canvas, paint)
+            animator.animate {
+                vld.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            vld.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
