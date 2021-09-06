@@ -205,4 +205,13 @@ class VLineDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : VLineDropView {
+            val view : VLineDropView = VLineDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
