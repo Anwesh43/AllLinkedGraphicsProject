@@ -38,14 +38,14 @@ fun Canvas.drawSideLineUpMove(scale : Float, w : Float, h : Float, paint : Paint
         for (k in 0..1) {
             save()
             translate(
-                -size / 2 + size * 0.5f * j,
+                -size / 2 - size * 0.5f * k,
                 -h * 0.5f  * scale.divideScale(2 + (1 - k), parts)
             )
             drawLine(
                 0f,
                 0f,
                 0f,
-                (-size / 2 - (size / 2) * j) * scale.divideScale(k, parts),
+                (-size / 2 - (size / 2) * k) * scale.divideScale(k, parts),
                 paint
             )
             restore()
