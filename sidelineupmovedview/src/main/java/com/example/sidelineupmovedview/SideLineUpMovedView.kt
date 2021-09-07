@@ -215,4 +215,12 @@ class SideLineUpMovedView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : SideLineUpMovedView {
+            val view : SideLineUpMovedView = SideLineUpMovedView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
