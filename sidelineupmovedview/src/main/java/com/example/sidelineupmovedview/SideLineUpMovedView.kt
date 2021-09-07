@@ -82,7 +82,7 @@ class SideLineUpMovedView(ctx : Context) : View(ctx) {
 
     data class State(var scale : Float = 0f, var dir : Float = 0f, var prevScale : Float = 0f) {
 
-        fun update(cb : (Float) -> Unit) {
+        fun update(cb: (Float) -> Unit) {
             scale += scGap * dir
             if (Math.abs(scale - prevScale) > 1) {
                 scale = prevScale + dir
@@ -92,80 +92,102 @@ class SideLineUpMovedView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun startUpdating(cb : () -> Unit) {
+        fun startUpdating(cb: () -> Unit) {
             if (dir == 0f) {
                 dir = 1f - 2 * prevScale
                 cb()
             }
         }
+    }
+    data class Animator(var view : View, var animated : Boolean = false) {
 
-        data class Animator(var view : View, var animated : Boolean = false) {
+        fun animate(cb : () -> Unit) {
+            if (animated) {
+                cb()
+                try {
+                    Thread.sleep(delay)
+                    view.invalidate()
+                } catch(ex : Exception) {
 
-            fun animate(cb : () -> Unit) {
-                if (animated) {
-                    cb()
-                    try {
-                        Thread.sleep(delay)
-                        view.invalidate()
-                    } catch(ex : Exception) {
-
-                    }
-                }
-            }
-
-            fun start() {
-                if (!animated) {
-                    animated = true
-                    view.postInvalidate()
-                }
-            }
-
-            fun stop() {
-                if (animated) {
-                    animated = false
                 }
             }
         }
 
-        data class SLUMNode(var i : Int, val state : State = State()) {
-
-            private var next : SLUMNode? = null
-            private var prev : SLUMNode? = null
-
-            init {
-                addNeighbor()
+        fun start() {
+            if (!animated) {
+                animated = true
+                view.postInvalidate()
             }
+        }
 
-            fun addNeighbor() {
-                if (i < colors.size - 1) {
-                    next = SLUMNode(i + 1)
-                    next?.prev = this
+        fun stop() {
+            if (animated) {
+                animated = false
+            }
+        }
+    }
+
+    data class SLUMNode(var i : Int, val state : State = State()) {
+
+        private var next : SLUMNode? = null
+        private var prev : SLUMNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = SLUMNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawSLUMNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : SLUMNode {
+            var curr : SLUMNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
+
+    data class SideLineUpMoved(var i : Int) {
+
+        private var curr : SLUMNode = SLUMNode(0)
+        private var dir : Int = 1
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            curr.draw(canvas, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            curr.update {
+                curr = curr.getNext(dir) {
+                    dir *= -1
                 }
+                cb(it)
             }
+        }
 
-            fun draw(canvas : Canvas, paint : Paint) {
-                canvas.drawSLUMNode(i, state.scale, paint)
-            }
-
-            fun update(cb : (Float) -> Unit) {
-                state.update(cb)
-            }
-
-            fun startUpdating(cb : () -> Unit) {
-                state.startUpdating(cb)
-            }
-
-            fun getNext(dir : Int, cb : () -> Unit) : SLUMNode {
-                var curr : SLUMNode? = prev
-                if (dir == 1) {
-                    curr = next
-                }
-                if (curr != null) {
-                    return curr
-                }
-                cb()
-                return this
-            }
+        fun startUpdating(cb : () -> Unit) {
+            curr.startUpdating(cb)
         }
     }
 }
