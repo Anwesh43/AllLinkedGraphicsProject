@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.sidelineupmovedview.SideLineUpMovedView
+
 //import com.example.vlinedropview.VLineDropView
 
 //import com.example.trilinecreateendview.TriLineCreateEndView
@@ -130,6 +132,7 @@ class MainActivity : AppCompatActivity() {
         //DropSquareMoveToSideView.create(this)
         //TriLineCreateEndView.create(this)
         //VLineDropView.create(this)
+        SideLineUpMovedView.create(this)
         fullScreen()
     }
 }
