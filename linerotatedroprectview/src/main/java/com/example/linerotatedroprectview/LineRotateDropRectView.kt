@@ -39,7 +39,7 @@ fun Canvas.drawLineRotateDropRect(scale : Float, w : Float, h : Float, paint : P
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(0f, (h + paint.strokeWidth) * sc4)
+        translate(-w * 0.25f, (h + paint.strokeWidth) * sc4)
         for (k in 0..1) {
             save()
             rotate(deg * (1f - 2 * k) * sc2)
