@@ -211,4 +211,13 @@ class LineRotateDropRectView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineRotateDropRectView {
+            val view : LineRotateDropRectView = LineRotateDropRectView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
