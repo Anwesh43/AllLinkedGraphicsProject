@@ -48,7 +48,7 @@ fun Canvas.drawLineRotateDropRect(scale : Float, w : Float, h : Float, paint : P
         }
         restore()
     }
-    drawRect(RectF(-w / 2, h * 0.5f * sc4, w / 2, h * 0.5f), paint)
+    drawRect(RectF(-w / 2, h * 0.5f * sc4, w / 2, h * 0.5f * sc3), paint)
     restore()
 }
 
@@ -63,14 +63,16 @@ fun Canvas.drawLRDRNode(i : Int, scale : Float, paint : Paint) {
 
 class LineRotateDropRectView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    private val renderer : Renderer = Renderer(this)
 
+    override fun onDraw(canvas : Canvas) {
+        renderer.render(canvas)
     }
 
     override fun onTouchEvent(event : MotionEvent) : Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-
+                renderer.handleTap()
             }
         }
         return true
