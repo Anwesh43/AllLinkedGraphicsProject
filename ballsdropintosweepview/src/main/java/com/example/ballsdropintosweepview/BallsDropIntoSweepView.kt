@@ -211,4 +211,12 @@ class BallsDropIntoSweepView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity: Activity) : BallsDropIntoSweepView {
+            val view : BallsDropIntoSweepView = BallsDropIntoSweepView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
