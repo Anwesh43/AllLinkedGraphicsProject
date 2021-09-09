@@ -186,4 +186,27 @@ class BallsDropIntoSweepView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BallsDropIntoSweepView) {
+
+        private val animator : Animator = Animator(view)
+        private val bdis : BallsDropIntoSweep = BallsDropIntoSweep(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bdis.draw(canvas, paint)
+            animator.animate {
+                bdis.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bdis.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
