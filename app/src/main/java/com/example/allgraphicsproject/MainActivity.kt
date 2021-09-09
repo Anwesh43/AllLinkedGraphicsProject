@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linerotatedroprectview.LineRotateDropRectView
+//import com.example.linerotatedroprectview.LineRotateDropRectView
 
 //import com.example.sidelineupmovedview.SideLineUpMovedView
 
@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity() {
         //TriLineCreateEndView.create(this)
         //VLineDropView.create(this)
         //SideLineUpMovedView.create(this)
-        LineRotateDropRectView.create(this)
+        //LineRotateDropRectView.create(this)
         fullScreen()
     }
 }
