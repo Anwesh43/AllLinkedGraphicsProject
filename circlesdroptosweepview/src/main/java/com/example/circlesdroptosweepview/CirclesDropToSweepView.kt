@@ -41,7 +41,13 @@ fun Canvas.drawCirclesDropToSweep(scale : Float, w : Float, h : Float, paint : P
     for (j in 0..(balls - 1)) {
         save()
         translate((x + j * x) * (1 - sc4), (-h / 2 - size / 2) * (1 - scale.divideScale(j, parts)))
-        drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), deg * sc5, deg, false, true)
+        drawArc(
+            RectF(-size / 2, -size / 2, size / 2, size / 2),
+            deg * sc5,
+            deg,
+            false,
+            paint
+        )
         restore()
     }
     restore()
@@ -55,4 +61,20 @@ fun Canvas.drawCDTSNode(i : Int, scale : Float, paint : Paint) {
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     paint.style = Paint.Style.STROKE
     drawCirclesDropToSweep(scale, w, h, paint)
+}
+
+class CirclesDropToSweepView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
 }
