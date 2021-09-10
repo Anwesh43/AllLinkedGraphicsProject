@@ -189,4 +189,27 @@ class CirclesDropToSweepView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : CirclesDropToSweepView) {
+
+        private val animator : Animator = Animator(view)
+        private val cdts : CirclesDropToSweep = CirclesDropToSweep(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            cdts.draw(canvas, paint)
+            animator.animate {
+                cdts.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            cdts.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
