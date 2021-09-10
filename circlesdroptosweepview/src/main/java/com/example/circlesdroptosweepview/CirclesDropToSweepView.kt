@@ -214,4 +214,13 @@ class CirclesDropToSweepView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : CirclesDropToSweepView {
+            val view : CirclesDropToSweepView = CirclesDropToSweepView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
