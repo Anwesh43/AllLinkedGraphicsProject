@@ -35,12 +35,12 @@ fun Canvas.drawCirclesDropToSweep(scale : Float, w : Float, h : Float, paint : P
     val size : Float = Math.min(w, h) / sizeFactor
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
-    val x : Float = -w / 2 + size / 2
+    val x : Float = w / 2 - size / 2
     save()
     translate(w / 2, h / 2)
     for (j in 0..(balls - 1)) {
         save()
-        translate((x + j * x) * (1 - sc4), (-h / 2 - size / 2) * (1 - scale.divideScale(j, parts)))
+        translate((-x + j * x) * (1 - sc4), (-h / 2 - size / 2) * (1 - scale.divideScale(j, parts)))
         drawArc(
             RectF(-size / 2, -size / 2, size / 2, size / 2),
             deg * sc5,
