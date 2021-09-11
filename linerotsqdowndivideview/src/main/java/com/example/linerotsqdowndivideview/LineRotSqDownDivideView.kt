@@ -221,4 +221,13 @@ class LineRotSqDownDivideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : LineRotSqDownDivideView {
+            val view : LineRotSqDownDivideView = LineRotSqDownDivideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
