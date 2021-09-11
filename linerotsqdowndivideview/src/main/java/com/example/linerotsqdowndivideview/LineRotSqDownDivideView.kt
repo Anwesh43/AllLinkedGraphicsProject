@@ -39,13 +39,13 @@ fun Canvas.drawLineRotSqDownDivide(scale : Float, w : Float, h : Float, paint : 
     save()
     translate(w / 2, h / 2)
     save()
-    rotate(90f * sc2)
+    rotate(deg * sc2)
     drawLine(0f, 0f, size * (sc1 - sc3), 0f, paint)
     restore()
-    for (j in 0..1) {
+    for (j in 0..Math.floor(sc3.toDouble()).toInt()) {
         save()
         scale(1f, 1f - 2 * j)
-        translate(0f, (h / 2 + size) * sc4)
+        translate(0f, -size * j + (h / 2 + size + size * j) * sc4)
         drawRect(
             RectF(
                 -size * 0.5f * Math.floor(sc1.toDouble()).toFloat(),
