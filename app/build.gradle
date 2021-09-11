@@ -90,5 +90,6 @@ dependencies {
     //implementation project(":sidelineupmovedview")
     //implementation project(":linerotatedroprectview")
     //implementation project(":ballsdropintosweepview")
-    implementation project(":circlesdroptosweepview")
+    //implementation project(":circlesdroptosweepview")
+    implementation project(":linerotsqdowndivideview")
 }

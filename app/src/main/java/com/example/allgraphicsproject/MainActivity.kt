@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.circlesdroptosweepview.CirclesDropToSweepView
+//import com.example.circlesdroptosweepview.CirclesDropToSweepView
 
 //import com.example.ballsdropintosweepview.BallsDropIntoSweepView
 
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         //SideLineUpMovedView.create(this)
         //LineRotateDropRectView.create(this)
         //BallsDropIntoSweepView.create(this)
-        CirclesDropToSweepView.create(this)
+        //CirclesDropToSweepView.create(this)
         fullScreen()
     }
 }
