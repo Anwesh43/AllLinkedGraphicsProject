@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linerotsqdowndivideview.LineRotSqDownDivideView
+
 //import com.example.circlesdroptosweepview.CirclesDropToSweepView
 
 //import com.example.ballsdropintosweepview.BallsDropIntoSweepView
@@ -142,6 +144,7 @@ class MainActivity : AppCompatActivity() {
         //LineRotateDropRectView.create(this)
         //BallsDropIntoSweepView.create(this)
         //CirclesDropToSweepView.create(this)
+        LineRotSqDownDivideView.create(this)
         fullScreen()
     }
 }
