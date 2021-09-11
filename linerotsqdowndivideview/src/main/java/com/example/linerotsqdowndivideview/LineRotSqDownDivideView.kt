@@ -196,4 +196,27 @@ class LineRotSqDownDivideView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineRotSqDownDivideView) {
+
+        private val animator : Animator = Animator(view)
+        private val lrsdd : LineRotSqDownDivide = LineRotSqDownDivide(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lrsdd.draw(canvas, paint)
+            animator.animate {
+                lrsdd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lrsdd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
