@@ -38,12 +38,16 @@ fun Canvas.drawBiLineHDrop(scale : Float, w : Float, h : Float, paint : Paint) {
     translate(w / 2 + (w / 2 + size / 2) * sc4, h / 2)
     for (j in 0..1) {
         save()
-        translate((w / 2 - size / 2) * (1f - sc1), size * 0.5f * sc3)
+        scale(1f - 2 * j, 1f)
+        translate(
+            size / 2 + paint.strokeWidth / 2 + (w / 2 - size / 2) * (1f - sc1),
+            size * 0.5f * sc3
+        )
         drawLine(0f, 0f, 0f, -size, paint)
         restore()
     }
     save()
-    translate(-size / 2, (h / 2 - size / 2) * (1 - sc2))
+    translate(-size / 2, (h / 2) * (1 - sc2))
     drawLine(0f, 0f, size, 0f, paint)
     restore()
     restore()
