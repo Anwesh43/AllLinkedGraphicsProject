@@ -209,4 +209,13 @@ class BiLineHDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiLineHDropView {
+            val view : BiLineHDropView = BiLineHDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
