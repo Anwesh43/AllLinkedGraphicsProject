@@ -214,4 +214,13 @@ class RightAngleSquareDivideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RightAngleSquareDivideView {
+            val view : RightAngleSquareDivideView = RightAngleSquareDivideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
