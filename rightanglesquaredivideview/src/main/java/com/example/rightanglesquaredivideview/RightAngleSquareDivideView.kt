@@ -191,4 +191,27 @@ class RightAngleSquareDivideView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RightAngleSquareDivideView) {
+
+        private val rasd : RightAngleSquareDivide = RightAngleSquareDivide(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rasd.draw(canvas, paint)
+            animator.animate {
+                rasd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rasd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
