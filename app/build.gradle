@@ -92,5 +92,6 @@ dependencies {
     //implementation project(":ballsdropintosweepview")
     //implementation project(":circlesdroptosweepview")
     //implementation project(":linerotsqdowndivideview")
-    implementation project(":bilinehdropview")
+    //implementation project(":bilinehdropview")
+    implementation project(":rightanglesquaredivideview")
 }
