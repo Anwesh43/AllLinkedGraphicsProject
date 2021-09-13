@@ -18,7 +18,7 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
+val parts : Int = 5
 val scGap : Float = 0.05f / parts
 val strokeFactor : Float = 90f
 val deg : Float = 90f
@@ -136,7 +136,7 @@ class RightAngleSquareDivideView(ctx : Context) : View(ctx) {
         private var prev : RASDNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
