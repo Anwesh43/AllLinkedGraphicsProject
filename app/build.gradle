@@ -93,5 +93,6 @@ dependencies {
     //implementation project(":circlesdroptosweepview")
     //implementation project(":linerotsqdowndivideview")
     //implementation project(":bilinehdropview")
-    implementation project(":rightanglesquaredivideview")
+    //implementation project(":rightanglesquaredivideview")
+    implementation project(":fourlineoppositedragview")
 }
