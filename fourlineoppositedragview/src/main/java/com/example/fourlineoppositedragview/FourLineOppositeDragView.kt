@@ -213,4 +213,13 @@ class FourLineOppositeDragView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : FourLineOppositeDragView {
+            val view : FourLineOppositeDragView = FourLineOppositeDragView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
