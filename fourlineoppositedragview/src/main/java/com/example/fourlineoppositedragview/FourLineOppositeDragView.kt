@@ -17,13 +17,14 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 2
-val scGap : Float = 0.02f / parts
+val parts : Int = 3
+val scGap : Float = 0.03f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.5f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val gapFactor : Float = 11.2f
+val deg : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -33,16 +34,18 @@ fun Canvas.drawFourLineOppositeDrag(scale : Float, w : Float, h : Float, paint :
     val size : Float = Math.min(w, h) / sizeFactor
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
     val gap : Float = Math.min(w, h) / gapFactor
     save()
     translate(w / 2, h / 2)
     for (j in 0..1) {
         save()
+        rotate(deg * sc2)
         scale(1f - 2 * j * Math.floor(sc1.toDouble()).toFloat(), 1f - 2 * j)
-        translate((w / 2 + size / 2) * sc2, 0f)
+        translate((h / 2 + size / 2) * sc3, 0f)
         for (k in 0..1) {
             save()
-            translate(-size / 2, gap * (k + 1))
+            translate(-size / 2, gap * k + gap / 2)
             if (sc1 > 0f) {
                 drawLine(0f, 0f, size * sc1, 0f, paint)
             }
