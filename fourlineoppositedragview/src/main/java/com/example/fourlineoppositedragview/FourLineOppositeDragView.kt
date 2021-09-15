@@ -188,4 +188,27 @@ class FourLineOppositeDragView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : FourLineOppositeDragView) {
+
+        private val animator : Animator = Animator(view)
+        private val flod : FourLineOppositeDrag = FourLineOppositeDrag(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            flod.draw(canvas, paint)
+            animator.animate {
+                flod.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            flod.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
