@@ -212,4 +212,13 @@ class SquareSemiCircleDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareSemiCircleDownView {
+            val view : SquareSemiCircleDownView = SquareSemiCircleDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
