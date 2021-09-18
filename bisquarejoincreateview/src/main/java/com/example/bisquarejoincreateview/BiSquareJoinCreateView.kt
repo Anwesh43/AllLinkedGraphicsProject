@@ -28,3 +28,30 @@ val backColor : Int = Color.parseColor("#BDBDBD")
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawBiSquareJoinCreate(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(2, parts)
+    val sc2 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2 + (w / 2 + size / 2) * sc2, h / 2)
+    for (j in 0..1) {
+        save()
+        translate(
+            -size * 0.5f + size * 0.5f * j,
+            -h * 0.5f * (1 - scale.divideScale(j, parts))
+        )
+        drawRect(RectF(0f, 0f, size * 0.5f, size * 0.5f), paint)
+        restore()
+    }
+    drawRect(RectF(-size / 2, -size / 2, -size / 2 + size * sc1, 0f), paint)
+    restore()
+}
+
+fun Canvas.drawBSJCNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    drawBiSquareJoinCreate(scale, w, h, paint)
+}
+
