@@ -39,7 +39,7 @@ fun Canvas.drawBiSquareJoinCreate(scale : Float, w : Float, h : Float, paint : P
         save()
         translate(
             -size * 0.5f + size * 0.5f * j,
-            -h * 0.5f * (1 - scale.divideScale(j, parts))
+            (h * 0.5f + size / 2) * (1 - scale.divideScale(j, parts))
         )
         drawRect(RectF(0f, 0f, size * 0.5f, size * 0.5f), paint)
         restore()
@@ -126,7 +126,7 @@ class BiSquareJoinCreateView(ctx : Context) : View(ctx) {
         private var prev : BSJCNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
