@@ -206,4 +206,13 @@ class BiSquareJoinCreateView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiSquareJoinCreateView {
+            val view : BiSquareJoinCreateView = BiSquareJoinCreateView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
