@@ -181,4 +181,27 @@ class BiSquareJoinCreateView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiSquareJoinCreateView) {
+
+        private val bsjc : BiSquareJoinCreate = BiSquareJoinCreate(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bsjc.draw(canvas, paint)
+            animator.animate {
+                bsjc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bsjc.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
