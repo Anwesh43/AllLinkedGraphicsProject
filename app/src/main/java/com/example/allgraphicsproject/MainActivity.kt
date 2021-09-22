@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bisquarejoincreateview.BiSquareJoinCreateView
+//import com.example.bisquarejoincreateview.BiSquareJoinCreateView
 
 //import com.example.squaresemicircledownview.SquareSemiCircleDownView
 
@@ -159,7 +159,7 @@ class MainActivity : AppCompatActivity() {
         //RightAngleSquareDivideView.create(this)
         //FourLineOppositeDragView.create(this)
         //SquareSemiCircleDownView.create(this)
-        BiSquareJoinCreateView.create(this)
+        //BiSquareJoinCreateView.create(this)
         fullScreen()
     }
 }

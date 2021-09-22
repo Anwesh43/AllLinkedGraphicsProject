@@ -96,5 +96,6 @@ dependencies {
     //implementation project(":rightanglesquaredivideview")
     //implementation project(":fourlineoppositedragview")
     //implementation project(":squaresemicircledownview")
-    implementation project(":bisquarejoincreateview")
+    //implementation project(":bisquarejoincreateview")
+    implementation project(":bidividesquaredropview")
 }
