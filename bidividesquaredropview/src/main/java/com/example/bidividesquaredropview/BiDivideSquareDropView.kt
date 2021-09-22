@@ -208,4 +208,12 @@ class BiDivideSquareDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : BiDivideSquareDropView {
+            val view : BiDivideSquareDropView = BiDivideSquareDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
