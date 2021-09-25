@@ -46,7 +46,8 @@ fun Canvas.drawLineArrowRotMove(w : Float, h : Float, scale : Float, paint : Pai
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + size) * sc4, h / 2)
+    rotate(rot * sc3)
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     save()
     translate(0f, h / 2 - h * 0.5f * sc2)
@@ -59,6 +60,8 @@ fun Canvas.drawLARMNode(i : Int, scale : Float, paint : Paint) {
     val w : Float = width.toFloat()
     val h : Float = height.toFloat()
     paint.color = colors[i]
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    paint.strokeCap = Paint.Cap.ROUND
     drawLineArrowRotMove(w, h, scale, paint)
 }
 
