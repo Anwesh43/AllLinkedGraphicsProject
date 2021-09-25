@@ -188,4 +188,27 @@ class LineArrowRotMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineArrowRotMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val larm : LineArrowRotMove = LineArrowRotMove(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            larm.draw(canvas, paint)
+            animator.animate {
+                larm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            larm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
