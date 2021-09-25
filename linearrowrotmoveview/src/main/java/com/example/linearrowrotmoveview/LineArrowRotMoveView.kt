@@ -216,4 +216,13 @@ class LineArrowRotMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : LineArrowRotMoveView {
+            val view : LineArrowRotMoveView = LineArrowRotMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
