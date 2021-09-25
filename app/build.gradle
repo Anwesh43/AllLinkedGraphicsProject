@@ -98,5 +98,6 @@ dependencies {
     //implementation project(":squaresemicircledownview")
     //implementation project(":bisquarejoincreateview")
     //implementation project(":bidividesquaredropview")
-    implementation project(":squarebreakthenjoinview")
+    //implementation project(":squarebreakthenjoinview")
+    implementation project(":linearrowrotmoveview")
 }
