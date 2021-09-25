@@ -188,4 +188,27 @@ class SquareBreakThenJoinView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SquareBreakThenJoinView) {
+
+        private val animator : Animator = Animator(view)
+        private val sbtj : SquareBreakThenJoin = SquareBreakThenJoin(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            sbtj.draw(canvas, paint)
+            animator.animate {
+                sbtj.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            sbtj.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
