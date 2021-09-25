@@ -37,6 +37,7 @@ fun Canvas.drawArrow(size : Float, paint : Paint) {
     path.lineTo(size / 2, size)
     path.lineTo(0f, 0f)
     path.lineTo(-size / 2, size)
+    drawPath(path, paint)
 }
 
 fun Canvas.drawLineArrowRotMove(w : Float, h : Float, scale : Float, paint : Paint) {
@@ -62,6 +63,7 @@ fun Canvas.drawLARMNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     paint.strokeCap = Paint.Cap.ROUND
+    paint.style = Paint.Style.STROKE
     drawLineArrowRotMove(w, h, scale, paint)
 }
 
