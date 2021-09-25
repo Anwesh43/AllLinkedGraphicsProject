@@ -211,4 +211,13 @@ class SquareBreakThenJoinView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareBreakThenJoinView {
+            val view : SquareBreakThenJoinView = SquareBreakThenJoinView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
