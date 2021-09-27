@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linearrowrotmoveview.LineArrowRotMoveView
+//import com.example.linearrowrotmoveview.LineArrowRotMoveView
 
 //import com.example.squarebreakthenjoinview.SquareBreakThenJoinView
 
@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity() {
         //BiSquareJoinCreateView.create(this)
         //BiDivideSquareDropView.create(this)
         //SquareBreakThenJoinView.create(this)
-        LineArrowRotMoveView.create(this)
+        //LineArrowRotMoveView.create(this)
         fullScreen()
     }
 }
