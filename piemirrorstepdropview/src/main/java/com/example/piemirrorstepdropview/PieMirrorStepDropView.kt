@@ -42,7 +42,7 @@ fun Canvas.drawPieMirrorStepDown(scale : Float, w : Float, h : Float, paint : Pa
     for (j in 0..1) {
         val scj : Float = scale.divideScale(j, parts)
         save()
-        scale(1f - 2 * j, 1f - 2 * j)
+        scale(1f - 2 * j, 1f)
         drawArc(
             RectF(-size / 2, -size / 2, size / 2, size / 2),
             -rot / 2,
