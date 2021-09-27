@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.graphics.RectF
 import android.graphics.Canvas
 import android.content.Context
+import kotlin.math.acos
 
 val colors : Array<Int> = arrayOf(
     "#1A237E",
@@ -209,6 +210,14 @@ class PieMirrorStepDropView(ctx : Context) : View(ctx) {
             pmsd.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+        fun create(activity: Activity) : PieMirrorStepDropView {
+            val view : PieMirrorStepDropView = PieMirrorStepDropView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
