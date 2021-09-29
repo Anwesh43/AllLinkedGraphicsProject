@@ -204,4 +204,13 @@ class BreakTopSquareDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BreakTopSquareDropView {
+            val view : BreakTopSquareDropView = BreakTopSquareDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
