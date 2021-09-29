@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.breakarcrotdropview.BreakArcToDropView
+
 //import com.example.piemirrorstepdropview.PieMirrorStepDropView
 
 //import com.example.linearrowrotmoveview.LineArrowRotMoveView
@@ -172,6 +174,7 @@ class MainActivity : AppCompatActivity() {
         //SquareBreakThenJoinView.create(this)
         //LineArrowRotMoveView.create(this)
         //PieMirrorStepDropView.create(this)
+        BreakArcToDropView.create(this)
         fullScreen()
     }
 }
