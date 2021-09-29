@@ -183,8 +183,31 @@ class BreakArcToDropView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun startUdpating(cb : () -> Unit) {
+        fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : BreakArcToDropView) {
+
+        private val batd : BreakArcToDrop = BreakArcToDrop(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            batd.draw(canvas, paint)
+            animator.animate {
+                batd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            batd.startUpdating {
+                animator.stop()
+            }
         }
     }
 }
