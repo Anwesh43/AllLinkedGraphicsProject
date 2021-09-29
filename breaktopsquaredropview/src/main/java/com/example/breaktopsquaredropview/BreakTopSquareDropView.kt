@@ -200,7 +200,7 @@ class BreakTopSquareDropView(ctx : Context) : View(ctx) {
 
         fun handleTap() {
             btsd.startUpdating {
-                animator.stop()
+                animator.start()
             }
         }
     }
