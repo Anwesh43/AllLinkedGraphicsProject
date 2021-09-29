@@ -52,3 +52,17 @@ fun Canvas.drawBTSDNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     drawBreakTopSquareDrop(scale, w, h, paint)
 }
+
+class BreakTopSquareDropView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+
+        }
+        return true
+    }
+}
