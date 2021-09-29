@@ -212,4 +212,13 @@ class BreakArcToDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BreakArcToDropView {
+            val view : BreakArcToDropView = BreakArcToDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
