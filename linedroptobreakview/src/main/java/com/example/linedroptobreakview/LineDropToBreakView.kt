@@ -209,4 +209,13 @@ class LineDropToBreakView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineDropToBreakView {
+            val view : LineDropToBreakView = LineDropToBreakView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
