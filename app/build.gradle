@@ -102,5 +102,6 @@ dependencies {
     //implementation project(":linearrowrotmoveview")
     //implementation project(":piemirrorstepdropview")
     //implementation project(":breakarcrotdropview")
-    implementation project(":breaktopsquaredropview")
+    //implementation project(":breaktopsquaredropview")
+    implementation project(":linedroptobreakview")
 }
