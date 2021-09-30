@@ -183,4 +183,27 @@ class LineDropToBreakView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineDropToBreakView) {
+
+        private val animator : Animator = Animator(view)
+        private val ldtb : LineDropToBreak = LineDropToBreak(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ldtb.draw(canvas, paint)
+            animator.animate {
+                ldtb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ldtb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
