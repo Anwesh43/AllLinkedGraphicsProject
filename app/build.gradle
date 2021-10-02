@@ -103,5 +103,6 @@ dependencies {
     //implementation project(":piemirrorstepdropview")
     //implementation project(":breakarcrotdropview")
     //implementation project(":breaktopsquaredropview")
-    implementation project(":linedroptobreakview")
+    //implementation project(":linedroptobreakview")
+    implementation project(":wavesweeparcdropview")
 }

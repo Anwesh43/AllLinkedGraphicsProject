@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linedroptobreakview.LineDropToBreakView
+//import com.example.linedroptobreakview.LineDropToBreakView
 
 //import com.example.breaktopsquaredropview.BreakTopSquareDropView
 
@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
         //PieMirrorStepDropView.create(this)
         //BreakArcToDropView.create(this)
         //BreakTopSquareDropView.create(this)
-        LineDropToBreakView.create(this)
+        //LineDropToBreakView.create(this)
         fullScreen()
     }
 }

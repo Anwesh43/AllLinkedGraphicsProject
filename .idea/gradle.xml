@@ -74,6 +74,7 @@
             <option value="$PROJECT_DIR$/twolinetosquaredownview" />
             <option value="$PROJECT_DIR$/vlinedropview" />
             <option value="$PROJECT_DIR$/vtoupsideview" />
+            <option value="$PROJECT_DIR$/wavesweeparcdropview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
