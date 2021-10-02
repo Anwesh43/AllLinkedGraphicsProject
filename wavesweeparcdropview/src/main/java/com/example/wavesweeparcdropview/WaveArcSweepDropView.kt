@@ -36,15 +36,16 @@ fun Canvas.drawWaveArcSweep(scale : Float, w : Float, h : Float, paint : Paint) 
     save()
     translate(w / 2, h / 2 + (h / 2 + size / 2) * sc4)
     for (j in 0..1) {
+        val scj : Float = scale.divideScale(j, parts)
         save()
-        scale(1f - 2 * j, 1f)
-        translate(0f, size / 2 * (1f - 2 * j) * (1f - sc3))
+        scale(1f - 2 * j, 1f - 2 * j)
+        translate(0f, size / 2 * (1f - sc3))
         drawArc(
             RectF(
                 -size / 2, -size / 2, size / 2, size / 2
             ),
-            (deg / 2) * (1f - 2 * j),
-            deg * scale.divideScale(j, parts),
+            (deg / 2) + deg * j * (1 - scj),
+            deg * scj,
             true,
             paint
         )
