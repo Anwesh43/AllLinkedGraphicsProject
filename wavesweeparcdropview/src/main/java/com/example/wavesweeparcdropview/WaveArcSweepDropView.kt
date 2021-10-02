@@ -209,4 +209,13 @@ class WaveArcSweepDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : WaveArcSweepDropView {
+            val view : WaveArcSweepDropView = WaveArcSweepDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
