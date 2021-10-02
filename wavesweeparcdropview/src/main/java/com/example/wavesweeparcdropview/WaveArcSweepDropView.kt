@@ -186,4 +186,27 @@ class WaveArcSweepDropView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : WaveArcSweepDropView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val waveArcSweepDrop : WaveArcSweepDrop = WaveArcSweepDrop(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            waveArcSweepDrop.draw(canvas, paint)
+            animator.animate {
+                waveArcSweepDrop.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            waveArcSweepDrop.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
