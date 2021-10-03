@@ -176,4 +176,27 @@ class RectBreakThenJoinView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RectBreakThenJoinView) {
+
+        private val animator : Animator = Animator(view)
+        private val rbtj : RectJoinThenBreak = RectJoinThenBreak(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rbtj.draw(canvas, paint)
+            animator.animate {
+                rbtj.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rbtj.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
