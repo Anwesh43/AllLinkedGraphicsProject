@@ -16,7 +16,7 @@ val colors : Array<Int> = arrayOf(
     "#C51162",
     "#00C853"
 ).map {
-    Color.parseColor("#BDBDBD")
+    Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
@@ -38,7 +38,7 @@ fun Canvas.drawRectJoinBreak(scale : Float, w : Float, h : Float, paint : Paint)
         save()
         scale(1f - 2 * j, 1f - 2 * j)
         translate(w * 0.5f * (1 - scj1), (h * 0.5f + size / 2) * scj2)
-        drawRect(RectF(0f, -size / 4, -size / 4, size / 4), paint)
+        drawRect(RectF(0f, -size / 4, size / 2, size / 4), paint)
         restore()
     }
     restore()
