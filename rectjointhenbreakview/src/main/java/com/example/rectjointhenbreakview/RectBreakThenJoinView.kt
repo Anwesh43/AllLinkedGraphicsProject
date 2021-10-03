@@ -65,7 +65,7 @@ class RectBreakThenJoinView(ctx : Context) : View(ctx) {
         return true
     }
 
-    data class State(var scale : Float = 0f, var dir : Float = 0f, var prevScale : Floaat = 0f) {
+    data class State(var scale : Float = 0f, var dir : Float = 0f, var prevScale : Float = 0f) {
 
         fun update(cb : (Float) -> Unit) {
             scale += scGap * dir
@@ -151,6 +151,29 @@ class RectBreakThenJoinView(ctx : Context) : View(ctx) {
             }
             cb()
             return this
+        }
+    }
+
+    data class RectJoinThenBreak(var i : Int) {
+
+        private var curr : RBTJNode = RBTJNode(0)
+        private var dir : Int = 1
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            curr.draw(canvas, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            curr.update {
+                curr = curr.getNext(dir) {
+                    dir *= -1
+                }
+                cb(it)
+            }
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            curr.startUpdating(cb)
         }
     }
 }
