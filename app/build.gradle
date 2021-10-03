@@ -104,5 +104,5 @@ dependencies {
     //implementation project(":breakarcrotdropview")
     //implementation project(":breaktopsquaredropview")
     //implementation project(":linedroptobreakview")
-    implementation project(":wavesweeparcdropview")
+    //implementation project(":wavesweeparcdropview")
 }
