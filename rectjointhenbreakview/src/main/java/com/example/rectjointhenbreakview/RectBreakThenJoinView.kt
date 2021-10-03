@@ -201,4 +201,13 @@ class RectBreakThenJoinView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RectBreakThenJoinView {
+            val view : RectBreakThenJoinView = RectBreakThenJoinView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
