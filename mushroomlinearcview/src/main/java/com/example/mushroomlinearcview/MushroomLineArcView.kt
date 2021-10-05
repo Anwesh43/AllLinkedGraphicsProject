@@ -185,4 +185,27 @@ class MushroomLineArcView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : MushroomLineArcView) {
+
+        private val animator : Animator = Animator(view)
+        private val mla : MushroomLineArc = MushroomLineArc(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            mla.draw(canvas, paint)
+            animator.animate {
+                mla.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            mla.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
