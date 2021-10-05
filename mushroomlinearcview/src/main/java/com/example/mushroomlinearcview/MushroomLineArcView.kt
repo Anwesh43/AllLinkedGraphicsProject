@@ -208,4 +208,13 @@ class MushroomLineArcView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : MushroomLineArcView {
+            val view : MushroomLineArcView = MushroomLineArcView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
