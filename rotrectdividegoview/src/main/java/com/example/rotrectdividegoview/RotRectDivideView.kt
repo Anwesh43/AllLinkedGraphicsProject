@@ -180,4 +180,27 @@ class RotRectDivideView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RotRectDivideView) {
+
+        private val animator : Animator = Animator(view)
+        private val rrd : RotRectDivide = RotRectDivide(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rrd.draw(canvas, paint)
+            animator.animate {
+                rrd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rrd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
