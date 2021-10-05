@@ -39,7 +39,7 @@ fun Canvas.drawRotRectDivide(scale : Float, w : Float, h : Float, paint : Paint)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate((w / 2) * sc3, h * 0.5f * (1 - sc1))
+        translate((w / 2) * sc3, -h * 0.5f * (1 - sc1))
         rotate(deg * sc2)
         drawRect(RectF(0f, -size, size / 2, 0f), paint)
         restore()
