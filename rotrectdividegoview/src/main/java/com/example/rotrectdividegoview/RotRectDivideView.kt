@@ -203,4 +203,13 @@ class RotRectDivideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RotRectDivideView {
+            val view : RotRectDivideView = RotRectDivideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
