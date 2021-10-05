@@ -37,7 +37,7 @@ fun Canvas.drawMushroomLineArc(scale : Float, w : Float, h : Float, paint : Pain
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h * 0.5f * sc4))
     rotate(deg * sc3)
     drawLine(0f, 0f, 0f, -size * sc1, paint)
     save()
