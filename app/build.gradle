@@ -106,5 +106,6 @@ dependencies {
     //implementation project(":linedroptobreakview")
     //implementation project(":wavesweeparcdropview")
     //implementation project(":rectjointhenbreakview")
-    implementation project(":mushroomlinearcview")
+    //implementation project(":mushroomlinearcview")
+    implementation project(":rotrectdividegoview")
 }

@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.mushroomlinearcview.MushroomLineArcView
+//import com.example.mushroomlinearcview.MushroomLineArcView
 
 //import com.example.rectjointhenbreakview.RectBreakThenJoinView
 
@@ -189,7 +189,7 @@ class MainActivity : AppCompatActivity() {
         //LineDropToBreakView.create(this)
         //WaveArcSweepDropView.create(this)
         //RectBreakThenJoinView.create(this)
-        MushroomLineArcView.create(this)
+        //MushroomLineArcView.create(this)
         fullScreen()
     }
 }
