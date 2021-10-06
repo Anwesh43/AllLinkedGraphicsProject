@@ -27,3 +27,26 @@ val backColor : Int = Color.parseColor("#BDBDBD")
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawBarCompleteGoUp(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc3 : Float = scale.divideScale(2, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2, (h - size) * (1 - sc3))
+    for (j in 0..1) {
+        val scj : Float = scale.divideScale(j, parts)
+        save()
+        scale(1f - 2 * j, 1f)
+        drawRect(RectF(-w / 2, 0f, -w / 2 + (w * 0.5f) * scj, size * (1 - sc4)), paint)
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawBCGUNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    drawBarCompleteGoUp(scale, w, h, paint)
+}
