@@ -177,4 +177,26 @@ class BarCompleteGoUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarCompleteGoUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val bcgu : BarCompleteGoUp = BarCompleteGoUp(0)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            bcgu.draw(canvas, paint)
+            animator.animate {
+                bcgu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bcgu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
