@@ -184,8 +184,9 @@ class BarCompleteGoUpView(ctx : Context) : View(ctx) {
 
         private val animator : Animator = Animator(view)
         private val bcgu : BarCompleteGoUp = BarCompleteGoUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-        fun render(canvas : Canvas, paint : Paint) {
+        fun render(canvas : Canvas) {
             canvas.drawColor(backColor)
             bcgu.draw(canvas, paint)
             animator.animate {
@@ -199,6 +200,15 @@ class BarCompleteGoUpView(ctx : Context) : View(ctx) {
             bcgu.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity : Activity) : BarCompleteGoUpView {
+            val view : BarCompleteGoUpView = BarCompleteGoUpView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
