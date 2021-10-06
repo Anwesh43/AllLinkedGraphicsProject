@@ -107,5 +107,6 @@ dependencies {
     //implementation project(":wavesweeparcdropview")
     //implementation project(":rectjointhenbreakview")
     //implementation project(":mushroomlinearcview")
-    implementation project(":rotrectdividegoview")
+    //implementation project(":rotrectdividegoview")
+    implementation project(":barcompletegoupview")
 }
