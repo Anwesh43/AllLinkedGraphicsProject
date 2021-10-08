@@ -208,4 +208,13 @@ class SquareJourneyMovementView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareJourneyMovementView {
+            val view : SquareJourneyMovementView = SquareJourneyMovementView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
