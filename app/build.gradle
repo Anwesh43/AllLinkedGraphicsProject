@@ -110,4 +110,5 @@ dependencies {
     //implementation project(":rotrectdividegoview")
     //implementation project(":barcompletegoupview")
     //implementation project(":squarejourneymovementview")
+    implementation project(":twoconccircdownview")
 }
