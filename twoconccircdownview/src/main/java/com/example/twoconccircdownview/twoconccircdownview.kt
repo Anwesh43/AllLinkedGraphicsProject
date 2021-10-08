@@ -197,4 +197,27 @@ class TwoConcCircleDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TwoConcCircleDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val tccd : TwoConcCircleDown = TwoConcCircleDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tccd.draw(canvas, paint)
+            animator.animate {
+                tccd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tccd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
