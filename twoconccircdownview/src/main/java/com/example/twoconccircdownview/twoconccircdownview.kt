@@ -44,13 +44,13 @@ fun Canvas.drawTwoConcCircDown(scale : Float, w : Float, h : Float, paint : Pain
         for (k in 0..1) {
             val sck : Float = scale.divideScale(k, parts)
             save()
-            translate(k * size * 0.5f, 0f)
+            translate(k * size, 0f)
             drawArc(
                 RectF(
                     -size / 2, -size, size / 2, 0f
                 ),
                 0f,
-                deg * k,
+                deg * sck,
                 false,
                 paint
             )
