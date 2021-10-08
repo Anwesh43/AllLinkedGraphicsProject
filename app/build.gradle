@@ -109,5 +109,5 @@ dependencies {
     //implementation project(":mushroomlinearcview")
     //implementation project(":rotrectdividegoview")
     //implementation project(":barcompletegoupview")
-    implementation project(":squarejourneymovementview")
+    //implementation project(":squarejourneymovementview")
 }
