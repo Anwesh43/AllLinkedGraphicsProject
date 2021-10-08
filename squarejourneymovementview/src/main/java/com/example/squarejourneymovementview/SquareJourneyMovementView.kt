@@ -183,4 +183,27 @@ class SquareJourneyMovementView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SquareJourneyMovementView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val sjm : SquareJourneyMovement = SquareJourneyMovement(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            sjm.draw(canvas, paint)
+            animator.animate {
+                sjm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            sjm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
