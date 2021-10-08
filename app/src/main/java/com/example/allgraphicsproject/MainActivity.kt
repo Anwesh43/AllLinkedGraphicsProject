@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.squarejourneymovementview.SquareJourneyMovementView
+
 //import com.example.barcompletegoupview.BarCompleteGoUpView
 
 //import com.example.rotrectdividegoview.RotRectDivideView
@@ -196,6 +198,7 @@ class MainActivity : AppCompatActivity() {
         //MushroomLineArcView.create(this)
         //RotRectDivideView.create(this)
         //BarCompleteGoUpView.create(this)
+        SquareJourneyMovementView.create(this)
         fullScreen()
     }
 }
