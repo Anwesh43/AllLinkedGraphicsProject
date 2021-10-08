@@ -222,4 +222,13 @@ class TwoConcCircleDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TwoConcCircleDownView {
+            val view : TwoConcCircleDownView = TwoConcCircleDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
