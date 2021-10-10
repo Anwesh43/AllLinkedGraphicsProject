@@ -218,4 +218,13 @@ class PowerButtonShooterView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : PowerButtonShooterView {
+            val view : PowerButtonShooterView = PowerButtonShooterView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
