@@ -203,4 +203,27 @@ class DownloadIconMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : DownloadIconMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val dim : DownloadIconMove = DownloadIconMove(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            dim.draw(canvas, paint)
+            animator.animate {
+                dim.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            dim.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
