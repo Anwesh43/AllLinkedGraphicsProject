@@ -228,4 +228,13 @@ class DownloadIconMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DownloadIconMoveView {
+            val view : DownloadIconMoveView = DownloadIconMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
