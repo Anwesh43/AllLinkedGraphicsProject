@@ -44,26 +44,32 @@ fun Canvas.drawDownloadIconMove(scale : Float, w : Float, h : Float, paint : Pai
     save()
     rotate(-rot * sc4)
     translate(0f, (h / 2 + size) * sc5)
-    drawLine(0f, -size * 0.5f * sc1, 0f, size * 0.5f * sc1, paint)
+    if (sc1 > 0f) {
+        drawLine(0f, -size * 0.5f * sc1, 0f, size * 0.5f * sc1, paint)
+    }
     save()
     translate(0f, size / 2)
     for (j in 0..1) {
         save()
         rotate(deg * sc3 * (1f - 2 * j))
-        drawLine(
-            0f,
-            0f,
-            0f,
-            -arrowSize * Math.floor(sc1.toDouble()).toFloat(),
-            paint
-        )
+        if (Math.floor(sc1.toDouble()).toFloat() > 0f) {
+            drawLine(
+                0f,
+                0f,
+                0f,
+                -arrowSize * Math.floor(sc1.toDouble()).toFloat(),
+                paint
+            )
+        }
         restore()
     }
     restore()
     restore()
     save()
     translate(0f, size / 2 + (h / 2 + size / 2) * sc4)
-    drawLine(-size * 0.25f * sc2, 0f, size * 0.25f * sc2, 0f, paint)
+    if (sc2 > 0f) {
+        drawLine(-size * 0.25f * sc2, 0f, size * 0.25f * sc2, 0f, paint)
+    }
     restore()
 
     restore()
