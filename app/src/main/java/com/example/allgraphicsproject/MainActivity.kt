@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.downloadiconmoveview.DownloadIconMoveView
+
 //import com.example.powerbuttonshooterview.PowerButtonShooterView
 
 //import com.example.twoconccircdownview.TwoConcCircleDownView
@@ -205,6 +207,7 @@ class MainActivity : AppCompatActivity() {
         //SquareJourneyMovementView.create(this)
         //TwoConcCircleDownView.create(this)
         //PowerButtonShooterView.create(this)
+        DownloadIconMoveView.create(this)
         fullScreen()
     }
 }
