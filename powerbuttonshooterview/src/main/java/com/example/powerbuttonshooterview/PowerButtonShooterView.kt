@@ -42,18 +42,22 @@ fun Canvas.drawPowerButtonShooter(scale : Float, w : Float, h : Float, paint : P
     save()
     translate(w / 2, h / 2)
     rotate(rot * sc3)
-    drawArc(
-        RectF(-size / 2, -size / 2, size / 2, size / 2),
-        start + deg * sc5,
-        deg * (sc1 - sc5),
-        false,
-        paint
-    )
+    if (sc1 > 0f && sc5 < 1f) {
+        drawArc(
+            RectF(-size / 2, -size / 2, size / 2, size / 2),
+            start + deg * sc5,
+            deg * (sc1 - sc5),
+            false,
+            paint
+        )
+    }
     save()
     translate(0f, -size  / 4 - (w / 2 + size) * sc4)
-    drawLine(
-        0f, 0f, 0f, -size * 0.5f * sc2, paint
-    )
+    if (sc2 > 0f) {
+        drawLine(
+            0f, 0f, 0f, -size * 0.5f * sc2, paint
+        )
+    }
     restore()
     restore()
 }
