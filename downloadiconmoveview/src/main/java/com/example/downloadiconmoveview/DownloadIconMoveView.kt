@@ -38,18 +38,13 @@ fun Canvas.drawDownloadIconMove(scale : Float, w : Float, h : Float, paint : Pai
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
-    val arrowSize : Float = Math.min(w, h) / arrowSizeFactor
+    val arrowSize : Float = size / arrowSizeFactor
     save()
     translate(w / 2, h / 2)
     save()
-    rotate(rot * sc4)
+    rotate(-rot * sc4)
     translate(0f, (h / 2 + size) * sc5)
     drawLine(0f, -size * 0.5f * sc1, 0f, size * 0.5f * sc1, paint)
-    restore()
-    save()
-    translate(0f, size / 2 + (h / 2 + size / 2) * sc4)
-    drawLine(-size * 0.25f * sc2, 0f, size * 0.25f * sc2, 0f, paint)
-    restore()
     save()
     translate(0f, size / 2)
     for (j in 0..1) {
@@ -59,12 +54,18 @@ fun Canvas.drawDownloadIconMove(scale : Float, w : Float, h : Float, paint : Pai
             0f,
             0f,
             0f,
-            arrowSize * Math.floor(sc1.toDouble()).toFloat(),
+            -arrowSize * Math.floor(sc1.toDouble()).toFloat(),
             paint
         )
         restore()
     }
     restore()
+    restore()
+    save()
+    translate(0f, size / 2 + (h / 2 + size / 2) * sc4)
+    drawLine(-size * 0.25f * sc2, 0f, size * 0.25f * sc2, 0f, paint)
+    restore()
+
     restore()
 }
 
