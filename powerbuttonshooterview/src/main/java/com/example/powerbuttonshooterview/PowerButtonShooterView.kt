@@ -26,6 +26,7 @@ val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val start : Float = -60f
 val deg : Float = 300f
+val rot : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -40,6 +41,7 @@ fun Canvas.drawPowerButtonShooter(scale : Float, w : Float, h : Float, paint : P
     val sc5 : Float = scale.divideScale(4, parts)
     save()
     translate(w / 2, h / 2)
+    rotate(rot * sc3)
     drawArc(
         RectF(-size / 2, size / 2, size / 2, size / 2),
         start + deg * sc5,
@@ -47,6 +49,12 @@ fun Canvas.drawPowerButtonShooter(scale : Float, w : Float, h : Float, paint : P
         false,
         paint
     )
+    save()
+    translate((w / 2 + size) * sc4, -size  / 4)
+    drawLine(
+        0f, 0f, 0f, -size * 0.5f * sc2, paint
+    )
+    restore()
     restore()
 }
 fun Canvas.drawPBSNode(i : Int, scale : Float, paint : Paint) {
