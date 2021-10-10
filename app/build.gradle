@@ -111,5 +111,6 @@ dependencies {
     //implementation project(":barcompletegoupview")
     //implementation project(":squarejourneymovementview")
     //implementation project(":twoconccircdownview")
-    implementation project(":powerbuttonshooterview")
+    //implementation project(":powerbuttonshooterview")
+    implementation project(":downloadiconmoveview")
 }
