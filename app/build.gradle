@@ -112,5 +112,6 @@ dependencies {
     //implementation project(":squarejourneymovementview")
     //implementation project(":twoconccircdownview")
     //implementation project(":powerbuttonshooterview")
-    implementation project(":downloadiconmoveview")
+    //implementation project(":downloadiconmoveview")
+    implementation project(":linetoarrowdroplineview")
 }
