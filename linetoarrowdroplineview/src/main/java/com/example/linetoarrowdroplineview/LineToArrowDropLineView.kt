@@ -210,4 +210,13 @@ class LineToArrowDropLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineToArrowDropLineView {
+            val view : LineToArrowDropLineView = LineToArrowDropLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
