@@ -43,7 +43,7 @@ fun Canvas.drawLineToArrowDropLine(scale : Float, w : Float, h : Float, paint : 
         save()
         translate(0f, -h / 2 + h * 0.5f * sc2)
         rotate(deg * (1f - 2 * j) * sc3)
-        drawLine(0f, 0f, 0f, -size, paint)
+        drawLine(0f, 0f, 0f, -size * 0.5f, paint)
         restore()
     }
     restore()
