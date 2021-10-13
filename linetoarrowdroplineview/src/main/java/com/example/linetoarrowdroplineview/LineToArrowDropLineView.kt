@@ -185,4 +185,27 @@ class LineToArrowDropLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineToArrowDropLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val ldatl : LineToArrowDropLine = LineToArrowDropLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ldatl.draw(canvas, paint)
+            animator.animate {
+                ldatl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ldatl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
