@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linetoarrowdroplineview.LineToArrowDropLineView
+
 //import com.example.downloadiconmoveview.DownloadIconMoveView
 
 //import com.example.powerbuttonshooterview.PowerButtonShooterView
@@ -208,6 +210,7 @@ class MainActivity : AppCompatActivity() {
         //TwoConcCircleDownView.create(this)
         //PowerButtonShooterView.create(this)
         //DownloadIconMoveView.create(this)
+        LineToArrowDropLineView.create(this)
         fullScreen()
     }
 }
