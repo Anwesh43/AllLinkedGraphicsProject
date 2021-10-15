@@ -124,4 +124,46 @@ class LineToMultiSquareDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class LMSDNode(private var i : Int) {
+
+        private var prev : LMSDNode? = null
+        private var next : LMSDNode? = null
+        private val state : State = State()
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LMSDNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLMSDNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LMSDNode {
+            var curr : LMSDNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
