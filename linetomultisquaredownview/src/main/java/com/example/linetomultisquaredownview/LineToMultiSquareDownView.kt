@@ -189,4 +189,27 @@ class LineToMultiSquareDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineToMultiSquareDownView) {
+
+        private var  lmsd : LineToMultiSquareDown = LineToMultiSquareDown(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lmsd.draw(canvas, paint)
+            animator.animate {
+                lmsd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lmsd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
