@@ -20,7 +20,7 @@ val colors : Array<Int> = arrayOf(
 }.toTypedArray()
 val lines : Int = 5
 val parts : Int = 2
-val scGap : Float = 0.15f / ((parts * lines) + 1)
+val scGap : Float = 0.05f / ((parts * lines) + 1)
 val sizeFactor : Float = 4.9f
 val strokeFactor : Float = 90f
 val delay : Long = 20
@@ -34,16 +34,16 @@ fun Canvas.drawLineToMultiSquareDown(scale : Float, w : Float, h : Float, paint 
     val size : Float = Math.min(w, h) / sizeFactor
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
-    val sc3 : Float = scale.divideScale(2, parts)
     save()
-    translate(0f, h * sc3)
+    translate(0f, h * sc2)
     for (j in 0..(lines - 1)) {
         val sc1j : Float = sc1.divideScale(j, lines)
-        val sc2j : Float = sc2.divideScale(j, lines)
-        val upSize : Float = size * 0.5f * sc2j
+        val sc1j1 : Float = sc1j.divideScale(0, parts)
+        val sc1j2 : Float = sc1j.divideScale(1, parts)
+        val upSize : Float = size * 0.5f * sc1j2
         save()
         translate(0f, size * j + size / 2)
-        drawLine(w * 0.5f * sc2j, 0f, w * 0.5f * sc1j, 0f, paint)
+        drawLine(w * 0.5f * sc1j2, 0f, w * 0.5f * sc1j1, 0f, paint)
         save()
         translate(w / 2, 0f)
         drawRect(RectF(-upSize, -upSize, upSize, upSize), paint)
