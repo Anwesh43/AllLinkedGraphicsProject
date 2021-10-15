@@ -214,4 +214,13 @@ class LineToMultiSquareDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineToMultiSquareDownView {
+            val view : LineToMultiSquareDownView = LineToMultiSquareDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
