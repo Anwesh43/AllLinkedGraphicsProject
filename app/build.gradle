@@ -114,5 +114,6 @@ dependencies {
     //implementation project(":powerbuttonshooterview")
     //implementation project(":downloadiconmoveview")
     //implementation project(":linetoarrowdroplineview")
-    implementation project(":linetomultisquaredownview")
+    //implementation project(":linetomultisquaredownview")
+    implementation project(':arrowlinemakerupview')
 }
