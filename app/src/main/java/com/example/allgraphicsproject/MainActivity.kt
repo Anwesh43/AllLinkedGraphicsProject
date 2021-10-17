@@ -3,6 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.arrowlinemakerupview.ArrowLineMakerUpView
 import com.example.linetomultisquaredownview.LineToMultiSquareDownView
 
 //import com.example.linetoarrowdroplineview.LineToArrowDropLineView
@@ -213,7 +214,8 @@ class MainActivity : AppCompatActivity() {
         //PowerButtonShooterView.create(this)
         //DownloadIconMoveView.create(this)
         //LineToArrowDropLineView.create(this)
-        LineToMultiSquareDownView.create(this)
+        //LineToMultiSquareDownView.create(this)
+        ArrowLineMakerUpView.create(this)
         fullScreen()
     }
 }
