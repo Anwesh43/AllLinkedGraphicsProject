@@ -209,4 +209,13 @@ class LineTakenByLinesView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineTakenByLinesView {
+            val view : LineTakenByLinesView = LineTakenByLinesView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
