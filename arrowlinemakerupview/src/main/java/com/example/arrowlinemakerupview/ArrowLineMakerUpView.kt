@@ -214,5 +214,14 @@ class ArrowLineMakerUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArrowLineMakerUpView {
+            val view : ArrowLineMakerUpView = ArrowLineMakerUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
 
