@@ -184,4 +184,27 @@ class LineTakenByLinesView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineTakenByLinesView) {
+
+        private val ltbl : LineTakenByLines = LineTakenByLines(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ltbl.draw(canvas, paint)
+            animator.animate {
+                ltbl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ltbl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
