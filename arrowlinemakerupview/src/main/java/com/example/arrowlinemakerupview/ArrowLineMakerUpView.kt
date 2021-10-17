@@ -189,5 +189,28 @@ class ArrowLineMakerUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ArrowLineMakerUpView) {
+
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val almu : ArrowLineMakerUp = ArrowLineMakerUp(0)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            almu.draw(canvas, paint)
+            animator.animate {
+                almu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            almu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
 
