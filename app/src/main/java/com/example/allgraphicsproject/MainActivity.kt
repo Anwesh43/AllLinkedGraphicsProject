@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import com.example.arrowlinemakerupview.ArrowLineMakerUpView
-import com.example.linetomultisquaredownview.LineToMultiSquareDownView
+//import com.example.linetomultisquaredownview.LineToMultiSquareDownView
 
 //import com.example.linetoarrowdroplineview.LineToArrowDropLineView
 

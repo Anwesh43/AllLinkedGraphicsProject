@@ -18,7 +18,7 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 3
-val scGap : Float = 0.03f / parts
+val scGap : Float = 0.02f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
@@ -38,13 +38,15 @@ fun Canvas.drawArrowLineMakerUp(scale : Float, w : Float, h : Float, paint : Pai
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        drawLine(
-            -size / 2,
-            0f,
-            -size / 2 + size * 0.5f * sc1,
-            -size * 0.5f * sc1,
-            paint
-        )
+        if (sc1 > 0f) {
+            drawLine(
+                -size / 2,
+                0f,
+                -size / 2 + size * 0.5f * sc1,
+                -size * 0.5f * sc1,
+                paint
+            )
+        }
         restore()
     }
     save()
