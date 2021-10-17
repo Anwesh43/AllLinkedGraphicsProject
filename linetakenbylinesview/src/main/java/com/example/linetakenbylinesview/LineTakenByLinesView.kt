@@ -36,7 +36,7 @@ fun Canvas.drawLineTakenByLines(scale : Float, w : Float, h : Float, paint : Pai
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2  + w * 0.5f * sc4, h / 2)
+    translate(w / 2  + (w * 0.5f + size) * sc4, h / 2)
     rotate(deg * sc3)
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     for (j in 0..1) {
