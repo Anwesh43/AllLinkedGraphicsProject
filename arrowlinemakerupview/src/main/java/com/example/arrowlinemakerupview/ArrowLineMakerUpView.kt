@@ -63,4 +63,19 @@ fun Canvas.drawALMUNode(i : Int, scale : Float, paint : Paint) {
     drawArrowLineMakerUp(scale, w, h, paint)
 }
 
+class ArrowLineMakerUpView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
 
