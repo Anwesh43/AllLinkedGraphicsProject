@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.sharelinemoverview.ShareLineMoverView
+
 //import com.example.linetakenbylinesview.LineTakenByLinesView
 
 //import com.example.arrowlinemakerupview.ArrowLineMakerUpView
@@ -219,7 +221,7 @@ class MainActivity : AppCompatActivity() {
         //LineToMultiSquareDownView.create(this)
         //ArrowLineMakerUpView.create(this)
         //LineTakenByLinesView.create(this)
-
+        ShareLineMoverView.create(this)
         fullScreen()
     }
 }
