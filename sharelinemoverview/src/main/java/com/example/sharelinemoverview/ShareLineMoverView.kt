@@ -211,4 +211,13 @@ class ShareLineMoverView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : ShareLineMoverView {
+            val view : ShareLineMoverView = ShareLineMoverView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
