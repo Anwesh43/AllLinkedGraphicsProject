@@ -23,7 +23,7 @@ val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val deg : Float = 45f
-val ballSizeFactor : Float = 15.4f
+val ballSizeFactor : Float = 25.4f
 val backColor : Int = Color.parseColor("#BDBDBD")
 
 fun Int.inverse() : Float = 1f / this
