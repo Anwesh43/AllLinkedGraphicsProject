@@ -117,5 +117,6 @@ dependencies {
     //implementation project(":linetomultisquaredownview")
     //implementation project(':arrowlinemakerupview')
     //implementation project(":linetakenbylinesview")
-    implementation project(":sharelinemoverview")
+    //implementation project(":sharelinemoverview")
+    implementation project(":bigbarsmalltopview")
 }
