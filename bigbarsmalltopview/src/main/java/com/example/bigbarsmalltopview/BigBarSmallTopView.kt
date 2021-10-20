@@ -57,14 +57,16 @@ fun Canvas.drawBBSTNode(i : Int, scale : Float, paint : Paint) {
 
 class BigBarSmallTopView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    private val renderer : Renderer = Renderer(this)
 
+    override fun onDraw(canvas : Canvas) {
+        renderer.render(canvas)
     }
 
     override fun onTouchEvent(event : MotionEvent) : Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-
+                renderer.handleTap()
             }
         }
         return true
@@ -203,6 +205,15 @@ class BigBarSmallTopView(ctx : Context) : View(ctx) {
             bbst.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity : Activity) : BigBarSmallTopView {
+            val view : BigBarSmallTopView = BigBarSmallTopView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 
