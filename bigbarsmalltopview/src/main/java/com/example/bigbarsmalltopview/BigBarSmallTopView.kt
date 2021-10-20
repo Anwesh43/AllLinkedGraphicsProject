@@ -36,7 +36,7 @@ fun Canvas.drawBigBarSmallTop(scale : Float, w : Float, h : Float, paint : Paint
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + size) * sc3, h / 2)
     save()
     translate(-w / 2 - size / 2 + (w / 2 + size  / 2) * sc1, 0f)
     drawRect(RectF(-size / 2, -size / 2, size / 2, size / 2), paint)
@@ -76,7 +76,7 @@ class BigBarSmallTopView(ctx : Context) : View(ctx) {
 
         fun update(cb : (Float) -> Unit) {
             scale += scGap * dir
-            if (Math.abs(scale - prevScale) > 0f) {
+            if (Math.abs(scale - prevScale) > 1f) {
                 scale = prevScale + dir
                 dir = 0f
                 prevScale = scale
