@@ -188,4 +188,27 @@ class DirecLinesCreateView(ctx : Context) : View(ctx) {
             state.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : DirecLinesCreateView) {
+
+        private val animator : Animator = Animator(view)
+        private val dlc : DirecLinesCreate = DirecLinesCreate(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            dlc.draw(canvas, paint)
+            animator.animate {
+                dlc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            dlc.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
