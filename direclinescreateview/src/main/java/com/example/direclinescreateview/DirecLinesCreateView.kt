@@ -213,4 +213,13 @@ class DirecLinesCreateView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DirecLinesCreateView {
+            val view : DirecLinesCreateView = DirecLinesCreateView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
