@@ -94,33 +94,75 @@ class DirecLinesCreateView(ctx : Context) : View(ctx) {
                 cb()
             }
         }
+    }
 
-        data class Animator(var view : View, var animated : Boolean = false) {
+    data class Animator(var view : View, var animated : Boolean = false) {
 
-            fun animate(cb : () -> Unit) {
-                if (animated) {
-                    cb()
-                    try {
-                        Thread.sleep(delay)
-                        view.invalidate()
-                    } catch(ex : Exception) {
+        fun animate(cb : () -> Unit) {
+            if (animated) {
+                cb()
+                try {
+                    Thread.sleep(delay)
+                    view.invalidate()
+                } catch(ex : Exception) {
 
-                    }
                 }
             }
+        }
 
-            fun start() {
-                if (!animated) {
-                    animated = true
-                    view.postInvalidate()
-                }
+        fun start() {
+            if (!animated) {
+                animated = true
+                view.postInvalidate()
             }
+        }
 
-            fun stop() {
-                if (animated) {
-                    animated = false
-                }
+        fun stop() {
+            if (animated) {
+                animated = false
             }
+        }
+
+    }
+
+    data class DLCNode(var i : Int, val state : State = State()) {
+
+        private var next : DLCNode? = null
+        private var prev : DLCNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = DLCNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawDLCNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : DLCNode {
+            var curr : DLCNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
         }
     }
 }
