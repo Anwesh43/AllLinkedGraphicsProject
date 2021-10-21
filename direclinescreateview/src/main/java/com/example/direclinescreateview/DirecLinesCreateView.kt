@@ -31,7 +31,7 @@ fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale
 fun Canvas.drawEndStartLine(scale : Float, i : Int, gap : Int, x : Float, y : Float, paint : Paint) {
     val scStart : Float = scale.divideScale(i, parts)
     val scEnd : Float = scale.divideScale(i + gap, parts)
-    drawLine(x * scEnd, y * scEnd, x * scStart, y * scEnd, paint)
+    drawLine(x * scEnd, y * scEnd, x * scStart, y * scStart, paint)
 }
 
 fun Canvas.drawDirecLinesCreate(scale : Float, w : Float, h : Float, paint : Paint) {
@@ -44,7 +44,7 @@ fun Canvas.drawDirecLinesCreate(scale : Float, w : Float, h : Float, paint : Pai
     restore()
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 1f)
+        scale(1f - 2 * j, 1f - 2 * j)
         translate(w / 2 - size, h / 2)
         drawEndStartLine(scale, 0, 2, size, -size, paint)
         restore()
@@ -168,7 +168,7 @@ class DirecLinesCreateView(ctx : Context) : View(ctx) {
         }
     }
 
-    data class DirecLinesCreate(var i : Int, val state : State = State()) {
+    data class DirecLinesCreate(var i : Int) {
 
         private var curr : DLCNode = DLCNode(0)
         private var dir : Int = 1
@@ -187,7 +187,7 @@ class DirecLinesCreateView(ctx : Context) : View(ctx) {
         }
 
         fun startUpdating(cb : () -> Unit) {
-            state.startUpdating(cb)
+            curr.startUpdating(cb)
         }
     }
 
