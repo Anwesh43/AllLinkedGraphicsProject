@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bigbarsmalltopview.BigBarSmallTopView
+//import com.example.bigbarsmalltopview.BigBarSmallTopView
 
 //import com.example.sharelinemoverview.ShareLineMoverView
 
@@ -224,7 +224,7 @@ class MainActivity : AppCompatActivity() {
         //ArrowLineMakerUpView.create(this)
         //LineTakenByLinesView.create(this)
         //ShareLineMoverView.create(this)
-        BigBarSmallTopView.create(this)
+        //BigBarSmallTopView.create(this)
         fullScreen()
     }
 }
