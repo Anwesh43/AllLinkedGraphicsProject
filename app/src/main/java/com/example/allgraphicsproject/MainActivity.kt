@@ -227,7 +227,7 @@ class MainActivity : AppCompatActivity() {
         //LineTakenByLinesView.create(this)
         //ShareLineMoverView.create(this)
         //BigBarSmallTopView.create(this)
-        DirecLinesCreateView.create(this)
+        //DirecLinesCreateView.create(this)
         fullScreen()
     }
 }
