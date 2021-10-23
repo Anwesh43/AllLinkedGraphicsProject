@@ -119,5 +119,6 @@ dependencies {
     //implementation project(":linetakenbylinesview")
     //implementation project(":sharelinemoverview")
     //implementation project(":bigbarsmalltopview")
-    implementation project(":direclinescreateview")
+    //implementation project(":direclinescreateview")
+    implementation project(":arcdividerlineview")
 }

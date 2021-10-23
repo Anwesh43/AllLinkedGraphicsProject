@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.direclinescreateview.DirecLinesCreateView
+//import com.example.direclinescreateview.DirecLinesCreateView
 
 //import com.example.bigbarsmalltopview.BigBarSmallTopView
 
