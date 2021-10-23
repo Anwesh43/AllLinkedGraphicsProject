@@ -49,7 +49,7 @@ fun Canvas.drawArcDividerLine(scale : Float, w : Float, h : Float, paint : Paint
                 size / 2,
                 size / 2
             )
-            , -deg * sc3,
+            , -deg + deg * sc3,
             deg * (sc1 - sc3),
             false,
             paint
@@ -58,9 +58,9 @@ fun Canvas.drawArcDividerLine(scale : Float, w : Float, h : Float, paint : Paint
     }
     drawLine(
         0f,
-        -h / 2 + h * 0.5f * sc4,
+        -h / 2 + h * sc4,
         0f,
-        -h / 2 + h * 0.5f * sc2,
+        -h / 2 + h * sc2,
         paint
     )
     restore()
