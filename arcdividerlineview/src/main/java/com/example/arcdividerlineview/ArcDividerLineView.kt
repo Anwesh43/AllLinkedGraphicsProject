@@ -227,4 +227,13 @@ class ArcDividerLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcDividerLineView {
+            val view : ArcDividerLineView = ArcDividerLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
