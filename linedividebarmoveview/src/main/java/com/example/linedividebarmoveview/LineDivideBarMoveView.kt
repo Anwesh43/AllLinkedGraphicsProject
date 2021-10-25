@@ -187,4 +187,27 @@ class LineDivideBarMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineDivideBarMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val ldbm : LineDivideBarMove = LineDivideBarMove(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ldbm.draw(canvas, paint)
+            animator.animate {
+                ldbm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ldbm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
