@@ -212,4 +212,13 @@ class LineDivideBarMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : LineDivideBarMoveView {
+            val view : LineDivideBarMoveView = LineDivideBarMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
