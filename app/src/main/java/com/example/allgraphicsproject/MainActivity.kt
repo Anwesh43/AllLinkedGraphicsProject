@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.trilinearcdownview.TriLineArcDownView
+
 //import com.example.linedividebarmoveview.LineDivideBarMoveView
 
 //import com.example.arcdividerlineview.ArcDividerLineView
@@ -234,6 +236,7 @@ class MainActivity : AppCompatActivity() {
         //DirecLinesCreateView.create(this)
         //ArcDividerLineView.create(this)
         //LineDivideBarMoveView.create(this)
+        TriLineArcDownView.create(this)
         fullScreen()
     }
 }
