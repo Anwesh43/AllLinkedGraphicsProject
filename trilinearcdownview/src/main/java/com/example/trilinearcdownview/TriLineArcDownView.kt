@@ -24,7 +24,50 @@ val strokeFactor : Float = 90f
 val sizeFactor : Float = 5.9f
 val delay : Long = 20
 val deg : Float = 60f
+val lines : Int = 3
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawTriLineArcDown(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    save()
+    translate(w / 2, h / 2)
+    if (sc1 > 0f) {
+        drawArc(
+            RectF(
+                -size / 2,
+                -size / 2,
+                size / 2,
+                size / 2
+            ),
+            -90f,
+            360f * sc1,
+            false,
+            paint
+        )
+    }
+    for (j in 0..(lines - 1)) {
+        save()
+        rotate(deg * j)
+        if (sc2 > 0f) {
+            drawLine(0f, 0f, size * 0.5f * sc2, 0f, paint)
+        }
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawTLADNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.style = Paint.Style.STROKE
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawTriLineArcDown(scale, w, h, paint)
+}
