@@ -23,7 +23,7 @@ val scGap : Float = 0.03f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 5.9f
 val delay : Long = 20
-val deg : Float = 60f
+val deg : Float = 120f
 val lines : Int = 3
 val backColor : Int = Color.parseColor("#BDBDBD")
 
@@ -37,7 +37,8 @@ fun Canvas.drawTriLineArcDown(scale : Float, w : Float, h : Float, paint : Paint
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + size) * sc3)
+    rotate(180f * sc3)
     if (sc1 > 0f) {
         drawArc(
             RectF(
