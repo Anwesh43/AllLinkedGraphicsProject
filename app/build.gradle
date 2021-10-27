@@ -121,5 +121,6 @@ dependencies {
     //implementation project(":bigbarsmalltopview")
     //implementation project(":direclinescreateview")
     //implementation project(":arcdividerlineview")
-    implementation project(":linedividebarmoveview")
+    //implementation project(":linedividebarmoveview")
+    implementation project(':trilinearcdownview')
 }
