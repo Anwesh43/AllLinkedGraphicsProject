@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.circlequadlineview.CircleQuadLineView
+//import com.example.circlequadlineview.CircleQuadLineView
 
 //import com.example.trilinearcdownview.TriLineArcDownView
 
@@ -239,7 +239,7 @@ class MainActivity : AppCompatActivity() {
         //ArcDividerLineView.create(this)
         //LineDivideBarMoveView.create(this)
         //TriLineArcDownView.create(this)
-        CircleQuadLineView.create(this)
+        //CircleQuadLineView.create(this)
         fullScreen()
     }
 }
