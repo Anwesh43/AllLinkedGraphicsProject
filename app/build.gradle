@@ -122,5 +122,6 @@ dependencies {
     //implementation project(":direclinescreateview")
     //implementation project(":arcdividerlineview")
     //implementation project(":linedividebarmoveview")
-    implementation project(':trilinearcdownview')
+    //implementation project(':trilinearcdownview')
+    implementation project(":circlequadlineview")
 }
