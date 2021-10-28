@@ -214,4 +214,12 @@ class HLineTravellerView(ctx : Context) : View(ctx) {
         }
     }
 
+    companion object {
+        fun create(activity : Activity) : HLineTravellerView {
+            val view : HLineTravellerView = HLineTravellerView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
+
 }
