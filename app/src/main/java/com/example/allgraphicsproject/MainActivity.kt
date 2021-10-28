@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.hlinetravellerview.HLineTravellerView
+
 //import com.example.circlequadlineview.CircleQuadLineView
 
 //import com.example.trilinearcdownview.TriLineArcDownView
@@ -240,6 +242,7 @@ class MainActivity : AppCompatActivity() {
         //LineDivideBarMoveView.create(this)
         //TriLineArcDownView.create(this)
         //CircleQuadLineView.create(this)
+        HLineTravellerView.create(this)
         fullScreen()
     }
 }
