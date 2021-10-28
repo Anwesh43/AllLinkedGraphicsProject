@@ -209,4 +209,13 @@ class CircleQuadLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CircleQuadLineView {
+            val view : CircleQuadLineView = CircleQuadLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
