@@ -189,5 +189,27 @@ class HLineTravellerView(ctx : Context) : View(ctx) {
         }
     }
 
+    data class Renderer(var view : HLineTravellerView) {
+
+        private var hlt : HLineTraveller = HLineTraveller(0)
+        private var animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            hlt.draw(canvas, paint)
+            animator.animate {
+                hlt.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hlt.startUpdating {
+                animator.start()
+            }
+        }
+    }
 
 }
