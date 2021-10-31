@@ -206,4 +206,13 @@ class BarJoinToGoUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarJoinToGoUpView {
+            val view : BarJoinToGoUpView = BarJoinToGoUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
