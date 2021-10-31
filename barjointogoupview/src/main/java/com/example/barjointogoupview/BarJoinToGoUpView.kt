@@ -40,7 +40,7 @@ fun Canvas.drawBarJoinToGoUp(scale : Float, w : Float, h : Float, paint : Paint)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(-(w * 0.5f - size) * (1 - sc2), 0f)
+        translate(-size + -(w * 0.5f - size) * (1 - sc2), 0f)
         drawRect(RectF(0f, -size * 0.5f * sc1, size, 0f), paint)
         restore()
     }
