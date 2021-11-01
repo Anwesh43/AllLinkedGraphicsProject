@@ -125,5 +125,6 @@ dependencies {
     //implementation project(':trilinearcdownview')
     //implementation project(":circlequadlineview")
     //implementation project(":hlinetravellerview")
-    implementation project(":barjointogoupview")
+    //implementation project(":barjointogoupview")
+    implementation project(":linefromuptodownview")
 }
