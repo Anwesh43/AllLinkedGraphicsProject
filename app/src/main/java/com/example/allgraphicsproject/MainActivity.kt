@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linefromuptodownview.LineFromUpToDownView
+
 //import com.example.barjointogoupview.BarJoinToGoUpView
 
 //import com.example.hlinetravellerview.HLineTravellerView
@@ -246,6 +248,7 @@ class MainActivity : AppCompatActivity() {
         //CircleQuadLineView.create(this)
         //HLineTravellerView.create(this)
         //BarJoinToGoUpView.create(this)
+        LineFromUpToDownView.create(this)
         fullScreen()
     }
 }
