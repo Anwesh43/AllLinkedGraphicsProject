@@ -17,7 +17,7 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 3
+val parts : Int = 4
 val scGap : Float = 0.03f / parts
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
@@ -34,8 +34,9 @@ fun Canvas.drawLineFromUpToDown(scale : Float, w : Float, h : Float, paint : Pai
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + paint.strokeWidth) * sc4)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
