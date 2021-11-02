@@ -40,7 +40,7 @@ fun Canvas.drawArcFromUpToSide(scale : Float, w : Float, h : Float, paint : Pain
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
-        translate(0f, -h / 2 + (h / 2 - size / 2) * sc2)
+        translate(0f, -h / 2 + (h / 2) * sc2)
         rotate(rot * 2 * sc2)
         for (k in 0..1) {
             save()
