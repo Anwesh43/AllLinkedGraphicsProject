@@ -36,15 +36,15 @@ fun Canvas.drawArcFromUpToSide(scale : Float, w : Float, h : Float, paint : Pain
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     save()
-    translate(w / 2 + (w / 2 + size) * sc1, h / 2)
-    rotate(-rot * sc2)
+    translate(w / 2 + (w / 2 + size) * sc3, h / 2)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
         translate(0f, -h / 2 + (h / 2 - size / 2) * sc2)
+        rotate(rot * 2 * sc2)
         for (k in 0..1) {
             save()
-            scale(1f - 2 * j, 1f)
+            scale(1f - 2 * k, 1f)
             drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), 0f, rot * sc1, false, paint)
             restore()
         }
