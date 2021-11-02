@@ -214,4 +214,13 @@ class ArcFromUpToSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcFromUpToSideView {
+            val view : ArcFromUpToSideView = ArcFromUpToSideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
