@@ -127,5 +127,6 @@ dependencies {
     //implementation project(":hlinetravellerview")
     //implementation project(":barjointogoupview")
     //implementation project(":linefromuptodownview")
-    implementation project(":arcfromuptosideview")
+    //implementation project(":arcfromuptosideview")
+    implementation project(":lcreatearcdownview")
 }
