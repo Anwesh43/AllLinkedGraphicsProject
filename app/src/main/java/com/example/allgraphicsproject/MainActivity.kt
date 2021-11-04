@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.lcreatearcdownview.LCreateArcDownView
+
 //import com.example.arcfromuptosideview.ArcFromUpToSideView
 
 //import com.example.linefromuptodownview.LineFromUpToDownView
@@ -252,6 +254,7 @@ class MainActivity : AppCompatActivity() {
         //BarJoinToGoUpView.create(this)
         //LineFromUpToDownView.create(this)
         //ArcFromUpToSideView.create(this)
+        LCreateArcDownView.create(this)
         fullScreen()
     }
 }
