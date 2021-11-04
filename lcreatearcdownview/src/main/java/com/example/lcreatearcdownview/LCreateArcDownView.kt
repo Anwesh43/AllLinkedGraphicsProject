@@ -24,7 +24,7 @@ val parts : Int = 5
 val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
-val arcSizeFactor : Float = 14.9f
+val arcSizeFactor : Float = 6.9f
 val delay : Long = 20
 val deg : Float = 90f
 val backColor : Int = Color.parseColor("#BDBDBD")
@@ -40,15 +40,15 @@ fun Canvas.drawLCreateArcDown(scale : Float, w : Float, h : Float, paint : Paint
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
     val initY : (Int) -> Float = {
-        ((-h / 2) * (1 - it) + (w / 2) * it)  * (1 - scale.divideScale(it, parts))
+        ((-h / 2) * (1 - it) - (w / 2) * it)  * (1 - scale.divideScale(it, parts))
     }
     save()
     translate(w / 2, h / 2 + (h / 2) * sc5)
     rotate(deg * 1.5f * sc4)
     for (j in 0..1) {
         save()
-        translate(0f, initY(j))
         rotate(deg * j)
+        translate(0f, initY(j))
         drawLine(0f, 0f, 0f, -size, paint)
         restore()
     }
