@@ -8,6 +8,8 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.Color
 import android.graphics.Canvas
+import kotlin.contracts.contract
+import kotlin.math.acos
 
 val colors : Array<Int> = arrayOf(
     "#01579B",
@@ -222,6 +224,14 @@ class LCreateArcDownView(ctx : Context) : View(ctx) {
             lcad.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+        fun create(activity: Activity) : LCreateArcDownView {
+            val view : LCreateArcDownView = LCreateArcDownView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
