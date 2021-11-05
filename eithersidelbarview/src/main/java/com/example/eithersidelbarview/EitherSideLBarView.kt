@@ -23,7 +23,7 @@ val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
-val deg : Float = 90f
+val deg : Float = 180f
 val lSizeFactor : Float = 5.6f
 val backColor : Int = Color.parseColor("#BDBDBD")
 
@@ -207,7 +207,7 @@ class EitherSideLBarView(ctx : Context) : View(ctx) {
 
         fun handleTap() {
             eslb.startUpdating {
-                animator.stop()
+                animator.start()
             }
         }
     }
