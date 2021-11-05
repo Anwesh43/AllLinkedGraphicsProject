@@ -212,4 +212,13 @@ class SquareCreateShrinkView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(actvity : Activity) : SquareCreateShrinkView {
+            val view : SquareCreateShrinkView = SquareCreateShrinkView(actvity)
+            actvity.setContentView(view)
+            return view
+        }
+    }
 }
