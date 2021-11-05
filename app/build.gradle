@@ -128,5 +128,6 @@ dependencies {
     //implementation project(":barjointogoupview")
     //implementation project(":linefromuptodownview")
     //implementation project(":arcfromuptosideview")
-    implementation project(":lcreatearcdownview")
+    //implementation project(":lcreatearcdownview")
+    implementation project(":squarecreateshrinkview")
 }
