@@ -40,7 +40,7 @@ fun Canvas.drawSquareCreateShrink(scale : Float, w : Float, h : Float, paint : P
         save()
         scale(1f - 2 * j, 1f)
         save()
-        translate(0f, (-h / 2 - size / 2) * (1 - sc1))
+        translate(-size / 2, (-h / 2 - size / 2) * (1 - sc1))
         drawLine(0f, -size / 2, 0f, size / 2, paint)
         restore()
         save()
