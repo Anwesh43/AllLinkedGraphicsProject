@@ -209,4 +209,13 @@ class EitherSideLBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : EitherSideLBarView {
+            val view : EitherSideLBarView = EitherSideLBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
