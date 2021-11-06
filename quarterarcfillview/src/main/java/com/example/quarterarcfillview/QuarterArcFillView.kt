@@ -218,4 +218,13 @@ class QuarterArcFillView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : QuarterArcFillView {
+            val view : QuarterArcFillView = QuarterArcFillView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
