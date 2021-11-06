@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.quarterarcfillview.QuarterArcFillView
+
 //import com.example.eithersidelbarview.EitherSideLBarView
 
 //import com.example.squarecreateshrinkview.SquareCreateShrinkView
@@ -261,6 +263,7 @@ class MainActivity : AppCompatActivity() {
         //LCreateArcDownView.create(this)
         //SquareCreateShrinkView.create(this)
         //EitherSideLBarView.create(this)
+        QuarterArcFillView.create(this)
         fullScreen()
     }
 }
