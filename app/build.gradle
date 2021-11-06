@@ -130,5 +130,6 @@ dependencies {
     //implementation project(":arcfromuptosideview")
     //implementation project(":lcreatearcdownview")
     //implementation project(":squarecreateshrinkview")
-    implementation project(":eithersidelbarview")
+    //implementation project(":eithersidelbarview")
+    implementation project(":quarterarcfillview")
 }
