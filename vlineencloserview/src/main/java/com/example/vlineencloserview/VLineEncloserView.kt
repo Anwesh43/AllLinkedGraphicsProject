@@ -183,4 +183,27 @@ class VLineEncloserView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : VLineEncloserView) {
+
+        private val animator : Animator = Animator(view)
+        private val vle : VLineEncloser = VLineEncloser(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            vle.draw(canvas, paint)
+            animator.animate {
+                vle.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            vle.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
