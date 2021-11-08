@@ -183,4 +183,27 @@ class LinePeakRotMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LinePeakRotMoveView) {
+
+        private val lprm : LinePeakRotMove = LinePeakRotMove(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lprm.draw(canvas, paint)
+            animator.animate {
+                lprm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lprm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
