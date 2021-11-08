@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.app.Activity
 import android.content.Context
+import android.util.Log
 
 val colors : Array<Int> = arrayOf(
     "#01579B",
@@ -35,6 +36,7 @@ fun Canvas.drawLinePeakRotMove(scale : Float, w : Float, h : Float, paint : Pain
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
+    Log.d("SCALE_UPDATE", "$sc1, $sc2, $sc3, $sc4")
     save()
     translate(w / 2 + (w / 2 + size) * sc4, h / 2)
     rotate(rot * sc3)
@@ -54,7 +56,7 @@ fun Canvas.drawLPRMNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
-    drawLinePeakRotMove(w, h, scale, paint)
+    drawLinePeakRotMove(scale,w, h, paint)
 }
 
 class LinePeakRotMoveView(ctx : Context) : View(ctx) {
@@ -78,6 +80,7 @@ class LinePeakRotMoveView(ctx : Context) : View(ctx) {
 
         fun update(cb : (Float) -> Unit) {
             scale += scGap * dir
+            Log.d("STATE_UPDATE", "$scale, $dir, $prevScale")
             if (Math.abs(scale - prevScale) > 1) {
                 scale = prevScale + dir
                 dir = 0f
@@ -128,7 +131,7 @@ class LinePeakRotMoveView(ctx : Context) : View(ctx) {
         private var prev : LPRMNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
