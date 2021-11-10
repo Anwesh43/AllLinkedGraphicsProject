@@ -211,4 +211,13 @@ class TrapeShooterUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TrapeShooterUpView {
+            val view : TrapeShooterUpView = TrapeShooterUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
