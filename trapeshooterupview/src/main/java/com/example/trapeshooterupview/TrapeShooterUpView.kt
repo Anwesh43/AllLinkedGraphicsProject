@@ -188,4 +188,27 @@ class TrapeShooterUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TrapeShooterUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val tsu : TrapeShooterUp = TrapeShooterUp(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tsu.draw(canvas, paint)
+            animator.animate {
+                tsu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tsu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
