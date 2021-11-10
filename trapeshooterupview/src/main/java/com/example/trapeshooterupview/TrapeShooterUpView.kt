@@ -38,7 +38,7 @@ fun Canvas.drawTrapeShooterUp(scale : Float, w : Float, h : Float, paint : Paint
     save()
     translate(w / 2, h / 2)
     save()
-    translate(0f, h / 2 - size - (h) * sc5)
+    translate(0f, h / 2 - size / 2 - h * sc5)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
