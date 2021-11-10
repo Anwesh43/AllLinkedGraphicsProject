@@ -133,5 +133,6 @@ dependencies {
     //implementation project(":eithersidelbarview")
     //implementation project(":quarterarcfillview")
     //implementation project(":vlineencloserview")
-    implementation project(":linepeakrotmoveview")
+    //implementation project(":linepeakrotmoveview")
+    implementation project(":trapeshooterupview")
 }

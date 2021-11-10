@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linepeakrotmoveview.LinePeakRotMoveView
+//import com.example.linepeakrotmoveview.LinePeakRotMoveView
 
 //import com.example.vlineencloserview.VLineEncloserView
 
@@ -269,7 +269,7 @@ class MainActivity : AppCompatActivity() {
         //EitherSideLBarView.create(this)
         //QuarterArcFillView.create(this)
         //VLineEncloserView.create(this)
-        LinePeakRotMoveView.create(this)
+        //LinePeakRotMoveView.create(this)
         fullScreen()
     }
 }
