@@ -191,4 +191,27 @@ class BarArcExtenderView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarArcExtenderView) {
+
+        private val animator : Animator = Animator(view)
+        private val bae : BarArcExtender = BarArcExtender(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bae.draw(canvas, paint)
+            animator.animate {
+                bae.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bae.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
