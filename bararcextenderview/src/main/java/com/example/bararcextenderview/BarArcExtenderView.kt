@@ -51,7 +51,7 @@ fun Canvas.drawBarArcExtender(scale : Float, w : Float, h : Float, paint : Paint
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        drawRect(RectF(-w / 2 + w * 0.5f * sc3, -barH, -w / 2 + w * 0.5f * sc1, 0f), paint)
+        drawRect(RectF(-w / 2 + (w * 0.5f - arcR / 2) * sc3, -barH, -w / 2 + (w * 0.5f - arcR / 2) * sc1, 0f), paint)
         restore()
     }
     restore()
