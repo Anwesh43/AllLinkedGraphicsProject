@@ -134,5 +134,6 @@ dependencies {
     //implementation project(":quarterarcfillview")
     //implementation project(":vlineencloserview")
     //implementation project(":linepeakrotmoveview")
-    implementation project(":trapeshooterupview")
+    //implementation project(":trapeshooterupview")
+    implementation project(":bararcextenderview")
 }
