@@ -216,4 +216,13 @@ class BarArcExtenderView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarArcExtenderView {
+            val view : BarArcExtenderView = BarArcExtenderView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
