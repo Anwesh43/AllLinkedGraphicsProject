@@ -185,4 +185,27 @@ class LineBarTravellerView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineBarTravellerView) {
+
+        private val lbt : LineBarTraveller = LineBarTraveller(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lbt.draw(canvas, paint)
+            animator.animate {
+                lbt.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lbt.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
