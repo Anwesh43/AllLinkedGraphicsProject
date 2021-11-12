@@ -210,4 +210,12 @@ class LineBarTravellerView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : LineBarTravellerView {
+            val view : LineBarTravellerView = LineBarTravellerView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
