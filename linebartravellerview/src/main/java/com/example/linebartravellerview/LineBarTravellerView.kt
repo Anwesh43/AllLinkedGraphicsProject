@@ -3,7 +3,6 @@ package com.example.linebartravellerview
 import android.view.View
 import android.view.MotionEvent
 import android.graphics.Paint
-import android.graphics.RectF
 import android.graphics.Color
 import android.graphics.Canvas
 import android.app.Activity

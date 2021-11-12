@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bararcextenderview.BarArcExtenderView
+import com.example.linebartravellerview.LineBarTravellerView
+
+//import com.example.bararcextenderview.BarArcExtenderView
 
 //import com.example.trapeshooterupview.TrapeShooterUpView
 
@@ -275,7 +277,8 @@ class MainActivity : AppCompatActivity() {
         //VLineEncloserView.create(this)
         //LinePeakRotMoveView.create(this)
         //TrapeShooterUpView.create(this)
-        BarArcExtenderView.create(this)
+        //BarArcExtenderView.create(this)
+        LineBarTravellerView.create(this)
         fullScreen()
     }
 }
