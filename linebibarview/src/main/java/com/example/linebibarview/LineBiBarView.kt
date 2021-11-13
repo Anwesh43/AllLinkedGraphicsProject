@@ -181,4 +181,27 @@ class LineBiBarView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineBiBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val lbb : LineBiBar = LineBiBar(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lbb.draw(canvas, paint)
+            animator.animate {
+                lbb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lbb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
