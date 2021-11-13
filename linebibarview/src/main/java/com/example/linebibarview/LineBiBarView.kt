@@ -22,7 +22,7 @@ val parts : Int = 4
 val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.2f
-val barHFactor : Float = sizeFactor / 4
+val barHFactor : Float = sizeFactor * 4
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 
@@ -126,7 +126,7 @@ class LineBiBarView(ctx : Context) : View(ctx) {
         private var next : LBBNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
