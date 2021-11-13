@@ -90,4 +90,31 @@ class LineBiBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class Animator(var view : LineBiBarView, var animated : Boolean = false) {
+
+        fun stop() {
+            if (animated) {
+                animated = false
+            }
+        }
+        fun start() {
+            if (!animated) {
+                animated = true
+                view.postInvalidate()
+            }
+        }
+
+        fun animate(cb : () -> Unit) {
+            if (animated) {
+                cb()
+                try {
+                    Thread.sleep(delay)
+                    view.invalidate()
+                } catch(ex : Exception) {
+
+                }
+            }
+        }
+    }
 }
