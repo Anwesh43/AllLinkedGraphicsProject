@@ -29,3 +29,29 @@ val backColor : Int = Color.parseColor("#BDBDBD")
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawLineBiBar(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val barH : Float = Math.min(w, h) / barHFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2 + (w / 2 + size / 2 + paint.strokeWidth)  * sc4, h / 2)
+    drawLine(-size / 2, size / 2 - size * sc1, -size / 2, size / 2, paint)
+    for (j in 0..1) {
+        save()
+        translate(-size / 2, size / 2 - barH * j)
+        drawRect(RectF(0f, -barH, size * scale.divideScale(j + 1, parts), 0f), paint)
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawLBBNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawLineBiBar(scale, w, h, paint)
+}
