@@ -204,4 +204,13 @@ class LineBiBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineBiBarView {
+            val view : LineBiBarView = LineBiBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
