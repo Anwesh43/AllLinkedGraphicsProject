@@ -137,5 +137,6 @@ dependencies {
     //implementation project(":trapeshooterupview")
     //implementation project(":bararcextenderview")
     //implementation project(":linebartravellerview")
-    implementation project(":linebibarview")
+    //implementation project(":linebibarview")
+    implementation project(":boxabovelineenclosureview")
 }

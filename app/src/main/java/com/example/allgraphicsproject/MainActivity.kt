@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linebibarview.LineBiBarView
+//import com.example.linebibarview.LineBiBarView
 
 //import com.example.linebartravellerview.LineBarTravellerView
 
@@ -281,7 +281,7 @@ class MainActivity : AppCompatActivity() {
         //TrapeShooterUpView.create(this)
         //BarArcExtenderView.create(this)
         //LineBarTravellerView.create(this)
-        LineBiBarView.create(this)
+        //LineBiBarView.create(this)
         fullScreen()
     }
 }
