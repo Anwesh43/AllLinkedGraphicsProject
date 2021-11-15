@@ -217,4 +217,13 @@ class BoxAboveLineClosureView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BoxAboveLineClosureView {
+            val view : BoxAboveLineClosureView = BoxAboveLineClosureView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
