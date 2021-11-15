@@ -193,5 +193,26 @@ class BoxAboveLineClosureView(ctx : Context) : View(ctx) {
         }
     }
 
+    data class Renderer(var view : BoxAboveLineClosureView) {
 
+        private val animator : Animator = Animator(view)
+        private val balc : BoxAboveLineClosure = BoxAboveLineClosure(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            balc.draw(canvas, paint)
+            animator.animate {
+                balc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            balc.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
