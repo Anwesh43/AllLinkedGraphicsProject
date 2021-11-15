@@ -38,7 +38,7 @@ fun Canvas.drawBoxAboveLineClosure(scale : Float, w : Float, h : Float, paint : 
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
-    val boxSize : Float = Math.min(w, h)/
+    val boxSize : Float = Math.min(w, h) / boxSizeFactor
     save()
     translate(w / 2, h / 2 + (h / 2) * sc5)
     rotate(deg * sc4)
