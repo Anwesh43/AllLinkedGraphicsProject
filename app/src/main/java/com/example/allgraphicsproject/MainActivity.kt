@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.vdoorrotmoveview.VDoorRotMoveView
+
 //import com.example.boxabovelineenclosureview.BoxAboveLineClosureView
 
 //import com.example.linebibarview.LineBiBarView
@@ -285,6 +287,7 @@ class MainActivity : AppCompatActivity() {
         //LineBarTravellerView.create(this)
         //LineBiBarView.create(this)
         //BoxAboveLineClosureView.create(this)
+        VDoorRotMoveView.create(this)
         fullScreen()
     }
 }
