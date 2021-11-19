@@ -219,4 +219,13 @@ class VDoorRotMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : VDoorRotMoveView {
+            val view : VDoorRotMoveView = VDoorRotMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
