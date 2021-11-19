@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/altlinetreedownview" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/arcdividerlineview" />
             <option value="$PROJECT_DIR$/arcfilldroptosquareview" />
@@ -105,6 +106,7 @@
             <option value="$PROJECT_DIR$/tripathtosquareview" />
             <option value="$PROJECT_DIR$/twoconccircdownview" />
             <option value="$PROJECT_DIR$/twolinetosquaredownview" />
+            <option value="$PROJECT_DIR$/vdoorrotmoveview" />
             <option value="$PROJECT_DIR$/vlinedropview" />
             <option value="$PROJECT_DIR$/vlineencloserview" />
             <option value="$PROJECT_DIR$/vtoupsideview" />

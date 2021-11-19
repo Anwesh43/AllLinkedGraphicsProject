@@ -138,5 +138,6 @@ dependencies {
     //implementation project(":bararcextenderview")
     //implementation project(":linebartravellerview")
     //implementation project(":linebibarview")
-    implementation project(":boxabovelineenclosureview")
+    //implementation project(":boxabovelineenclosureview")
+    implementation project(":vdoorrotmoveview")
 }

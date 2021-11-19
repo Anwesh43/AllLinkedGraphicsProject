@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.boxabovelineenclosureview.BoxAboveLineClosureView
+//import com.example.boxabovelineenclosureview.BoxAboveLineClosureView
 
 //import com.example.linebibarview.LineBiBarView
 
@@ -284,7 +284,7 @@ class MainActivity : AppCompatActivity() {
         //BarArcExtenderView.create(this)
         //LineBarTravellerView.create(this)
         //LineBiBarView.create(this)
-        BoxAboveLineClosureView.create(this)
+        //BoxAboveLineClosureView.create(this)
         fullScreen()
     }
 }
