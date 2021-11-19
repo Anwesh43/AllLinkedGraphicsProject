@@ -17,11 +17,11 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
+val parts : Int = 5
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.04f / parts
 val rot : Float = 90f
 val backColor : Int = Color.parseColor("#BDBDBD")
 
