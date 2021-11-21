@@ -51,7 +51,7 @@ fun Canvas.drawCrossTopLine(scale : Float, w : Float, h : Float, paint : Paint) 
         restore()
     }
     save()
-    translate(0f, -h / 2 + (h / 2 - size / 2) * sc2)
+    translate(0f, -h / 2 + (h / 2 - size * 0.5f * Math.cos(Math.PI / 4).toFloat()) * sc2)
     drawLine(-size / 2, 0f, size / 2, 0f, paint)
     restore()
     restore()
