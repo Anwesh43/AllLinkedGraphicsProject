@@ -48,7 +48,7 @@ fun Canvas.drawAltLineTreeDown(scale : Float, w : Float, h : Float, paint : Pain
         for (k in 0..1) {
             save()
             translate(0f, -size / 2 - size * 0.5f * k)
-            drawLine(0f, 0f, size * 0.5f * sc2, 0f, paint)
+            drawLine(0f, 0f, size * 0.5f * sc2 * (1f - 2 * k), 0f, paint)
             restore()
         }
         restore()
