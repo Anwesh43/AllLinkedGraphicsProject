@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.crosstoplineview.CrossTopLineView
+import com.example.altlinetreedownview.AllLineTreeDownView
+
+//import com.example.crosstoplineview.CrossTopLineView
 
 //import com.example.vdoorrotmoveview.VDoorRotMoveView
 
@@ -290,7 +292,8 @@ class MainActivity : AppCompatActivity() {
         //LineBiBarView.create(this)
         //BoxAboveLineClosureView.create(this)
         //VDoorRotMoveView.create(this)
-        CrossTopLineView.create(this)
+        //CrossTopLineView.create(this)
+        AllLineTreeDownView.create(this)
         fullScreen()
     }
 }
