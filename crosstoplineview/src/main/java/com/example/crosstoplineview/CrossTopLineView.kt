@@ -217,4 +217,13 @@ class CrossTopLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CrossTopLineView {
+            val view : CrossTopLineView = CrossTopLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
