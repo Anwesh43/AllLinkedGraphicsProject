@@ -215,4 +215,13 @@ class AllLineTreeDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity)  : AllLineTreeDownView {
+            val view : AllLineTreeDownView = AllLineTreeDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
