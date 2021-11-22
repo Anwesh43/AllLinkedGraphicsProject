@@ -37,7 +37,7 @@ fun Canvas.drawMiniPieDown(scale : Float, w : Float, h : Float, paint : Paint) {
     translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     for (j in 0..(lines - 1)) {
         save()
-        rotate(-deg * j)
+        rotate(deg * j)
         drawLine(0f, 0f, 0f, size * scale.divideScale(j, parts), paint)
         restore()
     }
