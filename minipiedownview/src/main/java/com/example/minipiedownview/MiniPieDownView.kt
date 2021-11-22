@@ -204,4 +204,13 @@ class MiniPieDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : MiniPieDownView {
+            val view : MiniPieDownView = MiniPieDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
