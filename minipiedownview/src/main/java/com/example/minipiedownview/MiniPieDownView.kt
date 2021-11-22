@@ -179,4 +179,27 @@ class MiniPieDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : MiniPieDownView) {
+
+        private val mpd : MiniPieDown = MiniPieDown(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            mpd.draw(canvas, paint)
+            animator.animate {
+                mpd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            mpd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
