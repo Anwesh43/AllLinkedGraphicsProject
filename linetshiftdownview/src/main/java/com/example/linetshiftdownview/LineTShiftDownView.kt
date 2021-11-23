@@ -130,7 +130,7 @@ class LineTShiftDownView(ctx : Context) : View(ctx) {
         private var prev : LTSDNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
