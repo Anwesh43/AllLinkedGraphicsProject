@@ -142,5 +142,6 @@ dependencies {
     //implementation project(":vdoorrotmoveview")
     //implementation project(":crosstoplineview")
     //implementation project(":altlinetreedownview")
-    implementation project(":minipiedownview")
+    //implementation project(":minipiedownview")
+    implementation project(":linetshiftdownview")
 }

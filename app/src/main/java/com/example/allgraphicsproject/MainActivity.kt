@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.minipiedownview.MiniPieDownView
+//import com.example.minipiedownview.MiniPieDownView
 
 //import com.example.altlinetreedownview.AllLineTreeDownView
 
@@ -296,7 +296,7 @@ class MainActivity : AppCompatActivity() {
         //VDoorRotMoveView.create(this)
         //CrossTopLineView.create(this)
         //AllLineTreeDownView.create(this)
-        MiniPieDownView.create(this)
+        //MiniPieDownView.create(this)
         fullScreen()
     }
 }
