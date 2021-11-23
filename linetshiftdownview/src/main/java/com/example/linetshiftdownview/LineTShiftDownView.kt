@@ -120,4 +120,46 @@ class LineTShiftDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class LTSDNode(var i : Int, val state : State = State()) {
+
+        private var next : LTSDNode? = null
+        private var prev : LTSDNode? = null
+
+        init {
+
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LTSDNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLTSDNode(i, state.scale, paint)
+        }
+
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LTSDNode {
+            var curr : LTSDNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
