@@ -211,4 +211,13 @@ class LineTShiftDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineTShiftDownView {
+            val view : LineTShiftDownView = LineTShiftDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
