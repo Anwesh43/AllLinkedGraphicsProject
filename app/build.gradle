@@ -143,5 +143,6 @@ dependencies {
     //implementation project(":crosstoplineview")
     //implementation project(":altlinetreedownview")
     //implementation project(":minipiedownview")
-    implementation project(":linetshiftdownview")
+    //implementation project(":linetshiftdownview")
+    implementation project(":lineexpandrotatorview")
 }

@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linetshiftdownview.LineTShiftDownView
+//import com.example.linetshiftdownview.LineTShiftDownView
 
 //import com.example.minipiedownview.MiniPieDownView
 
@@ -299,7 +299,7 @@ class MainActivity : AppCompatActivity() {
         //CrossTopLineView.create(this)
         //AllLineTreeDownView.create(this)
         //MiniPieDownView.create(this)
-        LineTShiftDownView.create(this)
+        //LineTShiftDownView.create(this)
         fullScreen()
     }
 }
