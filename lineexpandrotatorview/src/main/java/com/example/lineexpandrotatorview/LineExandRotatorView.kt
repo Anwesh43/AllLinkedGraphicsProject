@@ -206,4 +206,13 @@ class LineExpandRotatorView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineExpandRotatorView {
+            val view : LineExpandRotatorView = LineExpandRotatorView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
