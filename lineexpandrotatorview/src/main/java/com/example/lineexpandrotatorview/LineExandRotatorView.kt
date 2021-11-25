@@ -37,8 +37,8 @@ fun Canvas.drawLineExpandRotator(scale : Float, w : Float, h : Float, paint : Pa
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
     save()
-    translate(w / 2, h / 2 + (h / 2 + paint.strokeWidth) * sc4)
-    rotate(rot * sc3)
+    translate(w / 2, h / 2 + (h / 2 + paint.strokeWidth) * sc5)
+    rotate(rot * sc4)
     for (j in 0..2) {
         save()
         translate((-size / 2 + size * 0.5f * j) * sc3, 0f)
