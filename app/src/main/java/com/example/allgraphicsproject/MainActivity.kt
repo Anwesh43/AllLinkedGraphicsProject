@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.erotdownview.ERotDownView
+
 //import com.example.lineexpandrotatorview.LineExpandRotatorView
 
 //import com.example.linetshiftdownview.LineTShiftDownView
@@ -303,6 +305,7 @@ class MainActivity : AppCompatActivity() {
         //MiniPieDownView.create(this)
         //LineTShiftDownView.create(this)
         //LineExpandRotatorView.create(this)
+        ERotDownView.create(this)
         fullScreen()
     }
 }
