@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.lineexpandrotatorview.LineExpandRotatorView
+//import com.example.lineexpandrotatorview.LineExpandRotatorView
 
 //import com.example.linetshiftdownview.LineTShiftDownView
 
@@ -302,7 +302,7 @@ class MainActivity : AppCompatActivity() {
         //AllLineTreeDownView.create(this)
         //MiniPieDownView.create(this)
         //LineTShiftDownView.create(this)
-        LineExpandRotatorView.create(this)
+        //LineExpandRotatorView.create(this)
         fullScreen()
     }
 }
