@@ -212,4 +212,13 @@ class ERotDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ERotDownView {
+            val view : ERotDownView = ERotDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
