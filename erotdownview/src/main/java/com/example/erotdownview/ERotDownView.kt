@@ -189,4 +189,27 @@ class ERotDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ERotDownView) {
+
+        private val erd : ERotDown = ERotDown(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            erd.draw(canvas, paint)
+            animator.animate {
+                erd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            erd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
