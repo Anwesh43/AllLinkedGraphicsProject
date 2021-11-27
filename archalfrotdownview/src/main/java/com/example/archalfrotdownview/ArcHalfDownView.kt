@@ -216,4 +216,13 @@ class ArcHalfDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcHalfDownView {
+            val view : ArcHalfDownView = ArcHalfDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
