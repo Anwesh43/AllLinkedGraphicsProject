@@ -145,5 +145,6 @@ dependencies {
     //implementation project(":minipiedownview")
     //implementation project(":linetshiftdownview")
     //implementation project(":lineexpandrotatorview")
-    implementation project(":erotdownview")
+    //implementation project(":erotdownview")
+    implementation project(":archalfrotdownview")
 }
