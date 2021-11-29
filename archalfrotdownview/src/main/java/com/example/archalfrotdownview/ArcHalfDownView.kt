@@ -49,7 +49,7 @@ fun Canvas.drawArcHalfDown(scale : Float, w : Float, h : Float, paint : Paint) {
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        drawLine(size -size * sc2, 0f, size, 0f, paint)
+        drawLine(size / 2 - size * 0.5f * sc2, 0f, size / 2, 0f, paint)
         restore()
     }
     restore()

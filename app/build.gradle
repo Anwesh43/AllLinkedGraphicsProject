@@ -146,5 +146,6 @@ dependencies {
     //implementation project(":linetshiftdownview")
     //implementation project(":lineexpandrotatorview")
     //implementation project(":erotdownview")
-    implementation project(":archalfrotdownview")
+    //implementation project(":archalfrotdownview")
+    implementation project(":boxsmallboxdropview")
 }
