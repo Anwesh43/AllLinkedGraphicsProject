@@ -212,4 +212,13 @@ class BoxSmallBoxDropView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BoxSmallBoxDropView {
+            val view : BoxSmallBoxDropView = BoxSmallBoxDropView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
