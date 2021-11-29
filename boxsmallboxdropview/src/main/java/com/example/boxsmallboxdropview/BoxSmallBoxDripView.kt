@@ -40,13 +40,13 @@ fun Canvas.drawBoxSmallBoxDrop(scale : Float, w : Float, h : Float, paint : Pain
     val boxSize : Float = Math.min(w, h) / boxSizeFactor
     save()
     translate(w / 2, h / 2 + (h / 2 + size) * sc5)
-    drawRect(RectF(-size / 2, -size * sc1, size / 2, size / 2), paint)
+    drawRect(RectF(-size / 2, size / 2 -size * sc1, size / 2, size / 2), paint)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
         translate(
-            -size / 2 - boxSize * sc2,
-            (-h / 2 + size / 2) * sc2 + (h/ 2 + size / 2 + boxSize) * sc4
+            -size / 2 - boxSize * sc3,
+            -h / 2 + (h / 2 - size / 2) * sc2 + (h/ 2 + size / 2 + boxSize) * sc4
         )
         drawRect(RectF(0f, -boxSize, boxSize, 0f), paint)
         restore()
