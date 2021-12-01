@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.brickbreaklineview.BrickBreakLineView
+
 //import com.example.boxsmallboxdropview.BoxSmallBoxDropView
 
 //import com.example.archalfrotdownview.ArcHalfDownView
@@ -312,6 +314,7 @@ class MainActivity : AppCompatActivity() {
         //ERotDownView.create(this)
         //ArcHalfDownView.create(this)
         //BoxSmallBoxDropView.create(this)
+        BrickBreakLineView.create(this)
         fullScreen()
     }
 }
