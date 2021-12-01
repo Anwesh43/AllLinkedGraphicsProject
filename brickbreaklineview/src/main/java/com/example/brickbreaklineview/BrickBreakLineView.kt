@@ -38,18 +38,18 @@ fun Canvas.drawBrickBreakLine(scale : Float, w : Float, h : Float, paint : Paint
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2 + (h / 2) * sc4)
+    translate(w / 2, h / 2 + (h / 2 + size / 2) * sc4)
     rotate(rot * sc3)
     save()
-    translate(0f, -h / 2 + h * 0.5f * sc2)
+    translate(0f, -h / 2 + (h * 0.5f) * sc2)
     drawLine(0f, 0f, 0f, -size, paint)
     restore()
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(-size / 2, 0f)
-        rotate(deg * sc2)
-        drawRect(RectF(0f, -size, size / 2, 0f), paint)
+        translate(0f, -h / 2 + (h / 2) * sc1)
+        rotate(-deg * sc2)
+        drawRect(RectF(-size / 2, -size, 0f, 0f), paint)
         restore()
     }
     restore()
@@ -212,7 +212,7 @@ class BrickBreakLineView(ctx : Context) : View(ctx) {
 
         fun handleTap() {
             bbl.startUpdating {
-                animator.stop()
+                animator.start()
             }
         }
     }
