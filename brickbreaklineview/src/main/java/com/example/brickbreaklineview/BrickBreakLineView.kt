@@ -216,4 +216,13 @@ class BrickBreakLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BrickBreakLineView {
+            val view : BrickBreakLineView = BrickBreakLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
