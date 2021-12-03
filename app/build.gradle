@@ -148,5 +148,5 @@ dependencies {
     //implementation project(":erotdownview")
     //implementation project(":archalfrotdownview")
     //implementation project(":boxsmallboxdropview")
-    implementation project(":brickbreaklineview")
+    //implementation project(":brickbreaklineview")
 }
