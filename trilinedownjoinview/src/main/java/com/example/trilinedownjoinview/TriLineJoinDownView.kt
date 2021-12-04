@@ -187,7 +187,7 @@ class TriLineJoinDownView(ctx : Context) : View(ctx) {
         }
     }
 
-    data class Renderer(var view : TriLineJoinDown) {
+    data class Renderer(var view : TriLineJoinDownView) {
 
         private val animator : Animator = Animator(view)
         private val tljd : TriLineJoinDown = TriLineJoinDown(0)
@@ -207,6 +207,15 @@ class TriLineJoinDownView(ctx : Context) : View(ctx) {
             tljd.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity : Activity) : TriLineJoinDownView {
+            val view : TriLineJoinDownView = TriLineJoinDownView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
