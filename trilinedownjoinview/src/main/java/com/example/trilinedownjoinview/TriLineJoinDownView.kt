@@ -167,7 +167,7 @@ class TriLineJoinDownView(ctx : Context) : View(ctx) {
         private var curr : TLJDNode = TLJDNode(0)
         private var dir : Int = 1
 
-        fun draw(canvas : Canvas) {
+        fun draw(canvas : Canvas, paint : Paint) {
             curr.draw(canvas, paint)
         }
 
@@ -182,6 +182,29 @@ class TriLineJoinDownView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : TriLineJoinDown) {
+
+        private val animator : Animator = Animator(view)
+        private val tljd : TriLineJoinDown = TriLineJoinDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tljd.draw(canvas, paint)
+            animator.animate {
+                tljd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tljd.startUpdating {
+                animator.start()
+            }
         }
     }
 }
