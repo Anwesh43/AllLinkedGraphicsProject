@@ -149,5 +149,6 @@ dependencies {
     //implementation project(":archalfrotdownview")
     //implementation project(":boxsmallboxdropview")
     //implementation project(":brickbreaklineview")
-    implementation project(":linesquarejoindownview")
+    //implementation project(":linesquarejoindownview")
+    implementation project(":trilinedownjoinview")
 }
