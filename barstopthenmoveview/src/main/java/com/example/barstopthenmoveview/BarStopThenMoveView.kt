@@ -116,4 +116,45 @@ class BarStopThenMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class BSTMNode(var i : Int, val state : State = State()) {
+
+        private var next : BSTMNode? = null
+        private var prev : BSTMNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = BSTMNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawBSTMNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit ) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : BSTMNode {
+            var curr : BSTMNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
