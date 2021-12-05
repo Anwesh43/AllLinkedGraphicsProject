@@ -54,3 +54,18 @@ fun Canvas.drawBSTMNode(i : Int, scale : Float, paint : Paint) {
     drawBarStopThenMove(scale, w, h, paint)
 }
 
+class BarStopThenMoveView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
