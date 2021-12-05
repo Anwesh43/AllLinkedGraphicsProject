@@ -150,5 +150,6 @@ dependencies {
     //implementation project(":boxsmallboxdropview")
     //implementation project(":brickbreaklineview")
     //implementation project(":linesquarejoindownview")
-    implementation project(":trilinedownjoinview")
+    //implementation project(":trilinedownjoinview")
+    implementation project(":barstopthenmoveview")
 }

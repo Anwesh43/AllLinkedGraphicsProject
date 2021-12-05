@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.trilinedownjoinview.TriLineJoinDownView
+//import com.example.trilinedownjoinview.TriLineJoinDownView
 
 //import com.example.linesquarejoindownview.LineSquareJoinDownView
 
@@ -320,7 +320,7 @@ class MainActivity : AppCompatActivity() {
         //BoxSmallBoxDropView.create(this)
         //BrickBreakLineView.create(this)
         //LineSquareJoinDownView.create(this)
-        TriLineJoinDownView.create(this)
+        //TriLineJoinDownView.create(this)
         fullScreen()
     }
 }
