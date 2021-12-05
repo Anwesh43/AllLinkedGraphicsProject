@@ -205,4 +205,13 @@ class BarStopThenMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarStopThenMoveView {
+            val view : BarStopThenMoveView = BarStopThenMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
