@@ -180,4 +180,27 @@ class BarStopThenMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarStopThenMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val bstm : BarStopThenMove = BarStopThenMove(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bstm.draw(canvas, paint)
+            animator.animate {
+                bstm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bstm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
