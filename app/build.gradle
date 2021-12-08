@@ -151,5 +151,6 @@ dependencies {
     //implementation project(":brickbreaklineview")
     //implementation project(":linesquarejoindownview")
     //implementation project(":trilinedownjoinview")
-    implementation project(":barstopthenmoveview")
+    //implementation project(":barstopthenmoveview")
+    implementation project(":rightanglelineenderview")
 }
