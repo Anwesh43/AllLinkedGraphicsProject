@@ -212,4 +212,13 @@ class RightAngleLineEnderView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RightAngleLineEnderView {
+            val view : RightAngleLineEnderView = RightAngleLineEnderView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
