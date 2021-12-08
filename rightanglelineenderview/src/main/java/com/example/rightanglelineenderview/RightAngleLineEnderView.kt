@@ -40,7 +40,7 @@ fun Canvas.drawRightAngleLineEnder(scale : Float, w : Float, h : Float, paint : 
     val lSize : Float = size / lineFactor
     val ulSize : Float = lSize * 0.5f * sc2
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2) * sc4)
     rotate(deg * sc3)
     for (j in 0..1) {
         save()
