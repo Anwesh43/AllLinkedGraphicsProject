@@ -187,4 +187,27 @@ class RightAngleLineEnderView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RightAngleLineEnderView) {
+
+        private var rale : RightAngleLineEnder = RightAngleLineEnder(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rale.draw(canvas, paint)
+            animator.animate {
+                rale.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rale.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
