@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.biboxrotfromeithersideview.BiBoxRotFromEitherSideView
+
 //import com.example.rightanglelineenderview.RightAngleLineEnderView
 
 //import com.example.barstopthenmoveview.BarStopThenMoveView
@@ -327,6 +329,7 @@ class MainActivity : AppCompatActivity() {
         //TriLineJoinDownView.create(this)
         //BarStopThenMoveView.create(this)
         //RightAngleLineEnderView.create(this)
+        BiBoxRotFromEitherSideView.create(this)
         fullScreen()
     }
 }
