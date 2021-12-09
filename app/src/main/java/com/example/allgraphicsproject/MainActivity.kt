@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.rightanglelineenderview.RightAngleLineEnderView
+//import com.example.rightanglelineenderview.RightAngleLineEnderView
 
 //import com.example.barstopthenmoveview.BarStopThenMoveView
 
@@ -326,7 +326,7 @@ class MainActivity : AppCompatActivity() {
         //LineSquareJoinDownView.create(this)
         //TriLineJoinDownView.create(this)
         //BarStopThenMoveView.create(this)
-        RightAngleLineEnderView.create(this)
+        //RightAngleLineEnderView.create(this)
         fullScreen()
     }
 }
