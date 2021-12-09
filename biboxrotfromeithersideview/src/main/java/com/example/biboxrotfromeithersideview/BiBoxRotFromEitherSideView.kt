@@ -206,4 +206,13 @@ class BiBoxRotFromEitherSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : BiBoxRotFromEitherSideView {
+            val view : BiBoxRotFromEitherSideView = BiBoxRotFromEitherSideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
