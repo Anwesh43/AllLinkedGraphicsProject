@@ -41,6 +41,7 @@ fun Canvas.drawBiBoxRotFromEitherSide(scale : Float, w : Float, h : Float, paint
     rotate(deg * sc3)
     for (j in 0..1) {
         save()
+        scale(1f - 2 * j, 1f)
         translate((w / 2) * (1 - sc1) - size * 0.5f * sc2, size * 0.5f * sc2)
         drawRect(RectF(0f, -size / 2, size, size / 2), paint)
         restore()
