@@ -181,4 +181,27 @@ class BiBoxRotFromEitherSideView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiBoxRotFromEitherSideView) {
+
+        private val animator : Animator = Animator(view)
+        private val bbrfe : BiBoxRotFromEitherSide = BiBoxRotFromEitherSide(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bbrfe.draw(canvas, paint)
+            animator.animate {
+                bbrfe.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bbrfe.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
