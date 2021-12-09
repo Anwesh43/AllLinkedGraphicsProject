@@ -54,3 +54,19 @@ fun Canvas.drawBBRFENode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     drawBiBoxRotFromEitherSide(scale, w, h, paint)
 }
+
+class BiBoxRotFromEitherSideView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
