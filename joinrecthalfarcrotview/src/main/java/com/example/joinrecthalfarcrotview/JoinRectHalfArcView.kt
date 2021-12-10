@@ -51,6 +51,13 @@ fun Canvas.drawJoinRectHalfArc(scale : Float, w : Float, h : Float, paint : Pain
         drawLine(size / 2, start, size / 2, end, paint)
         restore()
     }
+    drawArc(
+        RectF(-size / 2, -size / 2, size / 2, size / 2),
+        deg,
+        deg * sc4,
+        false,
+        paint
+    )
     restore()
 }
 
@@ -60,6 +67,7 @@ fun Canvas.drawJRHANode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
+    paint.style = Paint.Style.STROKE
     drawJoinRectHalfArc(scale, w, h, paint)
 }
 
