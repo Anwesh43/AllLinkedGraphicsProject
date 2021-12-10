@@ -153,5 +153,6 @@ dependencies {
     //implementation project(":trilinedownjoinview")
     //implementation project(":barstopthenmoveview")
     //implementation project(":rightanglelineenderview")
-    implementation project(":biboxrotfromeithersideview")
+    //implementation project(":biboxrotfromeithersideview")
+    implementation project(":joinrecthalfarcrotview")
 }
