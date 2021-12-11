@@ -154,5 +154,6 @@ dependencies {
     //implementation project(":barstopthenmoveview")
     //implementation project(":rightanglelineenderview")
     //implementation project(":biboxrotfromeithersideview")
-    implementation project(":joinrecthalfarcrotview")
+    //implementation project(":joinrecthalfarcrotview")
+    implementation project(":tlinesidedownview")
 }

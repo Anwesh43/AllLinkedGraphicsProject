@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.joinrecthalfarcrotview.JoinRectHalfArcView
+//import com.example.joinrecthalfarcrotview.JoinRectHalfArcView
 
 //import com.example.biboxrotfromeithersideview.BiBoxRotFromEitherSideView
 
@@ -332,7 +332,7 @@ class MainActivity : AppCompatActivity() {
         //BarStopThenMoveView.create(this)
         //RightAngleLineEnderView.create(this)
         //BiBoxRotFromEitherSideView.create(this)
-        JoinRectHalfArcView.create(this)
+        //JoinRectHalfArcView.create(this)
         fullScreen()
     }
 }
