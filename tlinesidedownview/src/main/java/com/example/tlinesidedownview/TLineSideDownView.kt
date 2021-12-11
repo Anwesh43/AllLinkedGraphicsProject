@@ -210,4 +210,13 @@ class TLineSideDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TLineSideDownView {
+            val view : TLineSideDownView = TLineSideDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
