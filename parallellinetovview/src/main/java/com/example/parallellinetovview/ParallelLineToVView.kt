@@ -45,6 +45,7 @@ fun Canvas.drawParallelLineToV(scale : Float, w : Float, h : Float, paint : Pain
         save()
         scale(1f - 2 * j, 1f)
         translate(-dSize, -dSize)
+        rotate(-deg * sc2)
         drawLine(0f, 0f, 0f, size, paint)
         restore()
     }
