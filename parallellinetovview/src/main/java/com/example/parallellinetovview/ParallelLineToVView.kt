@@ -211,4 +211,13 @@ class ParallelLineToVView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ParallelLineToVView {
+            val view : ParallelLineToVView = ParallelLineToVView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
