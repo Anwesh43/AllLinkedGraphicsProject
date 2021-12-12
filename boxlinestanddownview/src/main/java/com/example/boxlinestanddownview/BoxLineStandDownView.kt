@@ -184,4 +184,27 @@ class BoxLineStandDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BoxLineStandDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val blsd : BoxLineStandDown = BoxLineStandDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            blsd.draw(canvas, paint)
+            animator.animate {
+                blsd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            blsd.startUdpating {
+                animator.start()
+            }
+        }
+    }
 }
