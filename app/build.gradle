@@ -156,5 +156,6 @@ dependencies {
     //implementation project(":biboxrotfromeithersideview")
     //implementation project(":joinrecthalfarcrotview")
     //implementation project(":tlinesidedownview")
-    implementation project(":parallellinetovview")
+    //implementation project(":parallellinetovview")
+    implementation project(":boxlinestanddownview")
 }
