@@ -209,4 +209,12 @@ class BoxLineStandDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(actvity : Activity) : BoxLineStandDownView {
+            val view : BoxLineStandDownView = BoxLineStandDownView(actvity)
+            actvity.setContentView(view)
+            return view
+        }
+    }
 }
