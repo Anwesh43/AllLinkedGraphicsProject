@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.parallellinetovview.ParallelLineToVView
+
 //import com.example.tlinesidedownview.TLineSideDownView
 
 //import com.example.joinrecthalfarcrotview.JoinRectHalfArcView
@@ -336,6 +338,7 @@ class MainActivity : AppCompatActivity() {
         //BiBoxRotFromEitherSideView.create(this)
         //JoinRectHalfArcView.create(this)
         //TLineSideDownView.create(this)
+        ParallelLineToVView.create(this)
         fullScreen()
     }
 }
