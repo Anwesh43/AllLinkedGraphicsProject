@@ -210,4 +210,13 @@ class ArrowHeadShiftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArrowHeadShiftView {
+            val view : ArrowHeadShiftView = ArrowHeadShiftView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
