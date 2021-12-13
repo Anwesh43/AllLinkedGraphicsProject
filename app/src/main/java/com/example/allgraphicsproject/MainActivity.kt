@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.boxlinestanddownview.BoxLineStandDownView
+//import com.example.boxlinestanddownview.BoxLineStandDownView
 
 //import com.example.parallellinetovview.ParallelLineToVView
 
@@ -341,7 +341,7 @@ class MainActivity : AppCompatActivity() {
         //JoinRectHalfArcView.create(this)
         //TLineSideDownView.create(this)
         //ParallelLineToVView.create(this)
-        BoxLineStandDownView.create(this)
+        //BoxLineStandDownView.create(this)
         fullScreen()
     }
 }

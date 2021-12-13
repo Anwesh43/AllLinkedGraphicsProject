@@ -157,5 +157,6 @@ dependencies {
     //implementation project(":joinrecthalfarcrotview")
     //implementation project(":tlinesidedownview")
     //implementation project(":parallellinetovview")
-    implementation project(":boxlinestanddownview")
+    //implementation project(":boxlinestanddownview")
+    implementation project(":arrowheadshiftview")
 }
