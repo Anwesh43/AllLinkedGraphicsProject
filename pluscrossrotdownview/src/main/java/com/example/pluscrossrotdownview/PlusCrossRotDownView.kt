@@ -214,4 +214,13 @@ class PlusCrossRotDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : PlusCrossRotDownView {
+            val view : PlusCrossRotDownView = PlusCrossRotDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
