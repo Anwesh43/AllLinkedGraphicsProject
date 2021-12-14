@@ -159,5 +159,7 @@ dependencies {
     //implementation project(":parallellinetovview")
     //implementation project(":boxlinestanddownview")
     //implementation project(":arrowheadshiftview")
+    //implementation project(":pluscrossrotdownview")
     implementation project(":pluscrossrotdownview")
+
 }
