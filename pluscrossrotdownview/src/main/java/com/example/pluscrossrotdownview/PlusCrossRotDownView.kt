@@ -189,4 +189,27 @@ class PlusCrossRotDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : PlusCrossRotDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val pcrd : PlusCrossRotDown = PlusCrossRotDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            pcrd.draw(canvas, paint)
+            animator.animate {
+                pcrd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            pcrd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
