@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.arrowheadshiftview.ArrowHeadShiftView
+//import com.example.arrowheadshiftview.ArrowHeadShiftView
 
 //import com.example.boxlinestanddownview.BoxLineStandDownView
 
@@ -344,7 +344,7 @@ class MainActivity : AppCompatActivity() {
         //TLineSideDownView.create(this)
         //ParallelLineToVView.create(this)
         //BoxLineStandDownView.create(this)
-        ArrowHeadShiftView.create(this)
+        //ArrowHeadShiftView.create(this)
         fullScreen()
     }
 }
