@@ -33,13 +33,13 @@ fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale
 
 fun Canvas.drawSquareBallCatcher(scale : Float, w : Float, h : Float, paint : Paint) {
     val size : Float = Math.min(w, h) / sizeFactor
-    val r : Float = Math.min(w, h) / rFactor
+    val r : Float = Math.min(w, h) / (2  * rFactor)
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2 + (w / 2 + size / 2) * sc4, h / 2)
+    translate(w / 2 + (w / 2 + size) * sc4, h / 2)
     rotate(deg * sc3)
     for (j in 0..1) {
         save()
@@ -47,6 +47,10 @@ fun Canvas.drawSquareBallCatcher(scale : Float, w : Float, h : Float, paint : Pa
         drawCircle(-size / 2 + r, -r - (h / 2) * (1 - sc2), r, paint)
         restore()
     }
+    save()
+    translate(0f, h / 2 * (1 - sc1))
+    drawRect(RectF(-size / 2, 0f, size / 2, size), paint)
+    restore()
     restore()
 }
 
