@@ -210,4 +210,13 @@ class SquareBallCatcherView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareBallCatcherView {
+            val view : SquareBallCatcherView = SquareBallCatcherView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
