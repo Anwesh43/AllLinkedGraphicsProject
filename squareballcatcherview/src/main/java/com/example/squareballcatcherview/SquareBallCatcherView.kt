@@ -185,4 +185,27 @@ class SquareBallCatcherView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SquareBallCatcherView) {
+
+        private val sbc : SquareBallCatcher = SquareBallCatcher(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            sbc.draw(canvas, paint)
+            animator.animate {
+                sbc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            sbc.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
