@@ -160,6 +160,6 @@ dependencies {
     //implementation project(":boxlinestanddownview")
     //implementation project(":arrowheadshiftview")
     //implementation project(":pluscrossrotdownview")
-    implementation project(":pluscrossrotdownview")
-
+    //implementation project(":pluscrossrotdownview")
+    implementation project(":squareballcatcherview")
 }

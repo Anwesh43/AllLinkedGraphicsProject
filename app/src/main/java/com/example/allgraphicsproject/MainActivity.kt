@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.pluscrossrotdownview.PlusCrossRotDownView
+//import com.example.pluscrossrotdownview.PlusCrossRotDownView
 
 //import com.example.arrowheadshiftview.ArrowHeadShiftView
 
@@ -347,7 +347,7 @@ class MainActivity : AppCompatActivity() {
         //ParallelLineToVView.create(this)
         //BoxLineStandDownView.create(this)
         //ArrowHeadShiftView.create(this)
-        PlusCrossRotDownView.create(this)
+        //PlusCrossRotDownView.create(this)
         fullScreen()
     }
 }
