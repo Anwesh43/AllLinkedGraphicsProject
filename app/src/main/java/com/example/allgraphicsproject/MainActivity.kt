@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.squareballcatcherview.SquareBallCatcherView
+import com.example.linesplitbarview.LineSplitBarView
+
+//import com.example.squareballcatcherview.SquareBallCatcherView
 
 //import com.example.pluscrossrotdownview.PlusCrossRotDownView
 
@@ -350,7 +352,8 @@ class MainActivity : AppCompatActivity() {
         //BoxLineStandDownView.create(this)
         //ArrowHeadShiftView.create(this)
         //PlusCrossRotDownView.create(this)
-        SquareBallCatcherView.create(this)
+        //SquareBallCatcherView.create(this)
+        LineSplitBarView.create(this)
         fullScreen()
     }
 }
