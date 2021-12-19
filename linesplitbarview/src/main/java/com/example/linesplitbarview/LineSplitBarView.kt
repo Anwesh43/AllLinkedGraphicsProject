@@ -36,7 +36,7 @@ fun Canvas.drawLineSplitBar(scale : Float, w : Float, h : Float, paint : Paint) 
     val sc4 : Float = scale.divideScale(3, parts)
     val size : Float = Math.min(w, h) / sizeFactor
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
@@ -62,14 +62,16 @@ fun Canvas.drawLSBNode(i : Int, scale : Float, paint : Paint) {
 
 class LineSplitBarView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    private val renderer : Renderer = Renderer(this)
 
+    override fun onDraw(canvas : Canvas) {
+        renderer.render(canvas)
     }
 
     override fun onTouchEvent(event : MotionEvent) : Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-
+                renderer.handleTap()
             }
         }
         return true
