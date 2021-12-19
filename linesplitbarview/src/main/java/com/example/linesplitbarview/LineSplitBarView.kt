@@ -186,4 +186,27 @@ class LineSplitBarView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineSplitBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val lsb : LineSplitBar = LineSplitBar(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lsb.draw(canvas, paint)
+            animator.animate {
+                lsb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lsb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
