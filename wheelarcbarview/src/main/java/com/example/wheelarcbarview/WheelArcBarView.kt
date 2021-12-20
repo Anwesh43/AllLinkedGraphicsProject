@@ -188,4 +188,27 @@ class WheelArcBarView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : WheelArcBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val wab : WheelArcBar = WheelArcBar(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            wab.draw(canvas, paint)
+            animator.animate {
+                wab.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            wab.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
