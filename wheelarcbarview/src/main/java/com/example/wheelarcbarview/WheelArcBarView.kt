@@ -213,4 +213,13 @@ class WheelArcBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity  : Activity) : WheelArcBarView {
+            val view : WheelArcBarView = WheelArcBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
