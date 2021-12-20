@@ -29,7 +29,7 @@ val rFactor : Float = 21.2f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i  : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
-fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n.inverse()
+fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 
 fun Canvas.drawWheelArcBar(scale : Float, w : Float, h : Float, paint : Paint) {
     val size : Float = Math.min(w, h) / sizeFactor
@@ -39,13 +39,15 @@ fun Canvas.drawWheelArcBar(scale : Float, w : Float, h : Float, paint : Paint) {
     val r : Float = Math.min(w, h) / rFactor
     save()
     translate(w / 2 + (w / 2 + size / 2) * sc3, h / 2)
+    paint.style = Paint.Style.STROKE
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(-size + r, r)
+        translate(-size / 2 + r, r)
         drawArc(RectF(-r, -r, r, r), 0f, 360f * sc1, false, paint)
         restore()
     }
+    paint.style = Paint.Style.FILL
     save()
     translate((-w / 2 - size / 2) * (1 - sc2), 0f)
     drawRect(RectF(-size / 2, -size, size / 2, 0f), paint)
