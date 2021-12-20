@@ -132,6 +132,7 @@
             <option value="$PROJECT_DIR$/vlineencloserview" />
             <option value="$PROJECT_DIR$/vtoupsideview" />
             <option value="$PROJECT_DIR$/wavesweeparcdropview" />
+            <option value="$PROJECT_DIR$/wheelarcbarview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
