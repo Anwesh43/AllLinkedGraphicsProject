@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.wheelarcbarview.WheelArcBarView
+//import com.example.wheelarcbarview.WheelArcBarView
 
 //import com.example.linesplitbarview.LineSplitBarView
 
@@ -356,7 +356,7 @@ class MainActivity : AppCompatActivity() {
         //PlusCrossRotDownView.create(this)
         //SquareBallCatcherView.create(this)
         //LineSplitBarView.create(this)
-        WheelArcBarView.create(this)
+        //WheelArcBarView.create(this)
         fullScreen()
     }
 }
