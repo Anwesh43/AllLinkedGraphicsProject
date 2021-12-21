@@ -208,4 +208,13 @@ class AltSquareFillUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : AltSquareFillUpView {
+            val view : AltSquareFillUpView = AltSquareFillUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
