@@ -183,4 +183,27 @@ class AltSquareFillUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : AltSquareFillUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val asfu : AltSquareFillUp = AltSquareFillUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            asfu.draw(canvas, paint)
+            animator.animate {
+                asfu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            asfu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
