@@ -57,3 +57,18 @@ fun Canvas.drawASFUNode(i  : Int, scale : Float, paint : Paint) {
     drawAltSquareFillUp(scale, w, h, paint)
 }
 
+class AltSquareFillUpView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
