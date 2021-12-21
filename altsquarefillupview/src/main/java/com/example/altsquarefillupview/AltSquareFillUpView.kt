@@ -41,7 +41,10 @@ fun Canvas.drawAltSquareFillUp(scale : Float, w : Float, h : Float, paint : Pain
         save()
         scale(1f - 2 * j, 1f - 2 * j)
         drawLine(-size / 2, size / 2, -size / 2, size / 2 - size * sc1, paint)
-        drawLine(-size / 2, -size / 2, -size/ 2 + size * sc2, -size / 2, paint)
+        save()
+        translate((-w  / 2 - size / 2) * (1 - sc2), 0f)
+        drawLine(-size / 2, -size / 2, size/ 2, -size / 2, paint)
+        restore()
         restore()
     }
     drawRect(RectF(-size / 2, size / 2, size / 2, size / 2 - size * sc3), paint)
