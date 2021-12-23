@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.altsquarefillupview.AltSquareFillUpView
+//import com.example.altsquarefillupview.AltSquareFillUpView
 
 //import com.example.wheelarcbarview.WheelArcBarView
 
@@ -359,7 +359,7 @@ class MainActivity : AppCompatActivity() {
         //SquareBallCatcherView.create(this)
         //LineSplitBarView.create(this)
         //WheelArcBarView.create(this)
-        AltSquareFillUpView.create(this)
+        //AltSquareFillUpView.create(this)
         fullScreen()
     }
 }

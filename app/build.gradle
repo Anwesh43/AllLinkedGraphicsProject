@@ -164,5 +164,6 @@ dependencies {
     //implementation project(":squareballcatcherview")
     //implementation project(":linesplitbarview")
     //implementation project(":wheelarcbarview")
-    implementation project(":altsquarefillupview")
+    //implementation project(":altsquarefillupview")
+    implementation project(":arclinedirecview")
 }
