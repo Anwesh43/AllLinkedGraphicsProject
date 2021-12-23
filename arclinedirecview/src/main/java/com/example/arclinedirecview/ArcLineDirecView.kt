@@ -216,4 +216,13 @@ class ArcLineDirecView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcLineDirecView {
+            val view : ArcLineDirecView = ArcLineDirecView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
