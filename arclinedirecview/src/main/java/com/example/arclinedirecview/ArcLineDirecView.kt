@@ -38,7 +38,7 @@ fun Canvas.drawArcLineDirec(scale : Float, w : Float, h : Float, paint : Paint) 
     save()
     translate(w / 2, h / 2)
     for (j in 0..3) {
-        val y : Float = (h / 2 - size) * (1 - j % 2) + (w / 2 - size) * (j % 2)
+        val y : Float = (h / 2) * (1 - j % 2) + (w / 2) * (j % 2)
         save()
         rotate(deg * j)
         translate(0f, y * sc3)
@@ -49,7 +49,7 @@ fun Canvas.drawArcLineDirec(scale : Float, w : Float, h : Float, paint : Paint) 
             false,
             paint
         )
-        drawLine(0f, size, 0f, size + size * sc3, paint)
+        drawLine(0f, size / 2, 0f, size / 2 + size * sc2, paint)
         restore()
     }
     restore()
