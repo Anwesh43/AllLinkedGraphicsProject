@@ -61,6 +61,7 @@ fun Canvas.drawPLTNode(i : Int, scale : Float, paint : Paint) {
 
 class ParallelLineTravellerView(ctx : Context) : View(ctx) {
 
+    private val renderer :
     override fun onDraw(canvas : Canvas) {
 
     }
@@ -206,6 +207,15 @@ class ParallelLineTravellerView(ctx : Context) : View(ctx) {
             plt.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity: Activity) : ParallelLineTravellerView {
+            val view : ParallelLineTravellerView = ParallelLineTravellerView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
