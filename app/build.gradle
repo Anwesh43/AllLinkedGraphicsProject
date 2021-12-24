@@ -165,5 +165,6 @@ dependencies {
     //implementation project(":linesplitbarview")
     //implementation project(":wheelarcbarview")
     //implementation project(":altsquarefillupview")
-    implementation project(":arclinedirecview")
+    //implementation project(":arclinedirecview")
+    implementation project(":parallellinetravellerview")
 }
