@@ -51,8 +51,8 @@ fun Canvas.drawTargetArcLine(scale : Float, w : Float, h : Float, paint : Paint)
     )
     for (j in 0..3) {
         save()
-        rotate(rot * j)
-        drawLine(size / 2, 0f, size / 2 - lSize * sc2, 0f, paint)
+        rotate(deg * j)
+        drawLine(size / 2, 0f, size / 2 - lSize * 0.5f * sc2, 0f, paint)
         restore()
     }
     restore()
