@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.targetarclineview.TargetArcLineView
+
 //import com.example.parallellinetravellerview.ParallelLineTravellerView
 
 //import com.example.arclinedirecview.ArcLineDirecView
@@ -366,6 +368,7 @@ class MainActivity : AppCompatActivity() {
         //AltSquareFillUpView.create(this)
         //ArcLineDirecView.create(this)
         //ParallelLineTravellerView.create(this)
+        TargetArcLineView.create(this)
         fullScreen()
     }
 }
