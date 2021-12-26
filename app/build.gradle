@@ -166,5 +166,6 @@ dependencies {
     //implementation project(":wheelarcbarview")
     //implementation project(":altsquarefillupview")
     //implementation project(":arclinedirecview")
-    implementation project(":parallellinetravellerview")
+    //implementation project(":parallellinetravellerview")
+    implementation project(":targetarclineview")
 }
