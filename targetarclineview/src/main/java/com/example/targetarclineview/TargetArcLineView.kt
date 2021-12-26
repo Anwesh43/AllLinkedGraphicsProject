@@ -217,4 +217,13 @@ class TargetArcLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TargetArcLineView {
+            val view : TargetArcLineView = TargetArcLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
