@@ -167,5 +167,6 @@ dependencies {
     //implementation project(":altsquarefillupview")
     //implementation project(":arclinedirecview")
     //implementation project(":parallellinetravellerview")
-    implementation project(":targetarclineview")
+    //implementation project(":targetarclineview")
+    implementation project(":arcjoinlinedownview")
 }
