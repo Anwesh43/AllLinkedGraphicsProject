@@ -211,4 +211,13 @@ class ArcJoinLineDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcJoinLineDownView {
+            val view : ArcJoinLineDownView = ArcJoinLineDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
