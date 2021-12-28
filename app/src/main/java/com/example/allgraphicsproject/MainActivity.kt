@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.halfarcjoindownview.HalfArcJoinDownView
+
 //import com.example.arcjoinlinedownview.ArcJoinLineDownView
 
 //import com.example.targetarclineview.TargetArcLineView
@@ -371,7 +373,7 @@ class MainActivity : AppCompatActivity() {
         //ArcLineDirecView.create(this)
         //ParallelLineTravellerView.create(this)
         //TargetArcLineView.create(this)
-        //ArcJoinLineDownView.create(this)
+        HalfArcJoinDownView.create(this)
         fullScreen()
     }
 }
