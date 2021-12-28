@@ -39,7 +39,7 @@ fun Canvas.drawHalfArcJoinDown(scale : Float, w : Float, h : Float, paint : Pain
     save()
     translate(w / 2, h / 2 + h * 0.5f * sc4)
     rotate(deg * sc3)
-    drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), deg, deg * sc2, false, paint)
+    drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), deg, deg * sc1, false, paint)
     save()
     translate(-size / 2, h * 0.5f * (1 - sc2))
     drawLine(0f, 0f, size, 0f, paint)
