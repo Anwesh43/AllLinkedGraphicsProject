@@ -180,4 +180,26 @@ class ArcSweepFromSideView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ArcSweepFromSideView) {
+
+        private val animator : Animator = Animator(view)
+        private val asfs : ArcSweepFromSide = ArcSweepFromSide(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            asfs.draw(canvas, paint)
+            animator.animate {
+                asfs.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            asfs.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
