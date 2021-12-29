@@ -204,4 +204,13 @@ class ArcSweepFromSideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ArcSweepFromSideView {
+            val view : ArcSweepFromSideView = ArcSweepFromSideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
