@@ -169,5 +169,6 @@ dependencies {
     //implementation project(":parallellinetravellerview")
     //implementation project(":targetarclineview")
     //implementation project(":arcjoinlinedownview")
-    implementation project(":halfarcjoindownview")
+    //implementation project(":halfarcjoindownview")
+    implementation project(":arcsweepfromsideview")
 }
