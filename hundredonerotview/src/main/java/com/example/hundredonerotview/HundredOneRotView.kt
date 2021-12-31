@@ -210,4 +210,13 @@ class HundredOneRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HundredOneRotView {
+            val view : HundredOneRotView = HundredOneRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
