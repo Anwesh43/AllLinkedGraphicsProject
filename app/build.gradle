@@ -170,5 +170,6 @@ dependencies {
     //implementation project(":targetarclineview")
     //implementation project(":arcjoinlinedownview")
     //implementation project(":halfarcjoindownview")
-    implementation project(":arcsweepfromsideview")
+    //implementation project(":arcsweepfromsideview")
+    implementation project(":hundredonerotview")
 }
