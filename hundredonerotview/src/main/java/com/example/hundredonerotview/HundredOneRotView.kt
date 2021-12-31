@@ -185,4 +185,27 @@ class HundredOneRotView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HundredOneRotView) {
+
+        private val animator : Animator = Animator(view)
+        private val hor : HundredOneRot = HundredOneRot(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            hor.draw(canvas, paint)
+            animator.animate {
+                hor.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hor.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
