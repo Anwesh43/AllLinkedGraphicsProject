@@ -29,3 +29,32 @@ val deg : Float = 180f
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawHundredOneRot(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2, h / 2)
+    drawArc(RectF(-size / 2, -size / 2, size / 2, size / 2), 0f, deg * 2 * sc1, false, paint)
+    for (j in 0..1) {
+        save()
+        scale(1f - 2 * j, 1f)
+        translate(w / 2, (h / 2 + size / 2) * (1 - sc2))
+        drawLine(-size, -size / 2, -size, size / 2, paint)
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawHORNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.style = Paint.Style.STROKE
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.color = colors[i]
+    drawHundredOneRot(scale, w, h, paint)
+}
