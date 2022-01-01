@@ -210,4 +210,13 @@ class SquareToHRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareToHRotView {
+            val view : SquareToHRotView = SquareToHRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
