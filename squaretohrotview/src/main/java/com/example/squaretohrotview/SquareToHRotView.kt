@@ -43,7 +43,7 @@ fun Canvas.drawSquareToHRot(scale : Float, w : Float, h : Float, paint : Paint) 
         val y : Float = -size * 0.5f * ((j % 2).mirrorValue(1f - sc2, 1f))
         save()
         rotate(rot * j)
-        translate(0f, y)
+        translate(-size / 2, y)
         drawLine(0f, 0f, size * sc1, 0f, paint)
         restore()
     }
