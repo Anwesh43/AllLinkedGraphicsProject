@@ -181,8 +181,31 @@ class SquareToHRotView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun startUpdaitng(cb : () -> Unit) {
+        fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : SquareToHRotView) {
+
+        private val srth : SquareToHRot = SquareToHRot(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            srth.draw(canvas, paint)
+            animator.animate {
+                srth.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            srth.startUpdating {
+                animator.start()
+            }
         }
     }
 }
