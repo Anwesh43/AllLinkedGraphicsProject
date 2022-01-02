@@ -44,19 +44,21 @@ fun Canvas.drawHalfArcLineVase(scale : Float, w : Float, h : Float, paint : Pain
         RectF(-size / 2, -size / 2, size / 2, size / 2),
         0f,
         rot * sc1,
-        false,
+        true,
         paint
     )
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        drawLine(
-            size / 2,
-            0f,
-            size / 2 + size * 0.5f * sc2,
-            -size * 0.5f * sc2,
-            paint
-        )
+        if (sc2 > 0f) {
+            drawLine(
+                size / 2,
+                0f,
+                size / 2 + size * 0.5f * sc2,
+                -size * 0.5f * sc2,
+                paint
+            )
+        }
         restore()
     }
     restore()
