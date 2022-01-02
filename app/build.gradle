@@ -172,5 +172,6 @@ dependencies {
     //implementation project(":halfarcjoindownview")
     //implementation project(":arcsweepfromsideview")
     //implementation project(":hundredonerotview")
-    implementation project(":squaretohrotview")
+    //implementation project(":squaretohrotview")
+    implementation project(":halfarclinevaseview")
 }
