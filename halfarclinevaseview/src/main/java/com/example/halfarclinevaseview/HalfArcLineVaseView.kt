@@ -222,4 +222,13 @@ class HalfArcLineVaseView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HalfArcLineVaseView {
+            val view : HalfArcLineVaseView = HalfArcLineVaseView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
