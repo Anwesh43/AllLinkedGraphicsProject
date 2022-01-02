@@ -197,4 +197,27 @@ class HalfArcLineVaseView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HalfArcLineVaseView) {
+
+        private val animator : Animator = Animator(view)
+        private val halv : HalfArcLineVase = HalfArcLineVase(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            halv.draw(canvas, paint)
+            animator.animate {
+                halv.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            halv.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
