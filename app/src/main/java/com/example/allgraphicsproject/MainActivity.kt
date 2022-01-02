@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.halfarclinevaseview.HalfArcLineVaseView
+
 //import com.example.squaretohrotview.SquareToHRotView
 
 //import com.example.hundredonerotview.HundredOneRotView
@@ -383,6 +385,7 @@ class MainActivity : AppCompatActivity() {
         //ArcSweepFromSideView.create(this)
         //HundredOneRotView.create(this)
         //SquareToHRotView.create(this)
+        HalfArcLineVaseView.create(this)
         fullScreen()
     }
 }
