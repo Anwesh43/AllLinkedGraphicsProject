@@ -211,4 +211,13 @@ class UmbreallaArcLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : UmbreallaArcLineView {
+            val view : UmbreallaArcLineView = UmbreallaArcLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
