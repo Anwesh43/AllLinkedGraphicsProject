@@ -173,5 +173,6 @@ dependencies {
     //implementation project(":arcsweepfromsideview")
     //implementation project(":hundredonerotview")
     //implementation project(":squaretohrotview")
-    implementation project(":halfarclinevaseview")
+    //implementation project(":halfarclinevaseview")
+    implementation project(":umbrellarclineview")
 }
