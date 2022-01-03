@@ -23,7 +23,7 @@ val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
-val rot : Float = 90f
+val rot : Float = 89F
 val deg : Float = 180f
 val backColor : Int = Color.parseColor("#BDBDBD")
 
@@ -45,7 +45,7 @@ fun Canvas.drawUmbrellaArcLine(scale : Float, w : Float, h : Float, paint : Pain
         scale(1f - 2 * j, 1f)
         translate(0f, (h / 2 + size) * (1 - sc1))
         rotate(rot * sc2)
-        drawArc(RectF(-size / 2, -size, size / 2, 0f), -90f, 180f, true, paint)
+        drawArc(RectF(-size / 2, -size, size / 2, 0f), -deg / 2, deg, false, paint)
         restore()
     }
     drawLine(0f, 0f, 0f, -size * sc3, paint)
@@ -105,6 +105,7 @@ class UmbreallaArcLineView(ctx : Context) : View(ctx) {
                 cb()
                 try {
                     Thread.sleep(delay)
+                    view.invalidate()
                 } catch(ex : Exception) {
 
                 }
