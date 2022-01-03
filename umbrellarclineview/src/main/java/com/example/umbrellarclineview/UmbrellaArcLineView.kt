@@ -25,6 +25,7 @@ val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val rot : Float = 90f
 val deg : Float = 180f
+val backColor : Int = Color.parseColor("#BDBDBD")
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -183,6 +184,29 @@ class UmbreallaArcLineView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : UmbreallaArcLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val ual : UmbrellaArcLine = UmbrellaArcLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ual.draw(canvas, paint)
+            animator.animate {
+                ual.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ual.startUpdating {
+                animator.start()
+            }
         }
     }
 }
