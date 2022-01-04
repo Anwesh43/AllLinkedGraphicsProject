@@ -222,4 +222,13 @@ class EnclosedAltSideBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : EnclosedAltSideBarView {
+            val view : EnclosedAltSideBarView = EnclosedAltSideBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
