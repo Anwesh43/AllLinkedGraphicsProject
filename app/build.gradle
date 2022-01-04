@@ -174,5 +174,6 @@ dependencies {
     //implementation project(":hundredonerotview")
     //implementation project(":squaretohrotview")
     //implementation project(":halfarclinevaseview")
-    implementation project(":umbrellarclineview")
+    //implementation project(":umbrellarclineview")
+    implementation project(":enclosedaltsidebarview")
 }
