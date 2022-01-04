@@ -20,7 +20,7 @@ val colors : Array<Int> = arrayOf(
 }.toTypedArray()
 val delay : Long = 20
 val sizeFactor : Float = 3.2f
-val barSizeFactor : Float = 11.2f
+val barSizeFactor : Float = 6.3f
 val strokeFactor : Float = 90f
 val parts : Int = 6
 val scGap : Float = 0.04f / parts
@@ -41,7 +41,8 @@ fun Canvas.drawEnclosedAltSideBar(scale : Float, w : Float, h : Float, paint : P
     val sc6 : Float = scale.divideScale(5, parts)
     val barSize : Float = Math.min(w, h) / barSizeFactor
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + size) * sc6, h / 2)
+    rotate(deg * sc5)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
@@ -52,7 +53,7 @@ fun Canvas.drawEnclosedAltSideBar(scale : Float, w : Float, h : Float, paint : P
         restore()
         save()
         translate(-(size - barSize * 0.5f) * sc3, -(size - barSize * 0.25f) * sc4)
-        drawRect(RectF(-barSize * 0.5f * sc1, -barSize / 4, 0f, 0f), paint)
+        drawRect(RectF(-barSize * 0.5f * sc2, -barSize / 4, 0f, 0f), paint)
         restore()
         save()
         drawLine(0f, 0f, -barSize * 0.5f * sc2 - (size - barSize * 0.5f) * sc3, 0f, paint)
