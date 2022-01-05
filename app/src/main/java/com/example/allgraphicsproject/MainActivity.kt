@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.dividebarupview.DivideBarUpView
+
 //import com.example.enclosedaltsidebarview.EnclosedAltSideBarView
 
 //import com.example.umbrellarclineview.UmbreallaArcLineView
@@ -392,6 +394,7 @@ class MainActivity : AppCompatActivity() {
         //HalfArcLineVaseView.create(this)
         //UmbreallaArcLineView.create(this)
         //EnclosedAltSideBarView.create(this)
+        DivideBarUpView.create(this)
         fullScreen()
     }
 }
