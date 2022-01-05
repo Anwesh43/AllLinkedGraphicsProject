@@ -183,4 +183,27 @@ class DivideBarUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : DivideBarUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val dbu : DivideBarUp = DivideBarUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            dbu.draw(canvas, paint)
+            animator.animate {
+                dbu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            dbu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
