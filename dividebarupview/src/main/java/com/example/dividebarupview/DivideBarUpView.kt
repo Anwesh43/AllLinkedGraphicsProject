@@ -209,4 +209,12 @@ class DivideBarUpView(ctx : Context) : View(ctx) {
         }
     }
 
+    companion object {
+
+        fun create(activity : Activity) : DivideBarUpView {
+            val view : DivideBarUpView = DivideBarUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
