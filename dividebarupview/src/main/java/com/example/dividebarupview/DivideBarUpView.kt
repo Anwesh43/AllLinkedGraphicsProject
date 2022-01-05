@@ -30,3 +30,30 @@ fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 
+fun Canvas.drawDivideBarUp(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(bars, parts)
+    val sc2 : Float = scale.divideScale(bars + 1, parts)
+    save()
+    translate(w / 2, h / 2 + (h / 2 + size / 2) * sc2)
+    rotate(deg * sc1)
+    var y : Float = 0f
+    for (j in 0..(bars - 1)) {
+        val barSize : Float = size / (j + 1)
+        val scj : Float = scale.divideScale(j, parts)
+        save()
+        translate(0f, y)
+        drawRect(RectF(-barSize / 2, -barSize * scj, barSize / 2, 0f), paint)
+        restore()
+        y -= barSize
+    }
+    restore()
+}
+
+fun Canvas.drawDBUNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    drawDivideBarUp(scale, w, h, paint)
+}
+
