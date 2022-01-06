@@ -169,7 +169,7 @@ class DivideBallUpView(ctx : Context) : View(ctx) {
         }
     }
 
-    data class DivideBarUp(var i : Int) {
+    data class DivideBallUp(var i : Int) {
 
         private var curr : DBUNode = DBUNode(0)
         private var dir : Int = 1
@@ -189,6 +189,29 @@ class DivideBallUpView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : DivideBallUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val dbu : DivideBallUp = DivideBallUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            dbu.draw(canvas, paint)
+            animator.animate {
+                dbu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            dbu.startUpdating {
+                animator.start()
+            }
         }
     }
 }
