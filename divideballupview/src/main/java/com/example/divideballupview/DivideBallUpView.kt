@@ -216,4 +216,13 @@ class DivideBallUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DivideBallUpView {
+            val view : DivideBallUpView = DivideBallUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
