@@ -176,5 +176,6 @@ dependencies {
     //implementation project(":halfarclinevaseview")
     //implementation project(":umbrellarclineview")
     //implementation project(":enclosedaltsidebarview")
-    implementation project(":dividebarupview")
+    //implementation project(":dividebarupview")
+    implementation project(":divideballupview")
 }
