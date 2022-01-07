@@ -23,8 +23,8 @@ val delay : Long = 20
 val parts : Int = bars + 2
 val scGap : Float = 0.04f / parts
 val backColor : Int = Color.parseColor("#BDBDBD")
-val sizeFactor : Float = 2.3f
-val divideFactor : Float = 2.1f
+val sizeFactor : Float = 5.1f
+val divideFactor : Float = 1.6f
 val rot : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
@@ -35,28 +35,29 @@ fun Canvas.drawBarSideUpgrade(scale : Float, w : Float, h : Float, paint : Paint
     val size : Float = Math.min(w, h) / sizeFactor
     val sc1 : Float = scale.divideScale(bars, parts)
     val sc2 : Float = scale.divideScale(bars + 1, parts)
-    var x : Float = 0f
     save()
     translate(w / 2 + (w / 2) * sc2, h / 2)
     rotate(rot * sc1)
-    var barSize : Float = size
     for (j in 0..1) {
+        var barSize : Float = size
+        var x : Float = 0f
         save()
         scale(1f - 2 * j, 1f)
         for (k in 0..(bars - 1)) {
             save()
+            translate(x, 0f)
             drawRect(
                 RectF(
                     0f,
                     -barSize,
-                    barSize * scale.divideScale(j, parts),
+                    barSize * scale.divideScale(k, parts),
                     0f),
                 paint)
             restore()
+            x += barSize
+            barSize /= divideFactor
         }
         restore()
-        x += barSize
-        barSize /= divideFactor
     }
     restore()
 }
