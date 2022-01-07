@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.barsideupgradeview.BarSideUpgradeView
+
 //import com.example.divideballupview.DivideBallUpView
 
 //import com.example.dividebarupview.DivideBarUpView
@@ -398,6 +400,7 @@ class MainActivity : AppCompatActivity() {
         //EnclosedAltSideBarView.create(this)
         //DivideBarUpView.create(this)
         //DivideBallUpView.create(this)
+        BarSideUpgradeView.create(this)
         fullScreen()
     }
 }
