@@ -219,4 +219,13 @@ class BarSideUpgradeView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarSideUpgradeView {
+            val view : BarSideUpgradeView = BarSideUpgradeView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
