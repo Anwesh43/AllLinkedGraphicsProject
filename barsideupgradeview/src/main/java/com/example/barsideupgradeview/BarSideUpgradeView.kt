@@ -194,4 +194,27 @@ class BarSideUpgradeView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarSideUpgradeView) {
+
+        private var bsu : BarSideUpgrade = BarSideUpgrade(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bsu.draw(canvas, paint)
+            animator.animate {
+                bsu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bsu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
