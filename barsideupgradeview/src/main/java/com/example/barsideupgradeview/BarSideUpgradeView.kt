@@ -24,7 +24,7 @@ val parts : Int = bars + 2
 val scGap : Float = 0.04f / parts
 val backColor : Int = Color.parseColor("#BDBDBD")
 val sizeFactor : Float = 5.1f
-val divideFactor : Float = 1.6f
+val divideFactor : Float = 1.4f
 val rot : Float = 90f
 
 fun Int.inverse() : Float = 1f / this
