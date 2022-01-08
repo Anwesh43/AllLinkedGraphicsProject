@@ -24,7 +24,7 @@ val delay : Long = 20
 val deg : Float = 45f
 val sizeFactor : Float = 4.9f
 val strokeFactor : Float = 90f
-val bacKColor : Int = Color.parseColor("#BDBDBD")
+val backColor : Int = Color.parseColor("#BDBDBD")
 val divideFactor : Float = 1.4f
 val scGap : Float = 0.05f / parts
 
@@ -202,6 +202,29 @@ class ConcentricCircleSideWiseView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
              curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : ConcentricCircleSideWiseView) {
+
+        private val animator : Animator = Animator(view)
+        private val ccsw : ConcentricCircleSideWise = ConcentricCircleSideWise(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ccsw.draw(canvas, paint)
+            animator.animate {
+                ccsw.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ccsw.startUpdating {
+                animator.start()
+            }
         }
     }
 }
