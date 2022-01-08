@@ -58,7 +58,7 @@ fun Canvas.drawConcentricCircleSideWise(scale : Float, w : Float, h : Float, pai
                     paint
                 )
                 restore()
-                x += (barSize + barSize / divideFactor)
+                x += (barSize / 2 + barSize / (2 * divideFactor))
                 barSize /= divideFactor
             }
             restore()
