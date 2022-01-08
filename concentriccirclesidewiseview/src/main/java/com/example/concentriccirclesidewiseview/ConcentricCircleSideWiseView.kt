@@ -229,4 +229,13 @@ class ConcentricCircleSideWiseView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ConcentricCircleSideWiseView {
+            val view : ConcentricCircleSideWiseView = ConcentricCircleSideWiseView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
