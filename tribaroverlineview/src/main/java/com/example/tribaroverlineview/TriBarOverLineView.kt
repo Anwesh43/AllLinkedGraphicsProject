@@ -209,4 +209,13 @@ class TriBarOverLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : TriBarOverLineView {
+            val view : TriBarOverLineView = TriBarOverLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
