@@ -42,7 +42,7 @@ fun Canvas.drawTriBarOverLine(scale : Float, w : Float, h : Float, paint : Paint
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     for (j in 0..2) {
         save()
-        translate(-size / 2 + (w / 2) * j)
+        translate(-size / 2 + (w / 2) * j, 0f)
         drawRect(RectF(0f, -size * sc1, size / 10, 0f), paint)
         restore()
     }
@@ -71,5 +71,25 @@ class TriBarOverLineView(ctx : Context) : View(ctx) {
             }
         }
         return true
+    }
+
+    data class State(var scale : Float = 0f, var prevScale : Float = 0f, var dir : Float = 0f) {
+
+        fun update(cb : (Float) -> Unit) {
+            scale += scGap * dir
+            if (Math.abs(scale - prevScale) > 1) {
+                scale = prevScale + dir
+                dir = 0f
+                prevScale = scale
+                cb(prevScale)
+            }
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            if (dir == 0f) {
+                dir = 1f - 2 * prevScale
+                cb()
+            }
+        }
     }
 }
