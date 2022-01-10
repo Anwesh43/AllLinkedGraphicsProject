@@ -42,8 +42,9 @@ fun Canvas.drawTriBarOverLine(scale : Float, w : Float, h : Float, paint : Paint
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     for (j in 0..2) {
         save()
-        translate(-size / 2 + (w / 2) * j, 0f)
-        drawRect(RectF(0f, -size * sc1, size / 10, 0f), paint)
+        translate(-size / 2 - paint.strokeWidth / 2 + (size * 0.5f -
+                ++paint.strokeWidth / 2) * j, 0f)
+        drawRect(RectF(0f, -size * sc2, size / 10, 0f), paint)
         restore()
     }
     restore()
