@@ -179,5 +179,6 @@ dependencies {
     //implementation project(":dividebarupview")
     //implementation project(":divideballupview")
     //implementation project(":barsideupgradeview")
-    implementation project(":concentriccirclesidewiseview")
+    //implementation project(":concentriccirclesidewiseview")
+    implementation project(":tribaroverlineview")
 }

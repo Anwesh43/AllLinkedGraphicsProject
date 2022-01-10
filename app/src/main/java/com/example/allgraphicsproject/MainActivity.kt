@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.concentriccirclesidewiseview.ConcentricCircleSideWiseView
+//import com.example.concentriccirclesidewiseview.ConcentricCircleSideWiseView
 
 //import com.example.barsideupgradeview.BarSideUpgradeView
 
@@ -403,7 +403,7 @@ class MainActivity : AppCompatActivity() {
         //DivideBarUpView.create(this)
         //DivideBallUpView.create(this)
         //BarSideUpgradeView.create(this)
-        ConcentricCircleSideWiseView.create(this)
+        //ConcentricCircleSideWiseView.create(this)
         fullScreen()
     }
 }
