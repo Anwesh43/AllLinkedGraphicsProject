@@ -218,4 +218,12 @@ class BarHammerDivideView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity: Activity) : BarHammerDivideView {
+            val view : BarHammerDivideView = BarHammerDivideView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
