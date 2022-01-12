@@ -43,15 +43,15 @@ fun Canvas.drawBarHammerDivide(scale : Float, w : Float, h : Float, paint : Pain
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        rotate(rot * sc3)
         translate((-w / 2) * sc4, 0f)
+        rotate(-rot * sc3)
         save()
         translate(0f, (h / 2 + size) * (1 - sc1))
         drawLine(0f, 0f, 0f, -size, paint)
         restore()
         save()
         translate(0f, -h / 2 + (h / 2 - size) * sc2)
-        drawRect(RectF(-barSize, -barSize, barSize, 0f), paint)
+        drawRect(RectF(-barSize, -barSize, 0f, 0f), paint)
         restore()
         restore()
     }
