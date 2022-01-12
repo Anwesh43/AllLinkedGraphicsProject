@@ -66,3 +66,18 @@ fun Canvas.drawBHDNode(i : Int, scale : Float, paint : Paint) {
     drawBarHammerDivide(scale, w, h, paint)
 }
 
+class BarHammerDivideView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
