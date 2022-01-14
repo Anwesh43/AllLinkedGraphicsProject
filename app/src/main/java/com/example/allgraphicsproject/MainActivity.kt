@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.arrowsignshootview.ArrowSignShootView
+
 //import com.example.barhammerdivideview.BarHammerDivideView
 
 //import com.example.tribaroverlineview.TriBarOverLineView
@@ -410,6 +412,7 @@ class MainActivity : AppCompatActivity() {
         //ConcentricCircleSideWiseView.create(this)
         //TriBarOverLineView.create(this)
         //BarHammerDivideView.create(this)
+        ArrowSignShootView.create(this)
         fullScreen()
     }
 }
