@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.barhammerdivideview.BarHammerDivideView
+//import com.example.barhammerdivideview.BarHammerDivideView
 
 //import com.example.tribaroverlineview.TriBarOverLineView
 
@@ -409,7 +409,7 @@ class MainActivity : AppCompatActivity() {
         //BarSideUpgradeView.create(this)
         //ConcentricCircleSideWiseView.create(this)
         //TriBarOverLineView.create(this)
-        BarHammerDivideView.create(this)
+        //BarHammerDivideView.create(this)
         fullScreen()
     }
 }
