@@ -218,4 +218,13 @@ class ArrowSignShootView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : ArrowSignShootView{
+            val view : ArrowSignShootView = ArrowSignShootView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
