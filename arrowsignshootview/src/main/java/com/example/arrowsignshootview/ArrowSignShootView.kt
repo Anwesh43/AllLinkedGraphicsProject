@@ -53,7 +53,7 @@ fun Canvas.drawArrowSignShoot(scale : Float, w : Float, h : Float, paint : Paint
     save()
     translate(w / 2, h / 2)
     rotate(deg * sc3)
-    translate(0f, -(w + size + triSize) * 0.5f * sc4)
+    translate(0f, -(w / 2 + triSize + size)  * sc4)
     drawLine(0f, 0f, 0f, -size * sc1, paint)
     drawTriangle(0f, -h / 2 + (h / 2 - size) * sc2, triSize, paint)
     restore()
