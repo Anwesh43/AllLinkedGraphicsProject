@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.boxuptodownonlineview.BoxUpToDownOnlineView
+
 //import com.example.arrowsignshootview.ArrowSignShootView
 
 //import com.example.barhammerdivideview.BarHammerDivideView
@@ -413,6 +415,7 @@ class MainActivity : AppCompatActivity() {
         //TriBarOverLineView.create(this)
         //BarHammerDivideView.create(this)
         //ArrowSignShootView.create(this)
+        BoxUpToDownOnlineView.create(this)
         fullScreen()
     }
 }
