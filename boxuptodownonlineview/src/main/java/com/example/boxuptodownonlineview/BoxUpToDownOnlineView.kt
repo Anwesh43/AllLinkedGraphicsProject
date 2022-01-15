@@ -218,4 +218,12 @@ class BoxUpToDownOnlineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity: Activity) : BoxUpToDownOnlineView {
+            val view : BoxUpToDownOnlineView = BoxUpToDownOnlineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
