@@ -212,4 +212,13 @@ class BiLineRotateVView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiLineRotateVView {
+            val view : BiLineRotateVView = BiLineRotateVView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
