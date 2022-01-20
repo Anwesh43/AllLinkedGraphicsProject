@@ -187,4 +187,27 @@ class BiLineRotateVView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiLineRotateVView) {
+
+        private val blrv : BiLineRotateV = BiLineRotateV(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            blrv.draw(canvas, paint)
+            animator.animate {
+                blrv.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            blrv.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
