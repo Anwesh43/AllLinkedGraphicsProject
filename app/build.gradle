@@ -183,5 +183,6 @@ dependencies {
     //implementation project(":tribaroverlineview")
     //implementation project(":barhammerdivideview")
     //implementation project(":arrowsignshootview")
-    implementation project(":boxuptodownonlineview")
+    //implementation project(":boxuptodownonlineview")
+    implementation project(":bilinerotatevview")
 }
