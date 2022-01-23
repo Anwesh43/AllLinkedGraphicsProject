@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bilinerotatevview.BiLineRotateVView
+//import com.example.bilinerotatevview.BiLineRotateVView
 
 //import com.example.boxuptodownonlineview.BoxUpToDownOnlineView
 
@@ -418,7 +418,7 @@ class MainActivity : AppCompatActivity() {
         //BarHammerDivideView.create(this)
         //ArrowSignShootView.create(this)
         //BoxUpToDownOnlineView.create(this)
-        BiLineRotateVView.create(this)
+        //BiLineRotateVView.create(this)
         fullScreen()
     }
 }
