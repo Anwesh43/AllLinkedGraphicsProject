@@ -212,4 +212,12 @@ class SemiArcBarHolderView(ctx : Context) : View(ctx) {
         }
 
     }
+
+    companion object {
+        fun create(activity: Activity) : SemiArcBarHolderView {
+            val view : SemiArcBarHolderView = SemiArcBarHolderView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
