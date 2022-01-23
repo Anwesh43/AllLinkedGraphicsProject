@@ -186,4 +186,28 @@ class SemiArcBarHolderView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SemiArcBarHolderView) {
+
+        private var sabh : SemiArcBarHolder = SemiArcBarHolder(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            sabh.draw(canvas, paint)
+            animator.animate {
+                sabh.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            sabh.startUpdating {
+                animator.start()
+            }
+        }
+
+    }
 }
