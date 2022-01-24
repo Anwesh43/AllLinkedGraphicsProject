@@ -180,4 +180,27 @@ class HalfBarRotDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HalfBarRotDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val hbrd : HalfBarRotDown = HalfBarRotDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            hbrd.draw(canvas, paint)
+            animator.animate {
+                hbrd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hbrd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
