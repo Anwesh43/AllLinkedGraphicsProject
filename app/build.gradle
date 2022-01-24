@@ -185,5 +185,6 @@ dependencies {
     //implementation project(":arrowsignshootview")
     //implementation project(":boxuptodownonlineview")
     //implementation project(":bilinerotatevview")
-    implementation project(":semiarcbarholderview")
+    //implementation project(":semiarcbarholderview")
+    implementation project(":halfbarrotdownview")
 }
