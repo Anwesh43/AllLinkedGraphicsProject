@@ -54,3 +54,19 @@ fun Canvas.drawHBRDNode(i : Int, scale : Float, paint : Paint) {
     val h : Float = height.toFloat()
     drawHalfBarRotDown(scale, w, h, paint)
 }
+
+class HalfBarRotDownView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
