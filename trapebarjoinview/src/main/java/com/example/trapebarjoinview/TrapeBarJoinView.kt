@@ -18,7 +18,7 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
+val parts : Int = 5
 val scGap : Float = 0.04f / parts
 val delay : Long = 20
 val sizeFactor : Float = 4.9f
@@ -33,14 +33,13 @@ fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale
 
 fun Canvas.drawTrapeBarJoin(scale : Float, w : Float, h : Float, paint : Paint) {
     val size : Float = Math.min(w, h) / sizeFactor
-    val sc1 : Float = scale.divideScale(0, parts)
-    val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
+    val sc5 : Float = scale.divideScale(4, parts)
     val barW : Float = size / barWFactor
     save()
-    translate(w / 2, h / 2 + (h / 2) * sc4)
-    rotate(deg * sc3)
+    translate(w / 2, h / 2 + (h / 2) * sc5)
+    rotate(deg * sc4)
     for (j in 0..1) {
         val scj : Float = scale.divideScale(j, parts)
         val barH : Float = size * 0.5f  + size * 0.5f * j
@@ -53,7 +52,7 @@ fun Canvas.drawTrapeBarJoin(scale : Float, w : Float, h : Float, paint : Paint) 
         -size / 2 + barW / 2,
         -size / 2,
         -size / 2 + barW / 2 + size * sc3,
-        size / 2 - size * 0.5f * sc3,
+        -size / 2 - size * 0.5f * sc3,
         paint
     )
     restore()
