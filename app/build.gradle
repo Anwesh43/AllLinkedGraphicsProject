@@ -186,5 +186,6 @@ dependencies {
     //implementation project(":boxuptodownonlineview")
     //implementation project(":bilinerotatevview")
     //implementation project(":semiarcbarholderview")
-    implementation project(":halfbarrotdownview")
+    //implementation project(":halfbarrotdownview")
+    implementation project(":trapebarjoinview")
 }
