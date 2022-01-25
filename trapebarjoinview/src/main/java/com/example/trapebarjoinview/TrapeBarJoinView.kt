@@ -194,4 +194,27 @@ class TrapeBarJoinView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TrapeBarJoinView) {
+
+        private val tbj : TrapeBarJoin = TrapeBarJoin(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tbj.draw(canvas, paint)
+            animator.animate {
+                tbj.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tbj.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
