@@ -219,4 +219,13 @@ class TrapeBarJoinView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TrapeBarJoinView {
+            val view : TrapeBarJoinView = TrapeBarJoinView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
