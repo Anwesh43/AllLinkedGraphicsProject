@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.arcbarrotdownview.ArcBarRotDownView
+
 //import com.example.trapebarjoinview.TrapeBarJoinView
 
 //import com.example.halfbarrotdownview.HalfBarRotDownView
@@ -428,6 +430,7 @@ class MainActivity : AppCompatActivity() {
         //SemiArcBarHolderView.create(this)
         //HalfBarRotDownView.create(this)
         //TrapeBarJoinView.create(this)
+        ArcBarRotDownView.create(this)
         fullScreen()
     }
 }
