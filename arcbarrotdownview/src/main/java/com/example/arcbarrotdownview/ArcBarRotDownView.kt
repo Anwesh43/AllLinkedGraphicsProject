@@ -212,4 +212,12 @@ class ArcBarRotDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : ArcBarRotDownView {
+            val view : ArcBarRotDownView = ArcBarRotDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
