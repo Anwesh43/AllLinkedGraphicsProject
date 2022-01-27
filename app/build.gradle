@@ -188,5 +188,6 @@ dependencies {
     //implementation project(":semiarcbarholderview")
     //implementation project(":halfbarrotdownview")
     //implementation project(":trapebarjoinview")
-    implementation project(":arcbarrotdownview")
+    //implementation project(":arcbarrotdownview")
+    implementation project(":squarelineextenderview")
 }
