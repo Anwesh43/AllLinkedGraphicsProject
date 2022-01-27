@@ -218,4 +218,13 @@ class SquareExtenderLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareExtenderLineView {
+            val view : SquareExtenderLineView = SquareExtenderLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
