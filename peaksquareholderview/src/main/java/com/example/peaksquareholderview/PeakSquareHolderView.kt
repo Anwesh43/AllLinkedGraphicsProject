@@ -209,4 +209,13 @@ class PeakSquareHolderView(ctx: Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : PeakSquareHolderView {
+            val view : PeakSquareHolderView = PeakSquareHolderView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
