@@ -189,5 +189,6 @@ dependencies {
     //implementation project(":halfbarrotdownview")
     //implementation project(":trapebarjoinview")
     //implementation project(":arcbarrotdownview")
-    implementation project(":squarelineextenderview")
+    //implementation project(":squarelineextenderview")
+    implementation project(":peaksquareholderview")
 }

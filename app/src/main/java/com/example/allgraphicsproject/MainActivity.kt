@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.squarelineextenderview.SquareExtenderLineView
+//import com.example.squarelineextenderview.SquareExtenderLineView
 
 //import com.example.arcbarrotdownview.ArcBarRotDownView
 
@@ -433,7 +433,7 @@ class MainActivity : AppCompatActivity() {
         //HalfBarRotDownView.create(this)
         //TrapeBarJoinView.create(this)
         //ArcBarRotDownView.create(this)
-        SquareExtenderLineView.create(this)
+        //SquareExtenderLineView.create(this)
         fullScreen()
     }
 }
