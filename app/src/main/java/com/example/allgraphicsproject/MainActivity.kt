@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.peaksquareholderview.PeakSquareHolderView
+
 //import com.example.squarelineextenderview.SquareExtenderLineView
 
 //import com.example.arcbarrotdownview.ArcBarRotDownView
@@ -434,6 +436,7 @@ class MainActivity : AppCompatActivity() {
         //TrapeBarJoinView.create(this)
         //ArcBarRotDownView.create(this)
         //SquareExtenderLineView.create(this)
+        PeakSquareHolderView.create(this)
         fullScreen()
     }
 }
