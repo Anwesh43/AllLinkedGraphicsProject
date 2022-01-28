@@ -183,5 +183,28 @@ class PeakSquareHolderView(ctx : Context) : View(ctx) {
                 curr.startUpdating(cb)
             }
         }
+
+        data class Renderer(var view : PeakSquareHolderView) {
+
+            private var psh : PeakSquareHolder = PeakSquareHolder(0)
+            private val animator : Animator = Animator(view)
+            private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+            fun render(canvas : Canvas) {
+                canvas.drawColor(backColor)
+                psh.draw(canvas, paint)
+                animator.animate {
+                    psh.update {
+                        animator.stop()
+                    }
+                }
+            }
+
+            fun handleTap() {
+                psh.startUpdating {
+                    animator.start()
+                }
+            }
+        }
     }
 }
