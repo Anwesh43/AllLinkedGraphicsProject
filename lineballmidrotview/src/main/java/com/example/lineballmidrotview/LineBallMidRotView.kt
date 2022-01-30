@@ -125,4 +125,45 @@ class LineBallMidRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class LBMRNode(var i : Int, val state : State = State()) {
+
+        private var next : LBMRNode? = null
+        private var prev : LBMRNode? = null
+
+        init {
+
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LBMRNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLBMRNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LBMRNode {
+            var curr : LBMRNode? = null
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
