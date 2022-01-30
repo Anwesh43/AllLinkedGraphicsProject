@@ -211,4 +211,13 @@ class LineToTriMoveUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineToTriMoveUpView {
+            val view : LineToTriMoveUpView = LineToTriMoveUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
