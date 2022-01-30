@@ -166,7 +166,7 @@ class LineToTriMoveUpView(ctx : Context) : View(ctx) {
 
     data class LineToTriMoveUp(var i : Int) {
 
-        private val curr : LTTMUNode = LTTMUNode(0)
+        private var curr : LTTMUNode = LTTMUNode(0)
         private var dir : Int = 1
 
         fun draw(canvas : Canvas, paint : Paint) {
@@ -184,6 +184,29 @@ class LineToTriMoveUpView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : LineToTriMoveUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val lttmu : LineToTriMoveUp = LineToTriMoveUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lttmu.draw(canvas, paint)
+            animator.animate {
+                lttmu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lttmu.startUpdating {
+                animator.start()
+            }
         }
     }
 }
