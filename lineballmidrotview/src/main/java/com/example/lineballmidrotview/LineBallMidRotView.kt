@@ -189,4 +189,27 @@ class LineBallMidRotView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineBallMidRotView) {
+
+        private val animator : Animator = Animator(view)
+        private val lbmr : LineBallMidRot = LineBallMidRot(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lbmr.draw(canvas, paint)
+            animator.animate {
+                lbmr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lbmr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
