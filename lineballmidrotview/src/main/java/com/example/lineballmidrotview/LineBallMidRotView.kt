@@ -214,4 +214,13 @@ class LineBallMidRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineBallMidRotView {
+            val view : LineBallMidRotView = LineBallMidRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
