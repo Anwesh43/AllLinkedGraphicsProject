@@ -208,4 +208,13 @@ class CloseOpenBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CloseOpenBoxView {
+            val view : CloseOpenBoxView = CloseOpenBoxView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
