@@ -192,5 +192,6 @@ dependencies {
     //implementation project(":squarelineextenderview")
     //implementation project(":peaksquareholderview")
     //implementation project(":linetotrimoveupview")
-    implementation project(":lineballmidrotview")
+    //implementation project(":lineballmidrotview")
+    implementation project(":closeopenboxview")
 }
