@@ -119,4 +119,45 @@ class CloseOpenBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class COBNode(var i : Int, val state : State = State()) {
+
+        private var prev : COBNode? = null
+        private var next : COBNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = COBNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawCOBNode(i, state.scale, paint)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : COBNode {
+            var curr : COBNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
