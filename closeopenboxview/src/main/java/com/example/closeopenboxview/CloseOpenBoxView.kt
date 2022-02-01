@@ -7,6 +7,7 @@ import android.content.Context
 import android.graphics.Paint
 import android.graphics.Color
 import android.graphics.Canvas
+import android.util.Log
 
 val colors : Array<Int> = arrayOf(
     "#4A148C",
@@ -15,7 +16,7 @@ val colors : Array<Int> = arrayOf(
     "#D50000",
     "#43A047"
 ).map {
-    Color.parseColor("#BDBDBD")
+    Color.parseColor(it)
 }.toTypedArray()
 val delay : Long = 20
 val strokeFactor : Float = 90f
@@ -35,6 +36,7 @@ fun Canvas.drawCloseOpenBox(scale : Float, w : Float, h : Float, paint : Paint) 
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
+    //Log.d("SC1, SC2, SC3, SC4", "$sc1, $sc2, $sc3, $sc4")
     save()
     translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
