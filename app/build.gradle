@@ -193,5 +193,6 @@ dependencies {
     //implementation project(":peaksquareholderview")
     //implementation project(":linetotrimoveupview")
     //implementation project(":lineballmidrotview")
-    implementation project(":closeopenboxview")
+    //implementation project(":closeopenboxview")
+    implementation project(":barpushlineupview")
 }
