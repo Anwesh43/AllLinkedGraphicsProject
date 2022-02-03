@@ -208,4 +208,13 @@ class BarPushLineUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarPushLineUpView {
+            val view : BarPushLineUpView = BarPushLineUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
