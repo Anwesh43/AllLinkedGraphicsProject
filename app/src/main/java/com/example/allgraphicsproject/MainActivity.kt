@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.barpushlineupview.BarPushLineUpView
+
 //import com.example.closeopenboxview.CloseOpenBoxView
 
 //import com.example.lineballmidrotview.LineBallMidRotView
@@ -446,6 +448,7 @@ class MainActivity : AppCompatActivity() {
         //LineToTriMoveUpView.create(this)
         //LineBallMidRotView.create(this)
         //CloseOpenBoxView.create(this)
+        BarPushLineUpView.create(this)
         fullScreen()
     }
 }
