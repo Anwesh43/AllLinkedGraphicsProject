@@ -44,7 +44,7 @@ fun Canvas.drawBarPushLineUp(scale : Float, w : Float, h : Float, paint : Paint)
         save()
         scale(1f - 2 * j, 1f)
         translate((-size / 2 + barSize / 2) * (1 - sc3), 0f)
-        drawRect(RectF(-barSize / 2, size * sc2, barSize / 2, 0f), paint)
+        drawRect(RectF(-barSize / 2, -size * 0.5f * sc2, barSize / 2, 0f), paint)
         restore()
     }
     restore()
@@ -197,8 +197,10 @@ class BarPushLineUpView(ctx : Context) : View(ctx) {
         fun render(canvas : Canvas) {
             canvas.drawColor(backColor)
             bpl.draw(canvas, paint)
-            bpl.update {
-                animator.stop()
+            animator.animate {
+                bpl.update {
+                    animator.stop()
+                }
             }
         }
 
