@@ -19,7 +19,7 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
-val scGap : Float = 0.04f
+val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
@@ -50,7 +50,7 @@ fun Canvas.drawArrowLeggedMover(scale : Float, w : Float, h : Float, paint : Pai
         save()
         scale(1f, 1f - 2 * j)
         translate(0f, -size / 2)
-        rotate(deg * sc3)
+        rotate(-deg * sc3)
         drawLine(0f, 0f, size * sc2, 0f, paint)
         restore()
     }
