@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.arrowleggedmoverview.ArrowLeggedMoverView
+
 //import com.example.barpushlineupview.BarPushLineUpView
 
 //import com.example.closeopenboxview.CloseOpenBoxView
@@ -449,6 +451,7 @@ class MainActivity : AppCompatActivity() {
         //LineBallMidRotView.create(this)
         //CloseOpenBoxView.create(this)
         //BarPushLineUpView.create(this)
+        ArrowLeggedMoverView.create(this)
         fullScreen()
     }
 }
