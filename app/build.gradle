@@ -194,5 +194,6 @@ dependencies {
     //implementation project(":linetotrimoveupview")
     //implementation project(":lineballmidrotview")
     //implementation project(":closeopenboxview")
-    implementation project(":barpushlineupview")
+    //implementation project(":barpushlineupview")
+    implementation project(":arrowleggedmoverview")
 }
