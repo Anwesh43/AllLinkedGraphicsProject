@@ -104,7 +104,7 @@ class ArrowLeggedMoverView(ctx : Context) : View(ctx) {
 
     data class Animator(var view : View, var animated : Boolean = false) {
 
-        fun animated(cb : () -> Unit) {
+        fun animate(cb : () -> Unit) {
             if (animated) {
                 cb()
                 try {
@@ -192,5 +192,29 @@ class ArrowLeggedMoverView(ctx : Context) : View(ctx) {
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
         }
+    }
+
+    data class Renderer(var view : ArrowLeggedMoverView) {
+
+        private val animator : Animator = Animator(view)
+        private val alm : ArrowLeggedMover = ArrowLeggedMover(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            alm.draw(canvas, paint)
+            animator.animate {
+                alm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            alm.startUpdating {
+                animator.start()
+            }
+        }
+
     }
 }
