@@ -451,7 +451,7 @@ class MainActivity : AppCompatActivity() {
         //LineBallMidRotView.create(this)
         //CloseOpenBoxView.create(this)
         //BarPushLineUpView.create(this)
-        ArrowLeggedMoverView.create(this)
+        //ArrowLeggedMoverView.create(this)
         fullScreen()
     }
 }
