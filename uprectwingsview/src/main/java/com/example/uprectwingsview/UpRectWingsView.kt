@@ -210,4 +210,12 @@ class UpRectWingsView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity: Activity) : UpRectWingsView {
+            val view : UpRectWingsView = UpRectWingsView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
