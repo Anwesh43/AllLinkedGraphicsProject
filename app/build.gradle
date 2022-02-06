@@ -196,5 +196,6 @@ dependencies {
     //implementation project(":closeopenboxview")
     //implementation project(":barpushlineupview")
     //implementation project(":arrowleggedmoverview")
-    implementation project(":uprectwingsview")
+    //implementation project(":uprectwingsview")
+    implementation project(":linesiderotbarview")
 }

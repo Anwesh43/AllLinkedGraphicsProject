@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.uprectwingsview.UpRectWingsView
+//import com.example.uprectwingsview.UpRectWingsView
 
 //import com.example.arrowleggedmoverview.ArrowLeggedMoverView
 
@@ -454,7 +454,7 @@ class MainActivity : AppCompatActivity() {
         //CloseOpenBoxView.create(this)
         //BarPushLineUpView.create(this)
         //ArrowLeggedMoverView.create(this)
-        UpRectWingsView.create(this)
+        //UpRectWingsView.create(this)
         fullScreen()
     }
 }
