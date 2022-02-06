@@ -212,4 +212,13 @@ class LineSideRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineSideRotView {
+            val view : LineSideRotView = LineSideRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
