@@ -43,7 +43,7 @@ fun Canvas.drawLineSideRot(scale : Float, w : Float, h : Float, paint : Paint) {
     rotate(rot * sc4)
     for (j in 0..1) {
         save()
-        translate(-size / 2 + size * j, 0f)
+        translate(-size / 2 + size * 0.5f * j, 0f)
         rotate(deg * sc2)
         drawLine(0f, 0f, 0f, -size * 0.5f * sc1, paint)
         restore()
@@ -132,7 +132,7 @@ class LineSideRotView(ctx : Context) : View(ctx) {
         private var next : LSRNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
