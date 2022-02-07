@@ -209,4 +209,13 @@ class SideRectRotLineView(ctx : Context) : View(ctx) {
         }
     }
 
+    companion object {
+
+        fun create(activity: Activity) : SideRectRotLineView {
+            val view : SideRectRotLineView = SideRectRotLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
+
 }
