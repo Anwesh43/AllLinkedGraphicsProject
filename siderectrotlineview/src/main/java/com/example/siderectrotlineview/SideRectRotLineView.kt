@@ -183,4 +183,28 @@ class SideRectRotLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SideRectRotLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val srrl : SideRectRotLine = SideRectRotLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            srrl.draw(canvas, paint)
+            animator.animate {
+                srrl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            srrl.startUpdating {
+                animator.start()
+            }
+        }
+    }
+
 }
