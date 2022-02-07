@@ -44,7 +44,7 @@ fun Canvas.drawSideRectRotLine(scale : Float, w : Float, h : Float, paint : Pain
         drawLine(0f, 0f, 0f, -size * sc1, paint)
         restore()
     }
-    drawRect(RectF(-size * 0.5f * sc3, -size / 2, size * 0.5f * sc3, 0f), paint)
+    drawRect(RectF(-size * 0.5f * sc3, -(size + paint.strokeWidth / 2), size * 0.5f * sc3, 0f), paint)
     restore()
 }
 
