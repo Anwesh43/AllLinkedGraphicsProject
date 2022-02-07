@@ -197,5 +197,6 @@ dependencies {
     //implementation project(":barpushlineupview")
     //implementation project(":arrowleggedmoverview")
     //implementation project(":uprectwingsview")
-    implementation project(":linesiderotbarview")
+    //implementation project(":linesiderotbarview")
+    implementation project(":siderectrotlineview")
 }

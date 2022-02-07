@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linesiderotbarview.LineSideRotView
+//import com.example.linesiderotbarview.LineSideRotView
 
 //import com.example.uprectwingsview.UpRectWingsView
 
@@ -457,7 +457,7 @@ class MainActivity : AppCompatActivity() {
         //BarPushLineUpView.create(this)
         //ArrowLeggedMoverView.create(this)
         //UpRectWingsView.create(this)
-        LineSideRotView.create(this)
+        //LineSideRotView.create(this)
         fullScreen()
     }
 }
