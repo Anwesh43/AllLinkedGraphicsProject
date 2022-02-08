@@ -184,4 +184,27 @@ class OpenBoxCrossMoverView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : OpenBoxCrossMoverView) {
+
+        private val obcm : OpenBoxCrossMover = OpenBoxCrossMover(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            obcm.draw(canvas, paint)
+            animator.animate {
+                obcm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            obcm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
