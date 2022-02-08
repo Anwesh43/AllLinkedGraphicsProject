@@ -198,5 +198,6 @@ dependencies {
     //implementation project(":arrowleggedmoverview")
     //implementation project(":uprectwingsview")
     //implementation project(":linesiderotbarview")
-    implementation project(":siderectrotlineview")
+    //implementation project(":siderectrotlineview")
+    implementation project(":openboxcrossmoverview")
 }
