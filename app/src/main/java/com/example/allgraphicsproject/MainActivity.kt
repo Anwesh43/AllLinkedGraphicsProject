@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.sidearmbarrotview.SideBarArmRotView
+
 //import com.example.openboxcrossmoverview.OpenBoxCrossMoverView
 
 //import com.example.siderectrotlineview.SideRectRotLineView
@@ -464,6 +466,7 @@ class MainActivity : AppCompatActivity() {
         //LineSideRotView.create(this)
         //SideRectRotLineView.create(this)
         //OpenBoxCrossMoverView.create(this)
+        SideBarArmRotView.create(this)
         fullScreen()
     }
 }
