@@ -211,4 +211,13 @@ class SideBarArmRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : SideBarArmRotView {
+            val view : SideBarArmRotView = SideBarArmRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
