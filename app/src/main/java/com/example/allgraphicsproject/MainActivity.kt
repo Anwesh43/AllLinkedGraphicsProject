@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.openboxcrossmoverview.OpenBoxCrossMoverView
+//import com.example.openboxcrossmoverview.OpenBoxCrossMoverView
 
 //import com.example.siderectrotlineview.SideRectRotLineView
 
@@ -463,7 +463,7 @@ class MainActivity : AppCompatActivity() {
         //UpRectWingsView.create(this)
         //LineSideRotView.create(this)
         //SideRectRotLineView.create(this)
-        OpenBoxCrossMoverView.create(this)
+        //OpenBoxCrossMoverView.create(this)
         fullScreen()
     }
 }
