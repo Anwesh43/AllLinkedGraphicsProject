@@ -200,5 +200,6 @@ dependencies {
     //implementation project(":linesiderotbarview")
     //implementation project(":siderectrotlineview")
     //implementation project(":openboxcrossmoverview")
-    implementation project(":sidearmbarrotview")
+    //implementation project(":sidearmbarrotview")
+    implementation project(":ktorottview")
 }
