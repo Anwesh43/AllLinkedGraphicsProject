@@ -210,4 +210,13 @@ class KRotTView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : KRotTView {
+            val view : KRotTView = KRotTView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
