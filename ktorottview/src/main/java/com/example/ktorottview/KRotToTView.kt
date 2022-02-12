@@ -185,4 +185,27 @@ class KRotTView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : KRotTView) {
+
+        private val animator : Animator = Animator(view)
+        private val krtt : KRotT = KRotT(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            krtt.draw(canvas, paint)
+            animator.animate {
+                krtt.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            krtt.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
