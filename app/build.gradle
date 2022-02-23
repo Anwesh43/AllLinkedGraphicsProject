@@ -201,5 +201,6 @@ dependencies {
     //implementation project(":siderectrotlineview")
     //implementation project(":openboxcrossmoverview")
     //implementation project(":sidearmbarrotview")
-    implementation project(":ktorottview")
+    //implementation project(":ktorottview")
+    implementation project(":diagboatlineview")
 }
