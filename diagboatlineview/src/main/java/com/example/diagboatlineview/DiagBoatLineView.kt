@@ -203,4 +203,13 @@ class DiagBoatLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DiagBoatLineView {
+            val view : DiagBoatLineView = DiagBoatLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
