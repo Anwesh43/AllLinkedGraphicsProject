@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.openlineboxlineview.OpenLineBoxLineView
+
 //import com.example.diagboatlineview.DiagBoatLineView
 
 //import com.example.ktorottview.KRotTView
@@ -473,6 +475,7 @@ class MainActivity : AppCompatActivity() {
         //SideBarArmRotView.create(this)
         //KRotTView.create(this)
         //DiagBoatLineView.create(this)
+        OpenLineBoxLineView.create(this)
         fullScreen()
     }
 }
