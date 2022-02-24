@@ -196,4 +196,27 @@ class OpenLineBoxLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : OpenLineBoxLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val olbl : OpenLineBoxLine = OpenLineBoxLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            olbl.draw(canvas, paint)
+            animator.animate {
+                olbl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            olbl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
