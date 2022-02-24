@@ -36,9 +36,9 @@ fun Canvas.drawOpenLineBoxLine(scale : Float, w : Float, h : Float, paint : Pain
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
     val sc6 : Float = scale.divideScale(5, parts)
-    val size : Float = Math.min(w, h) / strokeFactor
+    val size : Float = Math.min(w, h) / sizeFactor
     save()
-    translate(w / 2, h / 2 - (h / 2 + paint.strokeWidth) * sc6)
+    translate(w / 2, h / 2 - (h / 2 + size + paint.strokeWidth) * sc6)
     rotate(deg * sc5)
     if (sc1 > 0f) {
         drawLine(0f, -size, 0f, -size + size * 0.5f * sc1, paint)
