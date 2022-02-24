@@ -221,4 +221,13 @@ class OpenLineBoxLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : OpenLineBoxLineView {
+            val view : OpenLineBoxLineView = OpenLineBoxLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
