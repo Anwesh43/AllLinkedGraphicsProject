@@ -46,7 +46,7 @@ fun Canvas.drawLineRotToSideN(scale : Float, w : Float, h : Float, paint : Paint
         scale(1f - 2 * j, 1f - 2 * j)
         translate(-size / 2, 0f)
         rotate(-(deg * sc2) + sweep * sc3)
-        drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
+        drawLine(0f, 0f, size * Math.floor(sc1.toDouble()).toFloat(),0f, paint)
         restore()
     }
     restore()
