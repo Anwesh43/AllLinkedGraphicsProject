@@ -60,3 +60,19 @@ fun Canvas.drawLRTSNNode(i : Int, scale : Float, paint : Paint) {
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     drawLineRotToSideN(scale, w, h, paint)
 }
+
+class LineRotToSideNView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
