@@ -187,4 +187,27 @@ class LineRotToSideNView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineRotToSideNView) {
+
+        private val animator : Animator = Animator(view)
+        private val lrtss : LineRotToSideN = LineRotToSideN(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lrtss.render(canvas, paint)
+            animator.animate {
+                lrtss.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lrtss.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
