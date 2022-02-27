@@ -223,4 +223,13 @@ class ClipBoxLineRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : ClipBoxLineRotView {
+            val view : ClipBoxLineRotView = ClipBoxLineRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
