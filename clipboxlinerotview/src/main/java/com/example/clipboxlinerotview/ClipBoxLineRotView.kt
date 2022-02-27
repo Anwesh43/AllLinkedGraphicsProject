@@ -46,18 +46,22 @@ fun Canvas.drawClipBoxOpenLine(scale : Float, w : Float, h : Float, paint : Pain
         for (j in 0..1) {
             save()
             translate(-size / 2, 0f)
-            rotate(rot * j * sc2)
+            rotate(-rot * j * sc2)
             translate(size / 2, 0f)
-            drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
+            if (sc1 > 0f) {
+                drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
+            }
             restore()
         }
-        drawLine(
-            -size / 2,
-            -size,
-            -size / 2 + size * 0.5f * sc3,
-            -size + size * sc3,
-            paint
-        )
+        if (sc3 > 0f) {
+            drawLine(
+                -size / 2,
+                -size,
+                -size / 2 + size * 0.5f * sc3,
+                -size + size * sc3,
+                paint
+            )
+        }
         restore()
     }
     restore()
