@@ -182,4 +182,27 @@ class ClipBoxLineRotView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ClipBoxLineRotView) {
+
+        private var cblr : ClipBoxLineRot = ClipBoxLineRot(0)
+        private val animator : Animator = Animator(View)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            cblr.draw(canvas, paint)
+            animator.animate {
+                cblr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            cblr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
