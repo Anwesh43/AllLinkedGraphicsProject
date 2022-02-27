@@ -58,14 +58,16 @@ fun Canvas.drawCBLRNode(i : Int, scale : Float, paint : Paint) {
 
 class ClipBoxLineRotView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    private val renderer : Renderer = Renderer(this)
 
+    override fun onDraw(canvas : Canvas) {
+        renderer.render(canvas)
     }
 
     override fun onTouchEvent(event : MotionEvent) : Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-
+                renderer.handleTap()
             }
         }
         return true
@@ -186,7 +188,7 @@ class ClipBoxLineRotView(ctx : Context) : View(ctx) {
     data class Renderer(var view : ClipBoxLineRotView) {
 
         private var cblr : ClipBoxLineRot = ClipBoxLineRot(0)
-        private val animator : Animator = Animator(View)
+        private val animator : Animator = Animator(view)
         private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
         fun render(canvas : Canvas) {
