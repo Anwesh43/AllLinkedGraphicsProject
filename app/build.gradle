@@ -204,5 +204,6 @@ dependencies {
     //implementation project(":ktorottview")
     //implementation project(":diagboatlineview")
     //implementation project(":openlineboxlineview")
-    implementation project(":linerottosidenview")
+    //implementation project(":linerottosidenview")
+    implementation project(":clipboxlinerotview")
 }
