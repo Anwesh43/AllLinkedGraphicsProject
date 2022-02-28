@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.clipboxlinerotview.ClipBoxLineRotView
+//import com.example.clipboxlinerotview.ClipBoxLineRotView
 
 //import com.example.linerottosidenview.LineRotToSideNView
 
@@ -481,7 +481,7 @@ class MainActivity : AppCompatActivity() {
         //DiagBoatLineView.create(this)
         //OpenLineBoxLineView.create(this)
         //LineRotToSideNView.create(this)
-        ClipBoxLineRotView.create(this)
+        //ClipBoxLineRotView.create(this)
         fullScreen()
     }
 }
