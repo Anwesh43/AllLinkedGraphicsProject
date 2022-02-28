@@ -186,4 +186,27 @@ class LineFromEndVSweepView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineFromEndVSweepView) {
+
+        private val lfevs : LineFromEndVSweep = LineFromEndVSweep(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lfevs.draw(canvas, paint)
+            animator.animate {
+                lfevs.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lfevs.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
