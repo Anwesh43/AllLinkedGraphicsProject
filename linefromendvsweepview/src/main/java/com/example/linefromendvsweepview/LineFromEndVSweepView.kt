@@ -211,4 +211,12 @@ class LineFromEndVSweepView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity: Activity) : LineFromEndVSweepView {
+            val view : LineFromEndVSweepView = LineFromEndVSweepView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
