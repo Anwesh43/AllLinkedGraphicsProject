@@ -77,7 +77,7 @@ class LineFromEndVSweepView(ctx : Context) : View(ctx) {
     data class State(var scale : Float = 0f, var dir : Float = 0f, var prevScale : Float = 0f) {
 
 
-        fun update(cb : (Float) -> Unit) {
+        fun update(cb: (Float) -> Unit) {
             scale += scGap * dir
             if (Math.abs(scale - prevScale) > 1) {
                 scale = prevScale + dir
@@ -87,39 +87,80 @@ class LineFromEndVSweepView(ctx : Context) : View(ctx) {
             }
         }
 
-        fun startUpdating(cb : () -> Unit) {
+        fun startUpdating(cb: () -> Unit) {
             if (dir == 0f) {
                 dir = 1f - 2 * prevScale
                 cb()
             }
         }
+    }
+    data class Animator(var view : View, var animated : Boolean = false) {
 
-        data class Animator(var view : View, var animated : Boolean = false) {
+        fun animate(cb : () -> Unit) {
+            if (animated) {
+                cb()
+                try {
+                    Thread.sleep(delay)
+                    view.invalidate()
+                } catch(ex : Exception) {
 
-            fun animate(cb : () -> Unit) {
-                if (animated) {
-                    cb()
-                    try {
-                        Thread.sleep(delay)
-                        view.invalidate()
-                    } catch(ex : Exception) {
-
-                    }
                 }
             }
+        }
 
-            fun start() {
-                if (!animated) {
-                    animated = true
-                    view.postInvalidate()
-                }
+        fun start() {
+            if (!animated) {
+                animated = true
+                view.postInvalidate()
             }
+        }
 
-            fun stop() {
-                if (animated) {
-                    animated = false
-                }
+        fun stop() {
+            if (animated) {
+                animated = false
             }
+        }
+    }
+
+
+    data class LFEVSNode(var i : Int, private val state : State = State()) {
+
+        private var next : LFEVSNode? = null
+        private var prev : LFEVSNode? = null
+
+        init {
+
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LFEVSNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLFEVSNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LFEVSNode {
+            var curr : LFEVSNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
         }
     }
 }
