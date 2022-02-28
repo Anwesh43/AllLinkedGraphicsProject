@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linefromendvsweepview.LineFromEndVSweepView
+
 //import com.example.clipboxlinerotview.ClipBoxLineRotView
 
 //import com.example.linerottosidenview.LineRotToSideNView
@@ -482,6 +484,7 @@ class MainActivity : AppCompatActivity() {
         //OpenLineBoxLineView.create(this)
         //LineRotToSideNView.create(this)
         //ClipBoxLineRotView.create(this)
+        LineFromEndVSweepView.create(this)
         fullScreen()
     }
 }
