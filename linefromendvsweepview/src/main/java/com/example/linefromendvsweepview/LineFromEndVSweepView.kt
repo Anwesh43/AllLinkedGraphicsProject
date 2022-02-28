@@ -20,7 +20,7 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
-val sizeFactor : Float = 90f
+val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val deg : Float = 45f
@@ -43,7 +43,7 @@ fun Canvas.drawLineFromEndVSweep(scale : Float, w : Float, h : Float, paint : Pa
         save()
         scale(1f - 2 * j, 1f - 2 * j)
         translate(0f, (h / 2 + paint.strokeWidth) * (1 - sc1))
-        rotate(deg * sc2)
+        rotate(deg * sc2 * (1f - 2 * j))
         drawLine(0f, 0f, size, 0f, paint)
         restore()
     }
@@ -131,7 +131,7 @@ class LineFromEndVSweepView(ctx : Context) : View(ctx) {
         private var prev : LFEVSNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
