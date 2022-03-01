@@ -91,13 +91,13 @@ class LineArcHookView(ctx : Context) : View(ctx) {
 
     data class Animator(var view : View, var animated : Boolean = false) {
 
-        fun animate(cb : () -> Unit) {
+        fun animate(cb: () -> Unit) {
             if (animated) {
                 cb()
                 try {
                     Thread.sleep(delay)
                     view.invalidate()
-                } catch(ex : Exception) {
+                } catch (ex: Exception) {
 
                 }
             }
@@ -115,47 +115,71 @@ class LineArcHookView(ctx : Context) : View(ctx) {
                 animated = false
             }
         }
+    }
 
-        data class LAHNode(var i : Int, val state : State = State()) {
+    data class LAHNode(var i : Int, val state : State = State()) {
 
-            private var next : LAHNode? = null
-            private var prev : LAHNode? = null
+        private var next : LAHNode? = null
+        private var prev : LAHNode? = null
 
-            init {
-                addNeighbor()
-            }
+        init {
+            addNeighbor()
+        }
 
 
-            fun addNeighbor() {
-                if (i < colors.size - 1) {
-                    next = LAHNode(i + 1)
-                    next?.prev = this
-                }
-            }
-
-            fun draw(canvas : Canvas, paint : Paint) {
-                canvas.drawLAHNode(i, state.scale, paint)
-            }
-
-            fun update(cb : (Float) -> Unit) {
-                state.update(cb)
-            }
-
-            fun startUpdating(cb : () -> Unit) {
-                state.startUpdating(cb)
-            }
-
-            fun getNext(dir : Int, cb : () -> Unit) : LAHNode {
-                var curr : LAHNode? = prev
-                if (dir == 1) {
-                    curr = next
-                }
-                if (curr != null) {
-                    return curr
-                }
-                cb()
-                return this
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LAHNode(i + 1)
+                next?.prev = this
             }
         }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLAHNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LAHNode {
+            var curr : LAHNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
     }
+
+    data class LineArcHook(var i : Int) {
+
+        private var curr : LAHNode = LAHNode(0)
+        private var dir : Int = 1
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            curr.draw(canvas, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            curr.update {
+                curr = curr.getNext(dir) {
+                    dir *= -1
+                }
+                cb(it)
+            }
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            curr.startUpdating(cb)
+        }
+    }
+
 }
