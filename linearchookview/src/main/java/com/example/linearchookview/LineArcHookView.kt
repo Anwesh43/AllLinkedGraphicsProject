@@ -115,5 +115,47 @@ class LineArcHookView(ctx : Context) : View(ctx) {
                 animated = false
             }
         }
+
+        data class LAHNode(var i : Int, val state : State = State()) {
+
+            private var next : LAHNode? = null
+            private var prev : LAHNode? = null
+
+            init {
+                addNeighbor()
+            }
+
+
+            fun addNeighbor() {
+                if (i < colors.size - 1) {
+                    next = LAHNode(i + 1)
+                    next?.prev = this
+                }
+            }
+
+            fun draw(canvas : Canvas, paint : Paint) {
+                canvas.drawLAHNode(i, state.scale, paint)
+            }
+
+            fun update(cb : (Float) -> Unit) {
+                state.update(cb)
+            }
+
+            fun startUpdating(cb : () -> Unit) {
+                state.startUpdating(cb)
+            }
+
+            fun getNext(dir : Int, cb : () -> Unit) : LAHNode {
+                var curr : LAHNode? = prev
+                if (dir == 1) {
+                    curr = next
+                }
+                if (curr != null) {
+                    return curr
+                }
+                cb()
+                return this
+            }
+        }
     }
 }
