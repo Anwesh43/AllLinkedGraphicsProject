@@ -206,4 +206,13 @@ class LineArcHookView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : LineArcHookView {
+            val view : LineArcHookView = LineArcHookView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
