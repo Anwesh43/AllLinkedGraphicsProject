@@ -233,4 +233,13 @@ class MultipleTimesRotArcView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : MultipleTimesRotArcView {
+            val view : MultipleTimesRotArcView = MultipleTimesRotArcView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
