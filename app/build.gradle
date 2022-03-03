@@ -207,5 +207,6 @@ dependencies {
     //implementation project(":linerottosidenview")
     //implementation project(":clipboxlinerotview")
     //implementation project(":linefromendvsweepview")
-    implementation project(":linearchookview")
+    //implementation project(":linearchookview")
+    implementation project(":multipletimesrotarcview")
 }
