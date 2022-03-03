@@ -43,15 +43,17 @@ fun Canvas.drawMultipleTimesRotArc(scale : Float, w : Float, h : Float, paint : 
     val size : Float = fixedSize * (1 - sc6)
     save()
     translate(w / 2, h / 2)
-    rotate(rot * sc4)
+    save()
     drawArc(
         RectF(
-            -size / 2, -size / 2, size / 2, size / 2),
-        0f,
+            -size, -size, size, size),
+        sweep,
         sweep * sc5,
         true,
         paint
     )
+    restore()
+    rotate( rot * sc4)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
@@ -61,15 +63,9 @@ fun Canvas.drawMultipleTimesRotArc(scale : Float, w : Float, h : Float, paint : 
             drawLine(0f, 0f, size * sc1, 0f, paint)
             restore()
         }
-        drawArc(
-            RectF(-size / 2, -size / 2, size / 2, size / 2),
-            0f,
-            rot * sc3,
-            true,
-            paint
-        )
         restore()
     }
+    drawArc(RectF(-size, -size, size, size), -rot * sc3, sweep * sc3, true, paint)
     restore()
 }
 
