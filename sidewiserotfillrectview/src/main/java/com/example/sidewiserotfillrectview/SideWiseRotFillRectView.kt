@@ -189,4 +189,27 @@ class SideWiseRotFillRectView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SideWiseRotFillRectView) {
+
+        private val animator : Animator = Animator(view)
+        private val swrfr : SideWiseRotFillRect = SideWiseRotFillRect(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            swrfr.draw(canvas, paint)
+            animator.animate {
+                swrfr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            swrfr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
