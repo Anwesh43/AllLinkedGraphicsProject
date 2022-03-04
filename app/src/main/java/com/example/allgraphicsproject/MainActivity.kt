@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.sidewiserotfillrectview.SideWiseRotFillRectView
+
 //import com.example.multipletimesrotarcview.MultipleTimesRotArcView
 
 //import com.example.linearchookview.LineArcHookView
@@ -491,6 +493,7 @@ class MainActivity : AppCompatActivity() {
         //LineFromEndVSweepView.create(this)
         //LineArcHookView.create(this)
         //MultipleTimesRotArcView.create(this)
+        SideWiseRotFillRectView.create(this)
         fullScreen()
     }
 }
