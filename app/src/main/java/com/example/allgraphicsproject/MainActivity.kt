@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.multipletimesrotarcview.MultipleTimesRotArcView
+//import com.example.multipletimesrotarcview.MultipleTimesRotArcView
 
 //import com.example.linearchookview.LineArcHookView
 
@@ -490,7 +490,7 @@ class MainActivity : AppCompatActivity() {
         //ClipBoxLineRotView.create(this)
         //LineFromEndVSweepView.create(this)
         //LineArcHookView.create(this)
-        MultipleTimesRotArcView.create(this)
+        //MultipleTimesRotArcView.create(this)
         fullScreen()
     }
 }
