@@ -214,4 +214,13 @@ class SideWiseRotFillRectView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SideWiseRotFillRectView {
+            val view : SideWiseRotFillRectView = SideWiseRotFillRectView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
