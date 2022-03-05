@@ -209,5 +209,6 @@ dependencies {
     //implementation project(":linefromendvsweepview")
     //implementation project(":linearchookview")
     //implementation project(":multipletimesrotarcview")
-    implementation project(":sidewiserotfillrectview")
+    //implementation project(":sidewiserotfillrectview")
+    implementation project(":altsiderotrectupview")
 }
