@@ -214,4 +214,13 @@ class AltSideRotRectUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : AltSideRotRectUpView {
+            val view : AltSideRotRectUpView = AltSideRotRectUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
