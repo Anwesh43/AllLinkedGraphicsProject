@@ -189,4 +189,27 @@ class AltSideRotRectUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : AltSideRotRectUpView) {
+
+        private val asrru : AltSideRotRectUp = AltSideRotRectUp(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            asrru.draw(canvas, paint)
+            animator.animate {
+                asrru.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            asrru.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
