@@ -208,4 +208,13 @@ class HammerBarHitLeftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion  object {
+
+        fun create(activity : Activity) : HammerBarHitLeftView {
+            val view : HammerBarHitLeftView = HammerBarHitLeftView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
