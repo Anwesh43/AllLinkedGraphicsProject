@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.altsiderotrectupview.AltSideRotRectUpView
+//import com.example.altsiderotrectupview.AltSideRotRectUpView
 
 //import com.example.sidewiserotfillrectview.SideWiseRotFillRectView
 
@@ -496,7 +496,7 @@ class MainActivity : AppCompatActivity() {
         //LineArcHookView.create(this)
         //MultipleTimesRotArcView.create(this)
         //SideWiseRotFillRectView.create(this)
-        AltSideRotRectUpView.create(this)
+        //AltSideRotRectUpView.create(this)
         fullScreen()
     }
 }

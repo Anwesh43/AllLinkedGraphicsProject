@@ -210,5 +210,6 @@ dependencies {
     //implementation project(":linearchookview")
     //implementation project(":multipletimesrotarcview")
     //implementation project(":sidewiserotfillrectview")
-    implementation project(":altsiderotrectupview")
+    //implementation project(":altsiderotrectupview")
+    implementation project(":hammerbarhitleftview")
 }
