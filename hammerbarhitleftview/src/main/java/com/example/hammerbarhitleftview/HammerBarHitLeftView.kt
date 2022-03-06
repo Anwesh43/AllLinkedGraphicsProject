@@ -21,8 +21,8 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
 val barWFactor : Float = 7.8f
-val barHFactor : Float = 9.4f
-val lineWidthFactor : Float = 12.3f
+val barHFactor : Float = 16.4f
+val lineWidthFactor : Float = 21.3f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
@@ -153,7 +153,7 @@ class HammerBarHitLeftView(ctx : Context) : View(ctx) {
         fun getNext(dir : Int, cb : () -> Unit) : HBHLNode {
             var curr : HBHLNode? = prev
             if (dir == 1) {
-                curr == next
+                curr = next
             }
             if (curr != null) {
                 return curr
