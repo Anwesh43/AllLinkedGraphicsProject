@@ -211,5 +211,6 @@ dependencies {
     //implementation project(":multipletimesrotarcview")
     //implementation project(":sidewiserotfillrectview")
     //implementation project(":altsiderotrectupview")
-    implementation project(":hammerbarhitleftview")
+    //implementation project(":hammerbarhitleftview")
+    implementation project(":exclaimshooterview")
 }

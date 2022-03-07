@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.hammerbarhitleftview.HammerBarHitLeftView
+//import com.example.hammerbarhitleftview.HammerBarHitLeftView
 
 //import com.example.altsiderotrectupview.AltSideRotRectUpView
 
@@ -499,7 +499,14 @@ class MainActivity : AppCompatActivity() {
         //MultipleTimesRotArcView.create(this)
         //SideWiseRotFillRectView.create(this)
         //AltSideRotRectUpView.create(this)
-        HammerBarHitLeftView.create(this)
+        val colors : Array<String> = arrayOf(
+            "#1A237E",
+            "#00C853",
+            "#AA00FF",
+            "#01579B",
+            "#BF360C"
+        )
+        //HammerBarHitLeftView.create(this)
         fullScreen()
     }
 }
