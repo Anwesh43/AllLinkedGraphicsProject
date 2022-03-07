@@ -180,4 +180,27 @@ class ExclaimShooterView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ExclaimShooterView) {
+
+        private val animator : Animator = Animator(view)
+        private val es : ExclaimShooter = ExclaimShooter(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            es.draw(canvas, paint)
+            animator.animate {
+                es.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            es.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
