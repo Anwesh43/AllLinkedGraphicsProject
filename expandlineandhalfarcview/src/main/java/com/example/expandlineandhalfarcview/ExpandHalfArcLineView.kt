@@ -40,15 +40,17 @@ fun Canvas.drawExpandHalfArc(scale : Float, w : Float, h : Float, paint : Paint)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2 + (w / 2 + paint.strokeWidth), h / 2)
+    translate(w / 2 + (w / 2 + paint.strokeWidth) * sc4, h / 2)
     rotate(-rot * sc3)
     for (j in 0..1) {
         save()
         rotate(rot * sc2 * (1f - 2 * j))
-        drawLine(0f, 0f, 0f, size * sc1, paint)
+        if (sc1 > 0f) {
+            drawLine(0f, 0f, 0f, size * sc1, paint)
+        }
         restore()
     }
-    drawArc(RectF(-r / 2, -r / 2, r / 2, r / 2), 0f, deg * sc2, true, paint)
+    drawArc(RectF(-r / 2, -r / 2, r / 2, r / 2), deg * 0.5f * (1 - sc2), deg * sc2, true, paint)
     restore()
 }
 
