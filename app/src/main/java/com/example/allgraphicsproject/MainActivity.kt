@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.exclaimshooterview.ExclaimShooterView
+
 //import com.example.hammerbarhitleftview.HammerBarHitLeftView
 
 //import com.example.altsiderotrectupview.AltSideRotRectUpView
@@ -507,6 +509,7 @@ class MainActivity : AppCompatActivity() {
             "#BF360C"
         )
         //HammerBarHitLeftView.create(this)
+        ExclaimShooterView.create(this)
         fullScreen()
     }
 }
