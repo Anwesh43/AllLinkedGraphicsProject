@@ -212,4 +212,13 @@ class ExpandHalfArcLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ExpandHalfArcLineView {
+            val view : ExpandHalfArcLineView = ExpandHalfArcLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
