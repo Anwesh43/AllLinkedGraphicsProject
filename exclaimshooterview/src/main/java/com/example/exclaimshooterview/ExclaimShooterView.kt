@@ -41,7 +41,9 @@ fun Canvas.drawExclaimShooter(scale : Float, w : Float, h : Float, paint : Paint
     translate(w / 2, h / 2 + (h / 2 + d) * sc4)
     rotate(deg * sc3)
     drawCircle(0f, 0f, d * sc1, paint)
-    drawLine(0f, -d, 0f, -d - size * sc2, paint)
+    if (sc2 > 0f) {
+        drawLine(0f, -2 * d, 0f, -2 * d - (size - 2 * d) * sc2, paint)
+    }
     restore()
 }
 
