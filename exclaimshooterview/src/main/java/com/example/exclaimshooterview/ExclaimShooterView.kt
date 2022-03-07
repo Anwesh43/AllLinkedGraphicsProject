@@ -205,4 +205,13 @@ class ExclaimShooterView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ExclaimShooterView {
+            val view : ExclaimShooterView = ExclaimShooterView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
