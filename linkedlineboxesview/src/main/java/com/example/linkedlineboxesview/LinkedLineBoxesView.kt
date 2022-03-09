@@ -159,6 +159,10 @@ class LinkedLineBoxesView(ctx : Context) : View(ctx) {
             state.update(cb)
         }
 
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
         fun getNext(dir : Int, cb : () -> Unit) : LLBNode {
             var curr : LLBNode? = prev
             if (dir == 1) {
@@ -169,6 +173,29 @@ class LinkedLineBoxesView(ctx : Context) : View(ctx) {
             }
             cb()
             return this
+        }
+    }
+
+    data class LinkedLineBoxes(var i : Int) {
+
+        private var curr : LLBNode = LLBNode(0)
+        private var dir : Int = 1
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            curr.draw(canvas, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            curr.update {
+                curr = curr.getNext(dir) {
+                    dir *= -1
+                }
+                cb(it)
+            }
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            curr.startUpdating(cb)
         }
     }
 }
