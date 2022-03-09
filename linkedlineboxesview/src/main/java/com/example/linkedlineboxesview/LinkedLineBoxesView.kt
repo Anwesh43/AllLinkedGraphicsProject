@@ -223,4 +223,13 @@ class LinkedLineBoxesView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LinkedLineBoxesView {
+            val view : LinkedLineBoxesView = LinkedLineBoxesView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
