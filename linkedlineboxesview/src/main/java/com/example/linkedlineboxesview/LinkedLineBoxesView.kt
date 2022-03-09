@@ -134,4 +134,41 @@ class LinkedLineBoxesView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class LLBNode(var i : Int, val state : State = State()) {
+
+        private var next : LLBNode? = null
+        private var prev : LLBNode? = null
+
+        init {
+
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LLBNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLLBNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LLBNode {
+            var curr : LLBNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
