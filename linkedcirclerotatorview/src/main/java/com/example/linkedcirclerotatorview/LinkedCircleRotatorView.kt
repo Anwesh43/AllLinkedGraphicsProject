@@ -38,7 +38,7 @@ fun Canvas.drawLinkedCircleRotator(scale : Float, w : Float, h : Float, paint : 
     val sc4 : Float = scale.divideScale(3, parts)
     val r : Float = Math.min(w, h) / rFactor
     save()
-    translate(w / 2, h / 2 - (h / 2 + size) * sc4)
+    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
