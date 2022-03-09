@@ -188,4 +188,27 @@ class LinkedCircleRotatorView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LinkedCircleRotatorView) {
+
+        private val animator : Animator = Animator(view)
+        private val lcr : LinkedCircleRotator = LinkedCircleRotator(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lcr.draw(canvas, paint)
+            animator.animate {
+                lcr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lcr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
