@@ -198,4 +198,27 @@ class LinkedLineBoxesView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LinkedLineBoxesView) {
+
+        private val animator : Animator = Animator(view)
+        private val llb : LinkedLineBoxes = LinkedLineBoxes(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            llb.draw(canvas, paint)
+            animator.animate {
+                llb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            llb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
