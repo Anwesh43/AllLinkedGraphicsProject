@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linkedcirclerotatorview.LinkedCircleRotatorView
+
 //import com.example.linkedlineboxesview.LinkedLineBoxesView
 
 //import com.example.expandlineandhalfarcview.ExpandHalfArcLineView
@@ -516,6 +518,7 @@ class MainActivity : AppCompatActivity() {
         //ExclaimShooterView.create(this)
         //ExpandHalfArcLineView.create(this)
         //LinkedLineBoxesView.create(this)
+        LinkedCircleRotatorView.create(this)
         fullScreen()
     }
 }
