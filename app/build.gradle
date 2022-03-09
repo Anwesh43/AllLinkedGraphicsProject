@@ -213,5 +213,6 @@ dependencies {
     //implementation project(":altsiderotrectupview")
     //implementation project(":hammerbarhitleftview")
     //implementation project(":exclaimshooterview")
-    implementation project(":expandlineandhalfarcview")
+    //implementation project(":expandlineandhalfarcview")
+    implementation project(":linkedlineboxesview")
 }
