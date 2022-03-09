@@ -24,7 +24,7 @@ val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val rot : Float = 60f
-val rFactor : Float = 11.9f
+val rFactor : Float = 17.9f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -38,14 +38,17 @@ fun Canvas.drawLinkedCircleRotator(scale : Float, w : Float, h : Float, paint : 
     val sc4 : Float = scale.divideScale(3, parts)
     val r : Float = Math.min(w, h) / rFactor
     save()
-    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
+    translate(w / 2, h / 2 + (h / 2 + size + r) * sc4)
+    drawCircle(0f, (-h / 2 - r) * (1 - sc1), r, paint)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
         rotate(rot * sc3)
-        drawLine(0f, 0f, -size * sc1, 0f, paint)
+        if (sc2 > 0) {
+            drawLine(0f, 0f, -size * sc2, 0f, paint)
+        }
         save()
-        translate(-size, (-h / 2 - r) * (1 - sc2))
+        translate(-size, (-h / 2 - r) * (1 - sc1))
         drawCircle(0f, 0f, r, paint)
         restore()
         restore()
