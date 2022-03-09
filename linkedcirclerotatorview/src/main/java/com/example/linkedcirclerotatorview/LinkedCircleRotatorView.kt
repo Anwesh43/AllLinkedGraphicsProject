@@ -213,4 +213,13 @@ class LinkedCircleRotatorView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LinkedCircleRotatorView {
+            val view : LinkedCircleRotatorView = LinkedCircleRotatorView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
