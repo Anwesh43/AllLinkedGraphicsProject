@@ -143,7 +143,7 @@ class LinkedLineBoxesView(ctx : Context) : View(ctx) {
         private var prev : LLBNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
