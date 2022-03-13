@@ -119,6 +119,12 @@ class LineRotRectExpanderView(ctx : Context) : View(ctx) {
                 view.postInvalidate()
             }
         }
+
+        fun stop() {
+            if (animated) {
+                animated = false
+            }
+        }
     }
 
     data class LRRENode(var i : Int, val state : State = State()) {
@@ -182,6 +188,29 @@ class LineRotRectExpanderView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : LineRotRectExpanderView) {
+
+        private val animator : Animator = Animator(view)
+        private val lrre : LineRotRectExpander = LineRotRectExpander(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lrre.draw(canvas, paint)
+            animator.animate {
+                lrre.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lrre.startUpdating {
+                animator.start()
+            }
         }
     }
 }
