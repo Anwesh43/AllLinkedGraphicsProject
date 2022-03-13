@@ -187,4 +187,27 @@ class BothDirectionArrowsView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BothDirectionArrowsView) {
+
+        private val animator : Animator = Animator(view)
+        private val bda : BothDirectionArrows = BothDirectionArrows(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bda.draw(canvas, paint)
+            animator.animate {
+                bda.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bda.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
