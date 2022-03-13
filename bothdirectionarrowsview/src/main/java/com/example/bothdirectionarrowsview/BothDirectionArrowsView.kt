@@ -23,14 +23,14 @@ val delay : Long = 20
 val parts : Int = 3
 val backColor : Int = Color.parseColor("#BDBDBD")
 val scGap : Float = 0.03f / parts
-val heightFactor : Float = 23.2f
+val heightFactor : Float = 8.8f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 
 fun Canvas.drawBothDirectionArrows(scale : Float, w : Float, h : Float, paint : Paint) {
-    val size : Float = Math.min(w, h) / strokeFactor
+    val size : Float = Math.min(w, h) / sizeFactor
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
@@ -40,11 +40,10 @@ fun Canvas.drawBothDirectionArrows(scale : Float, w : Float, h : Float, paint : 
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(0f, (h / 2 + hSize) * sc3)
         for (k in 0..1) {
             save()
-            scale(1f - 2 * k, 1f)
-            drawLine(0f, -hSize * sc2, size * sc1, 0f, paint)
+            translate(0f, (h / 2 + hSize) * (1f - 2 *k) * sc3)
+            drawLine(0f, hSize * sc2 * (1f - 2 * k), size * sc1, 0f, paint)
             restore()
         }
         restore()
