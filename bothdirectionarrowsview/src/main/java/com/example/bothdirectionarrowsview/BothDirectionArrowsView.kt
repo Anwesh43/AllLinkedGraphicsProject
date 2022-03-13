@@ -212,4 +212,13 @@ class BothDirectionArrowsView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BothDirectionArrowsView {
+            val view : BothDirectionArrowsView = BothDirectionArrowsView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
