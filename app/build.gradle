@@ -215,5 +215,6 @@ dependencies {
     //implementation project(":exclaimshooterview")
     //implementation project(":expandlineandhalfarcview")
     //implementation project(":linkedlineboxesview")
-    implementation project(":linkedcirclerotatorview")
+    //implementation project(":linkedcirclerotatorview")
+    implementation project(":bothdirectionarrowsview")
 }
