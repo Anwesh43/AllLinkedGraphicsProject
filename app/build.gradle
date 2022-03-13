@@ -216,5 +216,6 @@ dependencies {
     //implementation project(":expandlineandhalfarcview")
     //implementation project(":linkedlineboxesview")
     //implementation project(":linkedcirclerotatorview")
-    implementation project(":bothdirectionarrowsview")
+    //implementation project(":bothdirectionarrowsview")
+    implementation project(":linerotrectexpanderview")
 }

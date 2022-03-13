@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bothdirectionarrowsview.BothDirectionArrowsView
+//import com.example.bothdirectionarrowsview.BothDirectionArrowsView
 
 //import com.example.linkedcirclerotatorview.LinkedCircleRotatorView
 
@@ -521,7 +521,7 @@ class MainActivity : AppCompatActivity() {
         //ExpandHalfArcLineView.create(this)
         //LinkedLineBoxesView.create(this)
         //LinkedCircleRotatorView.create(this)
-        BothDirectionArrowsView.create(this)
+        //BothDirectionArrowsView.create(this)
         fullScreen()
     }
 }
