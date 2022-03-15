@@ -214,4 +214,13 @@ class SquareSideLineRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareSideLineRotView {
+            val view : SquareSideLineRotView = SquareSideLineRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
