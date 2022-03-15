@@ -42,7 +42,7 @@ fun Canvas.drawSquareSideLineRot(scale : Float, w : Float, h : Float, paint : Pa
     rotate(deg * sc4)
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 1f)
+        scale(1f - 2 * j, 1f - 2 * j)
         save()
         rotate(rot * sc2)
         drawLine(0f, 0f, size * sc1, 0f, paint)
