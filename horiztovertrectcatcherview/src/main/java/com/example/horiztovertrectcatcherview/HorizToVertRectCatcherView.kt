@@ -62,7 +62,7 @@ fun Canvas.drawHTVRCNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
-    drawHTVRCNode(i, scale, paint)
+    drawHorizToVertRectCatcher(scale, w, h, paint)
 }
 
 class HorizToVertRectCatcherView(ctx : Context) : View(ctx) {
