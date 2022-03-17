@@ -216,4 +216,13 @@ class HorizToVertRectCatcherView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HorizToVertRectCatcherView {
+            val view : HorizToVertRectCatcherView = HorizToVertRectCatcherView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
