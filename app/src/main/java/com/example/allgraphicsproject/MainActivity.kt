@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.squaresidelinerotview.SquareSideLineRotView
+//import com.example.squaresidelinerotview.SquareSideLineRotView
 
 //import com.example.linerotrectexpanderview.LineRotRectExpanderView
 
@@ -527,7 +527,7 @@ class MainActivity : AppCompatActivity() {
         //LinkedCircleRotatorView.create(this)
         //BothDirectionArrowsView.create(this)
         //LineRotRectExpanderView.create(this)
-        SquareSideLineRotView.create(this)
+        //SquareSideLineRotView.create(this)
         fullScreen()
     }
 }

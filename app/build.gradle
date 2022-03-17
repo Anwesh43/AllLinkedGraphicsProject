@@ -218,5 +218,6 @@ dependencies {
     //implementation project(":linkedcirclerotatorview")
     //implementation project(":bothdirectionarrowsview")
     //implementation project(":linerotrectexpanderview")
-    implementation project(":squaresidelinerotview")
+    //implementation project(":squaresidelinerotview")
+    implementation project(":horiztovertrectcatcherview")
 }
