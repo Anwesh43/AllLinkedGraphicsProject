@@ -127,4 +127,41 @@ class HorizToVertRectCatcherView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class HTVRCNode(var i : Int, val state : State = State()) {
+
+        private var next : HTVRCNode? = null
+        private var prev : HTVRCNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = HTVRCNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawHTVRCNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : HTVRCNode {
+            var curr : HTVRCNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
