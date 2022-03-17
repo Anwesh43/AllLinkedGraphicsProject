@@ -191,4 +191,27 @@ class HorizToVertRectCatcherView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HorizToVertRectCatcherView) {
+
+        private val animator : Animator = Animator(view)
+        private val horizToVertRectCatcher : HorizToVertRectCatcher = HorizToVertRectCatcher(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            horizToVertRectCatcher.draw(canvas, paint)
+            animator.animate {
+                horizToVertRectCatcher.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            horizToVertRectCatcher.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
