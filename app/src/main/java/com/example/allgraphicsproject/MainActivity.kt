@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.invertedlinetorectview.InvertedLineToRectView
+
 //import com.example.horiztovertrectcatcherview.HorizToVertRectCatcherView
 
 //import com.example.squaresidelinerotview.SquareSideLineRotView
@@ -532,7 +534,7 @@ class MainActivity : AppCompatActivity() {
         //SquareSideLineRotView.create(this)
         //
         // HorizToVertRectCatcherView.create(this)
-
+        InvertedLineToRectView.create(this)
         fullScreen()
     }
 }
