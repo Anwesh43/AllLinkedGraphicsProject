@@ -183,4 +183,27 @@ class InvertedLineToRectView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : InvertedLineToRectView) {
+
+        private val animator : Animator = Animator(view)
+        private val iltr : InvertedLineToRect = InvertedLineToRect(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            iltr.draw(canvas, paint)
+            animator.animate {
+                iltr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            iltr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
