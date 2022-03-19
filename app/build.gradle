@@ -219,5 +219,6 @@ dependencies {
     //implementation project(":bothdirectionarrowsview")
     //implementation project(":linerotrectexpanderview")
     //implementation project(":squaresidelinerotview")
-    implementation project(":horiztovertrectcatcherview")
+    //implementation project(":horiztovertrectcatcherview")
+    implementation project(":invertedlinetorectview")
 }
