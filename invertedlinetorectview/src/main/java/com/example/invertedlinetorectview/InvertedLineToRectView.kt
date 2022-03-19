@@ -208,4 +208,13 @@ class InvertedLineToRectView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : InvertedLineToRectView {
+            val view : InvertedLineToRectView = InvertedLineToRectView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
