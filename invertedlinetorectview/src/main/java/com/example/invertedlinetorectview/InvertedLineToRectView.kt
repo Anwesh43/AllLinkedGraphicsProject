@@ -40,6 +40,7 @@ fun Canvas.drawInvertedLineToRect(scale : Float, w : Float, h : Float, paint : P
     translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     for (j in 0..1) {
         save()
+        scale(1f - 2 * j, 1f)
         rotate(-deg * (1 - sc2))
         drawLine(0f, 0f, size * sc1, 0f, paint)
         restore()
