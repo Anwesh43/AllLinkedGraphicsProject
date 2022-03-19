@@ -209,4 +209,13 @@ class QuarterLineRotRectUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : QuarterLineRotRectUpView {
+            val view : QuarterLineRotRectUpView = QuarterLineRotRectUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
