@@ -178,4 +178,27 @@ class QuarterLineRotRectUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : QuarterLineRotRectUpView) {
+
+        private val qlrru : QuarterLineRotRectUp = QuarterLineRotRectUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            qlrru.draw(canvas, paint)
+            animator.animate {
+                qlrru.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            qlrru.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
