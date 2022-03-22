@@ -181,4 +181,27 @@ class LineExpandBarFromRightView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineExpandBarFromRightView) {
+
+        private val animator : Animator = Animator(view)
+        private val lebfr : LineExpandBarFromRight = LineExpandBarFromRight(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lebfr.draw(canvas, paint)
+            animator.animate {
+                lebfr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lebfr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
