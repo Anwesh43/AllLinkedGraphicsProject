@@ -40,8 +40,12 @@ fun Canvas.drawLineExpandBarFromRight(scale : Float, w : Float, h : Float, paint
     save()
     translate(w / 2, h / 2 + (h / 2 + size) * sc5)
     rotate(deg * sc4)
-    drawLine(-size * sc1, 0f, size * sc1, 0f, paint)
-    drawLine(-size, 0f, -size, -size * sc2, paint)
+    if (sc1 > 0f) {
+        drawLine(-size * sc1, 0f, size * sc1, 0f, paint)
+    }
+    if (sc2 > 0f) {
+        drawLine(-size, 0f, -size, -size * sc2, paint)
+    }
     drawRect(RectF(-size, -size, -size + size * sc3, 0f), paint)
     restore()
 }
