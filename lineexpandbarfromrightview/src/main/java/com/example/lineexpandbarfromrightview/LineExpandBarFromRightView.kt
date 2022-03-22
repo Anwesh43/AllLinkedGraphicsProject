@@ -206,4 +206,13 @@ class LineExpandBarFromRightView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineExpandBarFromRightView {
+            val view : LineExpandBarFromRightView = LineExpandBarFromRightView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
