@@ -221,5 +221,6 @@ dependencies {
     //implementation project(":squaresidelinerotview")
     //implementation project(":horiztovertrectcatcherview")
     //implementation project(":invertedlinetorectview")
-    implementation project(":quarterlinerotrectupview")
+    //implementation project(":quarterlinerotrectupview")
+    implementation project(":lineexpandbarfromrightview")
 }
