@@ -215,4 +215,13 @@ class InvertedVaseView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : InvertedVaseView {
+            val view : InvertedVaseView = InvertedVaseView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
