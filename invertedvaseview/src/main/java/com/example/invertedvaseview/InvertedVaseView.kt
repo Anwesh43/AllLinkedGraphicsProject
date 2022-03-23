@@ -36,13 +36,14 @@ fun Canvas.drawInvertedVase(scale : Float, w : Float, h : Float, paint : Paint) 
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h /2 + (h / 2 + size / 2) * sc4)
+    rotate(180f * sc3)
     drawLine(-size * sc1, 0f, size * sc1, 0f, paint)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
         translate(size, 0f)
-        rotate(-rot * sc1)
+        rotate(rot * sc2)
         drawLine(
             0f,
             0f,
