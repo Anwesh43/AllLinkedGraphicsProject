@@ -195,7 +195,7 @@ class TableTopDownView(ctx: Context) : View(ctx) {
         private val animator : Animator = Animator(view)
         private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-        fun render(canvas : Canvas, paint : Paint) {
+        fun render(canvas : Canvas) {
             canvas.drawColor(backColor)
             ttd.draw(canvas, paint)
             animator.animate {
@@ -209,6 +209,15 @@ class TableTopDownView(ctx: Context) : View(ctx) {
             ttd.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity : Activity) : TableTopDownView {
+            val view : TableTopDownView = TableTopDownView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
