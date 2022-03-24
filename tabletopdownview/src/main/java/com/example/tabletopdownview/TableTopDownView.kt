@@ -3,6 +3,7 @@ package com.example.tabletopdownview
 import android.view.View
 import android.view.MotionEvent
 import android.app.Activity
+import android.content.Context
 import android.graphics.Paint
 import android.graphics.Canvas
 import android.graphics.Color
@@ -63,3 +64,18 @@ fun Canvas.drawTTDNode(i : Int, scale : Float, paint : Paint) {
     drawTableTopDown(scale, w, h, paint)
 }
 
+class TableTopDownView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
