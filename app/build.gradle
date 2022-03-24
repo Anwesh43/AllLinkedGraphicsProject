@@ -223,5 +223,6 @@ dependencies {
     //implementation project(":invertedlinetorectview")
     //implementation project(":quarterlinerotrectupview")
     //implementation project(":lineexpandbarfromrightview")
-    implementation project(":invertedvaseview")
+    //implementation project(":invertedvaseview")
+    implementation project(":tabletopdownview")
 }
