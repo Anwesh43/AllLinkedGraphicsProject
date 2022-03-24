@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.tabletopdownview.TableTopDownView
+
 //import com.example.invertedvaseview.InvertedVaseView
 
 //import com.example.lineexpandbarfromrightview.LineExpandBarFromRightView
@@ -544,6 +546,7 @@ class MainActivity : AppCompatActivity() {
         //QuarterLineRotRectUpView.create(this)
         //LineExpandBarFromRightView.create(this)
         //InvertedVaseView.create(this)
+        TableTopDownView.create(this)
         fullScreen()
     }
 }
