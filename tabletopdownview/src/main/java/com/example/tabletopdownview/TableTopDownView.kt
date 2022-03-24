@@ -39,7 +39,7 @@ fun Canvas.drawTableTopDown(scale: Float, w: Float, h: Float, paint: Paint) {
     val sc4: Float = scale.divideScale(3, parts)
     val barH: Float = size / barHFactor
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
     drawRect(RectF(-size / 2, -barH, -size / 2 + size * sc3, 0f), paint)
     for (j in 0..2) {
         val k: Float = 1f - j % 2
@@ -48,7 +48,7 @@ fun Canvas.drawTableTopDown(scale: Float, w: Float, h: Float, paint: Paint) {
         val x2: Float = sk * sc1 * size
         save()
         translate(-size / 2 + size * 0.5f * j, 0f)
-        rotate(rot * (1 - j) * sc2)
+        rotate(-rot * (1 - j) * sc2)
         drawLine(-x2 / 2, 0f, x2 / 2 + x1, 0f, paint)
         restore()
     }
@@ -181,7 +181,12 @@ class TableTopDownView(ctx: Context) : View(ctx) {
         }
 
         fun update(cb: (Float) -> Unit) {
-            curr.update(cb)
+            curr.update {
+                curr = curr.getNext(dir) {
+                    dir *= -1
+                }
+                cb(it)
+            }
         }
 
         fun startUpdating(cb: () -> Unit) {
