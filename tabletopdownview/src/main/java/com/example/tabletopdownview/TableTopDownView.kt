@@ -186,4 +186,27 @@ class TableTopDownView(ctx: Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TableTopDownView) {
+
+        private val ttd : TableTopDown = TableTopDown(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            ttd.draw(canvas, paint)
+            animator.animate {
+                ttd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ttd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
