@@ -212,4 +212,13 @@ class BoxLineEitherSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BoxLineEitherSquareView {
+            val view : BoxLineEitherSquareView = BoxLineEitherSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
