@@ -187,4 +187,27 @@ class BoxLineEitherSquareView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BoxLineEitherSquareView) {
+
+        private val bles : BoxLineEitherSquare = BoxLineEitherSquare()
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bles.draw(canvas, paint)
+            animator.animate {
+                bles.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bles.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
