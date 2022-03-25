@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.boxlineeithersquareview.BoxLineEitherSquareView
+
 //import com.example.tabletopdownview.TableTopDownView
 
 //import com.example.invertedvaseview.InvertedVaseView
@@ -547,6 +549,7 @@ class MainActivity : AppCompatActivity() {
         //LineExpandBarFromRightView.create(this)
         //InvertedVaseView.create(this)
         //TableTopDownView.create(this)
+        BoxLineEitherSquareView.create(this)
         fullScreen()
     }
 }
