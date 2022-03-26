@@ -179,4 +179,27 @@ class ThickLineRotView(ctx : Context) :  View(ctx) {
             }
         }
     }
+
+    data class Renderer(var view : ThickLineRotView) {
+
+        private val tlr : ThickLineRot = ThickLineRot(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tlr.draw(canvas, paint)
+            animator.animate {
+                tlr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tlr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
