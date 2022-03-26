@@ -204,4 +204,13 @@ class ThickLineRotView(ctx : Context) :  View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ThickLineRotView {
+            val view : ThickLineRotView = ThickLineRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
