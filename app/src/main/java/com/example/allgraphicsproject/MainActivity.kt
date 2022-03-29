@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.thicklinerotview.ThickLineRotView
+//import com.example.thicklinerotview.ThickLineRotView
 
 //import com.example.boxlineeithersquareview.BoxLineEitherSquareView
 
@@ -552,7 +552,7 @@ class MainActivity : AppCompatActivity() {
         //InvertedVaseView.create(this)
         //TableTopDownView.create(this)
         //BoxLineEitherSquareView.create(this)
-        ThickLineRotView.create(this)
+        //ThickLineRotView.create(this)
         fullScreen()
     }
 }

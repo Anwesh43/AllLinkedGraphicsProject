@@ -226,5 +226,6 @@ dependencies {
     //implementation project(":invertedvaseview")
     //implementation project(":tabletopdownview")
     //implementation project(":boxlineeithersquareview")
-    implementation project(":thicklinerotview")
+    //implementation project(":thicklinerotview")
+    implementation project(":horizcrossvertlineview")
 }
