@@ -206,4 +206,13 @@ class HorizCrossVertLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HorizCrossVertLineView {
+            val view : HorizCrossVertLineView = HorizCrossVertLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
