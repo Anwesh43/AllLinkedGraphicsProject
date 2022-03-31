@@ -25,6 +25,7 @@ val deg : Float = 45f
 val delay : Long = 20
 val sizeFactor : Float = 4.9f
 val strokeFactor : Float = 90f
+val backColor : Int = Color.parseColor("#BDBDBD")
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -184,6 +185,29 @@ class RightAngleArcRotView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : RightAngleArcRotView) {
+
+        private val animator : Animator = Animator(view)
+        private val raar : RightAngleArcRot = RightAngleArcRot(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            raar.draw(canvas, paint)
+            animator.animate {
+                raar.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            raar.startUpdating {
+                animator.start()
+            }
         }
     }
 }
