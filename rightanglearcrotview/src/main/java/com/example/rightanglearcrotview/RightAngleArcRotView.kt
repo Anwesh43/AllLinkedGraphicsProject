@@ -212,4 +212,13 @@ class RightAngleArcRotView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : RightAngleArcRotView {
+            val view : RightAngleArcRotView = RightAngleArcRotView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
