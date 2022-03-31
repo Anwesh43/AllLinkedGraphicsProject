@@ -24,7 +24,7 @@ val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val deg : Float = 45f
-
+val backColor : Int = Color.parseColor("#BDBDBD")
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
@@ -179,6 +179,29 @@ class HorizCrossVertLineView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : HorizCrossVertLineView) {
+
+        private val hcvl : HorizCrossVertLine = HorizCrossVertLine(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            hcvl.draw(canvas, paint)
+            animator.animate {
+                hcvl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hcvl.startUpdating {
+                animator.stop()
+            }
         }
     }
 }
