@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.RectF
+import android.content.Context
 
 val colors : Array<Int> = arrayOf(
     "#1A237E",
@@ -54,3 +55,18 @@ fun Canvas.drawHCVLNode(i : Int, scale : Float, paint : Paint) {
     drawHorizCrossVertLine(scale, w, h, paint)
 }
 
+class HorizCrossVertLineView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
