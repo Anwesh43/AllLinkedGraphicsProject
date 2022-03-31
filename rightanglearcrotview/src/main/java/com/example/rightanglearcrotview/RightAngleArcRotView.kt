@@ -47,7 +47,7 @@ fun Canvas.drawRightAngleRotArc(scale : Float, w : Float, h : Float, paint : Pai
         drawLine(0f, 0f, size * sc1, 0f, paint)
         restore()
     }
-    drawArc(RectF(-size, -size, size, size), rot, rot * sc3, false, paint)
+    drawArc(RectF(0f, -2 * size, 2 * size, 0f), rot, rot * sc3, false, paint)
     restore()
 }
 
