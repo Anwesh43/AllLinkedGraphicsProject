@@ -39,7 +39,7 @@ fun Canvas.drawHorizCrossVertLine(scale : Float, w : Float, h : Float, paint : P
     translate(w / 2, h / 2 + (h / 2 + size / 2) * sc4)
     for (j in 0..1) {
         save()
-        rotate((deg + deg * sc3) * (1f - 2 * j) * sc1)
+        rotate((deg + deg * sc3) * (1f - 2 * j) * sc2)
         drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
         restore()
     }
@@ -202,7 +202,7 @@ class HorizCrossVertLineView(ctx : Context) : View(ctx) {
 
         fun handleTap() {
             hcvl.startUpdating {
-                animator.stop()
+                animator.start()
             }
         }
     }
