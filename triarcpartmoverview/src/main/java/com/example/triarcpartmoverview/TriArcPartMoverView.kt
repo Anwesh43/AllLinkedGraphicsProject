@@ -187,4 +187,25 @@ class TriArcPartMoverView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TriArcPartMoverView) {
+
+        private val tapm : TriArcPartMover = TriArcPartMover(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tapm.draw(canvas, paint)
+            tapm.update {
+                animator.stop()
+            }
+        }
+
+        fun handleTap() {
+            tapm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
