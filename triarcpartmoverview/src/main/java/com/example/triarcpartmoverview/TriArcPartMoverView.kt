@@ -210,4 +210,13 @@ class TriArcPartMoverView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TriArcPartMoverView {
+            val view : TriArcPartMoverView = TriArcPartMoverView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
