@@ -8,6 +8,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.RectF
 import android.content.Context
+import android.util.Log
 
 val colors : Array<Int> = arrayOf(
     "#1A237E",
@@ -16,15 +17,15 @@ val colors : Array<Int> = arrayOf(
     "#01579B",
     "#BF360C"
 ).map {
-    Color.parseColor("#BDBDBD")
+    Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
-val scGap : Float = 0.04f / parts
+val parts : Int = 3
+val scGap : Float = 0.03f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val deg : Float = 90f
-val rot : Float = 45f
+val sweep : Float = 75f
 val backColor : Int = Color.parseColor("#BDBDBD")
 
 fun Int.inverse() : Float = 1f / this
@@ -36,16 +37,18 @@ fun Canvas.drawTriArcPartMover(scale : Float, w : Float, h : Float, paint : Pain
     val sc1 : Float = scale.divideScale(0, parts)
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
+    //Log.d("SC1, SC2, SC3", "$sc1, $sc2, $sc3")
     save()
     translate(w / 2, h / 2)
+    //drawCircle(0f, 0f, size * (sc1 - sc2 * 0.5f + sc3), paint)
     for (j in 0..2) {
         save()
-        rotate((-rot + deg * j) * sc2)
-        translate((w / 2) * (j % 2) * sc3 + (1 - (j % 2)) * h * 0.5f * sc3, 0f)
+        rotate((deg * j) * sc2)
+        translate((h / 2) * (j % 2) * sc3 + (1 - (j % 2)) * w * 0.5f * sc3, 0f)
         drawArc(
             RectF(-size / 2, -size / 2, size / 2, size / 2),
-            0f,
-            rot * sc1,
+            -sweep * 0.5f * sc2,
+            sweep * sc1,
             true,
             paint
         )
@@ -82,6 +85,7 @@ class TriArcPartMoverView(ctx : Context) : View(ctx) {
 
         fun update(cb : (Float) -> Unit) {
             scale += scGap * dir
+            //Log.d("SCALE", "$scale")
             if (Math.abs(scale - prevScale) > 1) {
                 scale = prevScale + dir
                 dir = 0f
@@ -199,12 +203,15 @@ class TriArcPartMoverView(ctx : Context) : View(ctx) {
         fun render(canvas : Canvas) {
             canvas.drawColor(backColor)
             tapm.draw(canvas, paint)
-            tapm.update {
-                animator.stop()
+            animator.animate {
+                tapm.update {
+                    animator.stop()
+                }
             }
         }
 
         fun handleTap() {
+
             tapm.startUpdating {
                 animator.start()
             }
