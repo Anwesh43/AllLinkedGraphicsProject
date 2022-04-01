@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.rightanglearcrotview.RightAngleArcRotView
+//import com.example.rightanglearcrotview.RightAngleArcRotView
 
 //import com.example.horizcrossvertlineview.HorizCrossVertLineView
 
@@ -558,7 +558,7 @@ class MainActivity : AppCompatActivity() {
         //BoxLineEitherSquareView.create(this)
         //ThickLineRotView.create(this)
         //HorizCrossVertLineView.create(this)
-        RightAngleArcRotView.create(this)
+        //RightAngleArcRotView.create(this)
         fullScreen()
     }
 }

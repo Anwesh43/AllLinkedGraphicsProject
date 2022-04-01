@@ -228,5 +228,6 @@ dependencies {
     //implementation project(":boxlineeithersquareview")
     //implementation project(":thicklinerotview")
     //implementation project(":horizcrossvertlineview")
-    implementation project(":rightanglearcrotview")
+    //implementation project(":rightanglearcrotview")
+    implementation project(":triarcpartmoverview")
 }
