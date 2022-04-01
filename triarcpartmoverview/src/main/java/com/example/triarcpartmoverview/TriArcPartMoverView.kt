@@ -29,3 +29,33 @@ val backColor : Int = Color.parseColor("#BDBDBD")
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawTriArcPartMover(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc2 : Float = scale.divideScale(1, parts)
+    val sc3 : Float = scale.divideScale(2, parts)
+    save()
+    translate(w / 2, h / 2)
+    for (j in 0..2) {
+        save()
+        rotate((-rot + deg * j) * sc2)
+        translate((w / 2) * (j % 2) * sc3 + (1 - (j % 2)) * h * 0.5f * sc3, 0f)
+        drawArc(
+            RectF(-size / 2, -size / 2, size / 2, size / 2),
+            0f,
+            rot * sc1,
+            true,
+            paint
+        )
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawTAPMNode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    drawTriArcPartMover(scale, w, h, paint)
+}
