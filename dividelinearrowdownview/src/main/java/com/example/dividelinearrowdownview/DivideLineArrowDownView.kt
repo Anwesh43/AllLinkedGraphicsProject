@@ -45,7 +45,7 @@ fun Canvas.drawDivideLineArrowDown(scale : Float, w : Float, h : Float, paint : 
         scale(1f, 1f - 2 * j)
         for (k in 0..1) {
             save()
-            rotate(rot * sc1 * j * (1f - 2 * k))
+            rotate(rot * sc2 * j * (1f - 2 * k))
             drawLine(0f, 0f, 0f, size * sc1, paint)
             restore()
         }
@@ -65,14 +65,16 @@ fun Canvas.drawDLADNode(i : Int, scale : Float, paint : Paint) {
 
 class DivideLineArrowDownView(ctx : Context) : View(ctx) {
 
-    override fun onDraw(canvas : Canvas) {
+    private val renderer : Renderer = Renderer(this)
 
+    override fun onDraw(canvas : Canvas) {
+        renderer.render(canvas)
     }
 
     override fun onTouchEvent(event : MotionEvent) : Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-
+                renderer.handleTap()
             }
         }
         return true
