@@ -45,7 +45,7 @@ fun Canvas.drawDivideLineArrowDown(scale : Float, w : Float, h : Float, paint : 
         scale(1f, 1f - 2 * j)
         for (k in 0..1) {
             save()
-            rotate(rot * sc2 * j * (1f - 2 * k))
+            rotate(deg * sc2 * j * (1f - 2 * k))
             drawLine(0f, 0f, 0f, size * sc1, paint)
             restore()
         }
