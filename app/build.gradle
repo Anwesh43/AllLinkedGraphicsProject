@@ -229,5 +229,6 @@ dependencies {
     //implementation project(":thicklinerotview")
     //implementation project(":horizcrossvertlineview")
     //implementation project(":rightanglearcrotview")
-    implementation project(":triarcpartmoverview")
+    //implementation project(":triarcpartmoverview")
+    implementation project(":dividelinearrowdownview")
 }

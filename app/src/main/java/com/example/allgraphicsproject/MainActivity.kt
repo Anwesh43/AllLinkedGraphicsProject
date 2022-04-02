@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.triarcpartmoverview.TriArcPartMoverView
+//import com.example.triarcpartmoverview.TriArcPartMoverView
 
 //import com.example.rightanglearcrotview.RightAngleArcRotView
 
@@ -561,7 +561,7 @@ class MainActivity : AppCompatActivity() {
         //ThickLineRotView.create(this)
         //HorizCrossVertLineView.create(this)
         //RightAngleArcRotView.create(this)
-        TriArcPartMoverView.create(this)
+        //TriArcPartMoverView.create(this)
         fullScreen()
     }
 }
