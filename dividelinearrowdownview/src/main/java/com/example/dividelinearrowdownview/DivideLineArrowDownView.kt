@@ -214,4 +214,13 @@ class DivideLineArrowDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DivideLineArrowDownView {
+            val view : DivideLineArrowDownView = DivideLineArrowDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
