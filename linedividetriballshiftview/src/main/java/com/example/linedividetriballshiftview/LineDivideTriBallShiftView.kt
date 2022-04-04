@@ -215,4 +215,13 @@ class LineDivideTriBallShiftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : LineDivideTriBallShiftView {
+            val view : LineDivideTriBallShiftView = LineDivideTriBallShiftView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
