@@ -94,7 +94,7 @@ class TDividerLineView(ctx : Context) : View(ctx) {
 
     data class Animator(var view : View, var animated : Boolean = false) {
 
-        fun animated(cb : () -> Unit) {
+        fun animate(cb : () -> Unit) {
             if (animated) {
                 cb()
                 try {
@@ -181,6 +181,29 @@ class TDividerLineView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : TDividerLineView) {
+
+        private val tDividerLine : TDividerLine = TDividerLine(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tDividerLine.draw(canvas, paint)
+            animator.animate {
+                tDividerLine.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tDividerLine.startUpdating {
+                animator.start()
+            }
         }
     }
 }
