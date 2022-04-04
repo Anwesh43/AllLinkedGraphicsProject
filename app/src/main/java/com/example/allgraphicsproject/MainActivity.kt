@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linedividetriballshiftview.LineDivideTriBallShiftView
+
 //import com.example.tdividerlineview.TDividerLineView
 
 //import com.example.dividelinearrowdownview.DivideLineArrowDownView
@@ -568,6 +570,7 @@ class MainActivity : AppCompatActivity() {
         //TriArcPartMoverView.create(this)
         //DivideLineArrowDownView.create(this)
         //TDividerLineView.create(this)
+        LineDivideTriBallShiftView.create(this)
         fullScreen()
     }
 }
