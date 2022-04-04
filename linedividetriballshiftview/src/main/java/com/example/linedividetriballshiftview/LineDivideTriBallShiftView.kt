@@ -126,4 +126,46 @@ class LineDivideTriBallShiftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class LDTBSNode(var i : Int, private val state : State = State()) {
+
+        private var prev : LDTBSNode? = null
+        private var next : LDTBSNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LDTBSNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLDTBSNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LDTBSNode {
+            var curr : LDTBSNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
+
 }
