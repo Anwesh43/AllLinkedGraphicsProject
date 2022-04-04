@@ -190,4 +190,27 @@ class LineDivideTriBallShiftView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineDivideTriBallShiftView) {
+
+        private val ldtbs : LineDivideTriBallShift = LineDivideTriBallShift(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ldtbs.draw(canvas, paint)
+            animator.animate {
+                ldtbs.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ldtbs.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
