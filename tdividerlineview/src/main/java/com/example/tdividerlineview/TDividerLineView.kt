@@ -20,11 +20,11 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
-val sizeFactor : Float = 11.9f
+val sizeFactor : Float = 4.9f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
-val rot : Float = 45f
-val tSizeFactor : Float = 6.2f
+val rot : Float = 22.5f
+val tSizeFactor : Float = 7.2f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
@@ -40,12 +40,12 @@ fun Canvas.drawTDividerLineView(scale : Float, w : Float, h : Float, paint : Pai
     translate(w / 2 + (w / 2 + size) * sc4, h / 2)
     for (j in 0..1) {
         save()
-        rotate(rot * (1f - 2 * j) * sc3)
+        rotate(-rot * (1f - 2 * j) * sc3)
         if (sc1 > 0) {
             drawLine(0f, 0f, -size * sc1, 0f, paint)
         }
         if (sc2 > 0) {
-            drawLine(-size, 0f, -size, (size / tSizeFactor) * sc2, paint)
+            drawLine(-size, 0f, -size, (size / tSizeFactor) * sc2 * (1f - 2 * j), paint)
         }
         restore()
     }
