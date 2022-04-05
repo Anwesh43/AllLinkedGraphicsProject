@@ -52,7 +52,7 @@ fun Canvas.drawBreakBarRiseCircle(scale : Float, w : Float, h : Float, paint : P
     }
     paint.style = Paint.Style.STROKE
     save()
-    translate(0f, -barW)
+    //translate(0f, -barW)
     drawArc(
         RectF(
             -size / 2,
@@ -60,7 +60,7 @@ fun Canvas.drawBreakBarRiseCircle(scale : Float, w : Float, h : Float, paint : P
             size / 2,
             size / 2
         ),
-        deg * sc4,
+        deg + deg * sc4,
         deg * (sc3 - sc4),
         false,
         paint
@@ -169,7 +169,7 @@ class BreakBarIsRiseCircleView(ctx : Context) : View(ctx) {
             state.startUpdating(cb)
         }
 
-        fun getNext(dir : Int, cb : () -> Unit) : BBRCNode? {
+        fun getNext(dir : Int, cb : () -> Unit) : BBRCNode {
             var curr : BBRCNode? = prev
             if (dir == 1) {
                 curr = next
@@ -193,7 +193,7 @@ class BreakBarIsRiseCircleView(ctx : Context) : View(ctx) {
 
         fun update(cb : (Float) -> Unit) {
             curr.update {
-                curr.getNext(dir) {
+                curr = curr.getNext(dir) {
                     dir *= -1
                 }
                 cb(it)
