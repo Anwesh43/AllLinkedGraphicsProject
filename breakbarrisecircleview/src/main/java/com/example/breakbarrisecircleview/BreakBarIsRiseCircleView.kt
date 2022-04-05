@@ -227,4 +227,12 @@ class BreakBarIsRiseCircleView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : BreakBarIsRiseCircleView {
+            val view : BreakBarIsRiseCircleView = BreakBarIsRiseCircleView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
