@@ -204,4 +204,27 @@ class BreakBarIsRiseCircleView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BreakBarIsRiseCircleView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val bbrc : BreakBarRiseCircle = BreakBarRiseCircle(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bbrc.draw(canvas, paint)
+            animator.animate {
+                bbrc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bbrc.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
