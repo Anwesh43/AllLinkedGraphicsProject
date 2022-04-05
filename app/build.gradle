@@ -232,5 +232,6 @@ dependencies {
     //implementation project(":triarcpartmoverview")
     //implementation project(":dividelinearrowdownview")
     //implementation project(":tdividerlineview")
-    implementation project(":linedividetriballshiftview")
+    //implementation project(":linedividetriballshiftview")
+    implementation project(":breakbarrisecircleview")
 }
