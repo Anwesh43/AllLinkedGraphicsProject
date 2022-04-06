@@ -218,4 +218,13 @@ class BiLineRotConcCircleView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiLineRotConcCircleView {
+            val view : BiLineRotConcCircleView = BiLineRotConcCircleView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
