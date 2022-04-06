@@ -193,4 +193,27 @@ class BiLineRotConcCircleView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiLineRotConcCircleView) {
+
+        private val animator : Animator = Animator(view)
+        private val blrcc : BiLineRotConcCircle = BiLineRotConcCircle(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            blrcc.draw(canvas, paint)
+            animator.animate {
+                blrcc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            blrcc.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
