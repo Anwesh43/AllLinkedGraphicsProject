@@ -40,13 +40,14 @@ fun Canvas.drawBiLineRotConcCircle(scale : Float, w : Float, h : Float, paint : 
     val sc4 : Float = scale.divideScale(3, parts)
     val r : Float = size / rFactor
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
+    rotate(rot * sc3)
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     for (j in 0..1) {
         save()
-        rotate(rot * sc3)
+        scale(1f - 2 * j, 1f - 2 * j)
         drawArc(
-            RectF(-size / 2, -2 * r, -size / 2 + r, 0f),
+            RectF(-size / 2, -2 * r, -size / 2 + 2 * r, 0f),
             rot,
             deg * sc2,
             false,
