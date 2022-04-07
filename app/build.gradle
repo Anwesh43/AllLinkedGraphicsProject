@@ -234,5 +234,6 @@ dependencies {
     //implementation project(":tdividerlineview")
     //implementation project(":linedividetriballshiftview")
     //implementation project(":breakbarrisecircleview")
-    implementation project(":bilinerotconccircleview")
+    //implementation project(":bilinerotconccircleview")
+    implementation project(":bisidebarview")
 }

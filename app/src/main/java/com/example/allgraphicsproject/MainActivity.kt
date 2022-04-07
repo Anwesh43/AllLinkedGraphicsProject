@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.bilinerotconccircleview.BiLineRotConcCircleView
+//import com.example.bilinerotconccircleview.BiLineRotConcCircleView
 
 //import com.example.linedividetriballshiftview.LineDivideTriBallShiftView
 
@@ -574,7 +574,7 @@ class MainActivity : AppCompatActivity() {
         //TDividerLineView.create(this)
         //LineDivideTriBallShiftView.create(this)
         //BreakBarIsRiseCircleView.create(this)
-        BiLineRotConcCircleView.create(this)
+        //BiLineRotConcCircleView.create(this)
         fullScreen()
     }
 }
