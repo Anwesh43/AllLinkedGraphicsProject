@@ -212,4 +212,13 @@ class BiSideBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiSideBarView {
+            val view : BiSideBarView = BiSideBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
