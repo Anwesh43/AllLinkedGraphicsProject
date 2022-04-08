@@ -210,4 +210,13 @@ class BarBreakToXView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BarBreakToXView {
+            val view : BarBreakToXView = BarBreakToXView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
