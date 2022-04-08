@@ -45,7 +45,7 @@ fun Canvas.drawBarBreakToX(scale : Float, w : Float, h : Float, paint : Paint) {
     rotate(rot * sc3)
     for (j in 0..1) {
         save()
-        rotate(deg * sc2)
+        rotate(deg * sc2 * (1f - 2 * j))
         drawRect(RectF(0f, -barH / 2, size * sc1, barH / 2), paint)
         restore()
     }
