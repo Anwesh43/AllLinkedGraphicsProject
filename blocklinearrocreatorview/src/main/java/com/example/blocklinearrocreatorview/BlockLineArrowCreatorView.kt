@@ -8,6 +8,7 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.Canvas
 import android.graphics.Color
+import kotlin.contracts.contract
 
 val colors : Array<Int> = arrayOf(
     "#1A237E",
@@ -125,6 +126,12 @@ class BlockLineArrowCreatorView(ctx : Context) : View(ctx) {
                 view.postInvalidate()
             }
         }
+
+        fun stop() {
+            if (animated) {
+                animated = false
+            }
+        }
     }
 
     data class BLACNode(var i : Int, val state : State = State()) {
@@ -188,6 +195,28 @@ class BlockLineArrowCreatorView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : View) {
+        private val animator : Animator = Animator(view)
+        private val blac : BlockLineArrowCreator = BlockLineArrowCreator(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            blac.draw(canvas, paint)
+            animator.animate {
+                blac.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            blac.startUpdating {
+                animator.start()
+            }
         }
     }
 }
