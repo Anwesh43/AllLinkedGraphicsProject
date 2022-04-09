@@ -221,4 +221,13 @@ class BlockLineArrowCreatorView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BlockLineArrowCreatorView {
+            val view : BlockLineArrowCreatorView = BlockLineArrowCreatorView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
