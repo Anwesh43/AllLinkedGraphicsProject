@@ -45,13 +45,13 @@ fun Canvas.drawBlockLineArrowCreator(scale : Float, w : Float, h : Float, paint 
     val blockSize : Float = size / blockSizeFactor
     save()
     translate(w / 2, h / 2 + (h / 2 + size + lineSize) * sc5)
-    rotate(rot * sc4)
+    rotate(deg * sc4)
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     for (j in 0..1) {
         save()
         translate(-size / 2, 0f)
         scale(1f, 1f - 2 * j)
-        rotate(deg * sc3)
+        rotate(-rot * sc3)
         drawLine(0f, 0f, 0f, -lineSize * sc2, paint)
         restore()
     }
