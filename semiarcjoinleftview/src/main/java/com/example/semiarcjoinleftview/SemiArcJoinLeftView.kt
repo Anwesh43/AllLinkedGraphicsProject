@@ -42,8 +42,7 @@ fun Canvas.drawSemiArcJoinLeft(scale : Float, w : Float, h : Float, paint : Pain
     translate(w / 2 + (w / 2 + size + r + paint.strokeWidth) * sc4, h / 2)
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 0f)
-        translate(size * (1f - sc2), 0f)
+        translate(size * (1f - sc2) * (1f - 2 * j), 0f)
         drawArc(RectF(-r, -r, r, r), deg * j, deg * sc1, true, paint)
         restore()
     }
