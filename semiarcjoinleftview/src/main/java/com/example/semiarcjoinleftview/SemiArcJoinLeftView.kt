@@ -214,4 +214,13 @@ class SemiArcJoinLeftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SemiArcJoinLeftView {
+            val view : SemiArcJoinLeftView = SemiArcJoinLeftView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
