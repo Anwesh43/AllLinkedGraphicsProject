@@ -237,5 +237,6 @@ dependencies {
     //implementation project(":bilinerotconccircleview")
     //implementation project(":bisidebarview")
     //implementation project(":barbreaktoxview")
-    implementation project(":blocklinearrocreatorview")
+    //implementation project(":blocklinearrocreatorview")
+    implementation project(":semiarcjoinleftview")
 }

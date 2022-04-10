@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.blocklinearrocreatorview.BlockLineArrowCreatorView
+//import com.example.blocklinearrocreatorview.BlockLineArrowCreatorView
 
 //import com.example.barbreaktoxview.BarBreakToXView
 
@@ -583,7 +583,7 @@ class MainActivity : AppCompatActivity() {
         //BiLineRotConcCircleView.create(this)
         //BiSideBarView.create(this)
         //BarBreakToXView.create(this)
-        BlockLineArrowCreatorView.create(this)
+        //BlockLineArrowCreatorView.create(this)
         fullScreen()
     }
 }
