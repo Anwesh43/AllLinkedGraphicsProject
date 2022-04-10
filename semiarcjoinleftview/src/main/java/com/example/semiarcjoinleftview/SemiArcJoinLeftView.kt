@@ -125,4 +125,45 @@ class SemiArcJoinLeftView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class SAJLNode(var i : Int, val state : State = State()) {
+
+        private var prev : SAJLNode? = null
+        private var next : SAJLNode? = null
+
+        init {
+
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = SAJLNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawSAJLNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdaitng(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : SAJLNode {
+            var curr : SAJLNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
