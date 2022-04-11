@@ -238,5 +238,6 @@ dependencies {
     //implementation project(":bisidebarview")
     //implementation project(":barbreaktoxview")
     //implementation project(":blocklinearrocreatorview")
-    implementation project(":semiarcjoinleftview")
+    //implementation project(":semiarcjoinleftview")
+    implementation project(":lineballcrusherview")
 }
