@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.lineballcrusherview.LineBallCrusherView
+
 //import com.example.semiarcjoinleftview.SemiArcJoinLeftView
 
 //import com.example.blocklinearrocreatorview.BlockLineArrowCreatorView
@@ -587,6 +589,7 @@ class MainActivity : AppCompatActivity() {
         //BarBreakToXView.create(this)
         //BlockLineArrowCreatorView.create(this)
         //SemiArcJoinLeftView.create(this)
+        LineBallCrusherView.create(this)
         fullScreen()
     }
 }
