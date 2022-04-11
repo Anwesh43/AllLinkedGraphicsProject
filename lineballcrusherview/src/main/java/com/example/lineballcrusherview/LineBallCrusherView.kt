@@ -215,4 +215,13 @@ class LineBallCrusherView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineBallCrusherView {
+            val view : LineBallCrusherView = LineBallCrusherView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
