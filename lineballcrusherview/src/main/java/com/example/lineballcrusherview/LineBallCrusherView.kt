@@ -26,7 +26,7 @@ fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 
-fun Canvas.drawLineBalLCrusher(scale : Float, w : Float, h : Float, paint : Paint) {
+fun Canvas.drawLineBallCrusher(scale : Float, w : Float, h : Float, paint : Paint) {
     val size : Float = Math.min(w, h) / sizeFactor
     val r : Float = size / rFactor
     val sc1 : Float = scale.divideScale(0, parts)
@@ -56,5 +56,21 @@ fun Canvas.drawLBCNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
-    drawLineBalLCrusher(scale, w, h, paint)
+    drawLineBallCrusher(scale, w, h, paint)
+}
+
+class LineBalLCrusherView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
 }
