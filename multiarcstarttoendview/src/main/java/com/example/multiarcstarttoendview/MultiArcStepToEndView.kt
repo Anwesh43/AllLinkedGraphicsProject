@@ -202,4 +202,13 @@ class MultiArcStepToEndView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : MultiArcStepToEndView {
+            val view : MultiArcStepToEndView = MultiArcStepToEndView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
