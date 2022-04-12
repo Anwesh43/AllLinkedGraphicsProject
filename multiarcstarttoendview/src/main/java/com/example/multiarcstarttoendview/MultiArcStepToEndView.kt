@@ -177,4 +177,27 @@ class MultiArcStepToEndView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : MultiArcStepToEndView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val maste : MultiArcStepToEnd = MultiArcStepToEnd(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            maste.draw(canvas, paint)
+            animator.animate {
+                maste.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            maste.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
