@@ -92,97 +92,96 @@ class LineJoinSquareDownView(ctx : Context) : View(ctx) {
                 cb()
             }
         }
+    }
+    data class Animator(var view : View, var animated : Boolean = false) {
 
-        data class Animator(var view : View, var animated : Boolean = false) {
-
-            fun animate(cb : () -> Unit) {
-                if (animated) {
-                    cb()
-                    try {
-                        Thread.sleep(delay)
-                        view.invalidate()
-                    } catch(ex : Exception) {
-
-                    }
-                }
-            }
-
-            fun start() {
-                if (!animated) {
-                    animated = true
-                    view.postInvalidate()
-                }
-            }
-
-            fun stop() {
-                if (animated) {
-                    animated = false
-                }
-            }
-        }
-
-        data class LJSDNode(var i : Int, val state : State = State()) {
-
-            private var prev : LJSDNode? = null
-            private var next : LJSDNode? = null
-
-            init {
-                addNeighbor()
-            }
-
-            fun addNeighbor() {
-                if (i < colors.size - 1) {
-                    next = LJSDNode(i + 1)
-                    next?.prev = this
-                }
-            }
-
-            fun draw(canvas : Canvas, paint : Paint) {
-                canvas.drawLJSDNode(i, state.scale, paint)
-            }
-
-            fun update(cb : (Float) -> Unit) {
-                state.update(cb)
-            }
-
-            fun startUpdating(cb : () -> Unit) {
-                state.startUpdating(cb)
-            }
-
-            fun getNext(dir : Int, cb : () -> Unit) : LJSDNode {
-                var curr : LJSDNode? = prev
-                if (dir == 1) {
-                    curr = next
-                }
-                if (curr != null) {
-                    return curr
-                }
+        fun animate(cb : () -> Unit) {
+            if (animated) {
                 cb()
-                return this
+                try {
+                    Thread.sleep(delay)
+                    view.invalidate()
+                } catch(ex : Exception) {
+
+                }
             }
         }
 
-        data class LineJoinSquareDown(var i : Int,) {
-
-            private var curr : LJSDNode = LJSDNode(0)
-            private var dir : Int = 1
-
-            fun draw(canvas : Canvas, paint : Paint) {
-                curr.draw(canvas, paint)
+        fun start() {
+            if (!animated) {
+                animated = true
+                view.postInvalidate()
             }
+        }
 
-            fun update(cb : (Float) -> Unit) {
-                curr.update {
-                    curr = curr.getNext(dir) {
-                        dir *= -1
-                    }
-                    cb(it)
+        fun stop() {
+            if (animated) {
+                animated = false
+            }
+        }
+    }
+
+    data class LJSDNode(var i : Int, val state : State = State()) {
+
+        private var prev : LJSDNode? = null
+        private var next : LJSDNode? = null
+
+        init {
+            addNeighbor()
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = LJSDNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawLJSDNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : LJSDNode {
+            var curr : LJSDNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
+
+    data class LineJoinSquareDown(var i : Int,) {
+
+        private var curr : LJSDNode = LJSDNode(0)
+        private var dir : Int = 1
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            curr.draw(canvas, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            curr.update {
+                curr = curr.getNext(dir) {
+                    dir *= -1
                 }
+                cb(it)
             }
+        }
 
-            fun startUpdating(cb : () -> Unit) {
-                curr.startUpdating(cb)
-            }
+        fun startUpdating(cb : () -> Unit) {
+            curr.startUpdating(cb)
         }
     }
 }
