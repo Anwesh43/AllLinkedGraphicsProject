@@ -209,4 +209,13 @@ class LineJoinSquareDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineJoinSquareDownView {
+            val view : LineJoinSquareDownView = LineJoinSquareDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
