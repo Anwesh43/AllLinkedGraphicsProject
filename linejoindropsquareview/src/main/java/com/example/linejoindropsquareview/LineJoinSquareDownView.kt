@@ -59,3 +59,18 @@ fun Canvas.drawLJSDNode(i : Int, scale : Float, paint : Paint) {
     drawLineJoinSquareDown(scale, w, h, paint)
 }
 
+class LineJoinSquareDownView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
