@@ -3,7 +3,6 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.multiarcstarttoendview.MultiArcStepToEndView
 
 //import com.example.lineballcrusherview.LineBallCrusherView
 
@@ -592,7 +591,7 @@ class MainActivity : AppCompatActivity() {
         //BlockLineArrowCreatorView.create(this)
         //SemiArcJoinLeftView.create(this)
         //LineBallCrusherView.create(this)
-        MultiArcStepToEndView.create(this)
+        //MultiArcStepToEndView.create(this)
         fullScreen()
     }
 }

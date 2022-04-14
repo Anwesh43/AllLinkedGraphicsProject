@@ -240,5 +240,6 @@ dependencies {
     //implementation project(":blocklinearrocreatorview")
     //implementation project(":semiarcjoinleftview")
     //implementation project(":lineballcrusherview")
-    implementation project(":multiarcstarttoendview")
+    //implementation project(":multiarcstarttoendview")
+    implementation project(":linejoindropsquareview")
 }
