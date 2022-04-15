@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linejoindropsquareview.LineJoinSquareDownView
+//import com.example.linejoindropsquareview.LineJoinSquareDownView
 
 //import com.example.lineballcrusherview.LineBallCrusherView
 
@@ -593,7 +593,7 @@ class MainActivity : AppCompatActivity() {
         //SemiArcJoinLeftView.create(this)
         //LineBallCrusherView.create(this)
         //MultiArcStepToEndView.create(this)
-        LineJoinSquareDownView.create(this)
+        //LineJoinSquareDownView.create(this)
         fullScreen()
     }
 }
