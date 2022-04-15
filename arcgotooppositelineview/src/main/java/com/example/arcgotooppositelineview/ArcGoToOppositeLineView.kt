@@ -40,12 +40,14 @@ fun Canvas.drawArcGoToOppositeLine(scale : Float, w : Float, h : Float, paint : 
     translate(w / 2, h / 2)
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 1f)
+        scale(1f - 2 * j * Math.floor(sc1.toDouble()).toFloat(), 1f)
         save()
         translate((w / 2 + size) * sc3, 0f)
         drawArc(RectF(-size / 2, -size, size / 2, 0f), 0f, deg * sc1, true, paint)
-        drawLine(w * 0.5f * sc4, 0f, w * 0.5f * sc2, 0f, paint)
         restore()
+        if (sc2 > 0f) {
+            drawLine(w * 0.5f * sc4, 0f, w * 0.5f * sc2, 0f, paint)
+        }
         restore()
     }
     restore()
