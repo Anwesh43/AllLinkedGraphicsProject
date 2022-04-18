@@ -83,7 +83,7 @@ class DotEitherExpanderView(ctx : Context) : View(ctx) {
         return true
     }
 
-    data class State(var scale : Float, var prevScale : Float =  0f, var dir : Float = 0f) {
+    data class State(var scale : Float = 0f, var prevScale : Float =  0f, var dir : Float = 0f) {
 
         fun update(cb : (Float) -> Unit) {
             scale += scGap * dir
@@ -192,6 +192,29 @@ class DotEitherExpanderView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : DotEitherExpanderView) {
+
+        private val animator : Animator = Animator(view)
+        private val dee : DotEitherExpander = DotEitherExpander(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            dee.draw(canvas, paint)
+            animator.animate {
+                dee.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            dee.startUpdating {
+                animator.start()
+            }
         }
     }
 }
