@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.arcgotooppositelineview.ArcGoToOppositeLineView
+//import com.example.arcgotooppositelineview.ArcGoToOppositeLineView
 
 //import com.example.linejoindropsquareview.LineJoinSquareDownView
 
@@ -596,7 +596,7 @@ class MainActivity : AppCompatActivity() {
         //LineBallCrusherView.create(this)
         //MultiArcStepToEndView.create(this)
         //LineJoinSquareDownView.create(this)
-        ArcGoToOppositeLineView.create(this)
+        //ArcGoToOppositeLineView.create(this)
         fullScreen()
     }
 }

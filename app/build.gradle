@@ -242,5 +242,6 @@ dependencies {
     //implementation project(":lineballcrusherview")
     //implementation project(":multiarcstarttoendview")
     //implementation project(":linejoindropsquareview")
-    implementation project(":arcgotooppositelineview")
+    //implementation project(":arcgotooppositelineview")
+    implementation project(":rightanglepointerview")
 }
