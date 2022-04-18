@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.rightanglepointerview.RightAnglePointerView
+
 //import com.example.arcgotooppositelineview.ArcGoToOppositeLineView
 
 //import com.example.linejoindropsquareview.LineJoinSquareDownView
@@ -597,6 +599,7 @@ class MainActivity : AppCompatActivity() {
         //MultiArcStepToEndView.create(this)
         //LineJoinSquareDownView.create(this)
         //ArcGoToOppositeLineView.create(this)
+        RightAnglePointerView.create(this)
         fullScreen()
     }
 }
