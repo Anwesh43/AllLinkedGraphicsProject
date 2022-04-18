@@ -243,5 +243,6 @@ dependencies {
     //implementation project(":multiarcstarttoendview")
     //implementation project(":linejoindropsquareview")
     //implementation project(":arcgotooppositelineview")
-    implementation project(":rightanglepointerview")
+    //implementation project(":rightanglepointerview")
+    implementation project(":doteitherexpanderview")
 }
