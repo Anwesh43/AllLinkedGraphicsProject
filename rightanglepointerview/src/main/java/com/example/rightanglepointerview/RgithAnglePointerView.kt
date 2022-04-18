@@ -221,4 +221,13 @@ class RightAnglePointerView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RightAnglePointerView {
+            val view : RightAnglePointerView = RightAnglePointerView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
