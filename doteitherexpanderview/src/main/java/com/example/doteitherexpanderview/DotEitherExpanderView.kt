@@ -17,8 +17,8 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 5
-val scGap : Float = 0.04f / parts
+val parts : Int = 6
+val scGap : Float = 0.05f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val rFactor : Float = 6.2f
@@ -39,9 +39,10 @@ fun Canvas.drawDotEitherExpander(scale : Float, w : Float, h : Float, paint : Pa
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
+    val sc6 : Float = scale.divideScale(5, parts)
     save()
-    translate(w / 2, h / 2 + (h / 2 + size) * sc5)
-    rotate(deg * sc4)
+    translate(w / 2, h / 2 + (h / 2 + size + r) * sc6)
+    rotate(deg * sc5)
     for (j in 0..1) {
         save()
         scale(1f, 1f - 2 * j)
@@ -53,7 +54,9 @@ fun Canvas.drawDotEitherExpander(scale : Float, w : Float, h : Float, paint : Pa
             drawCircle(0f, 0f, r * sc1, paint)
             restore()
         }
-        drawLine(-size, 0f, -size + 2 * size * sc3, 0f, paint)
+        if (sc4 > 0f) {
+            drawLine(-size, 0f, -size + 2 * size * sc4, 0f, paint)
+        }
         restore()
     }
     restore()
