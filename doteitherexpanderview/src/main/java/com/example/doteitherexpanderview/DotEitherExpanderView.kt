@@ -67,3 +67,19 @@ fun Canvas.drawDEENode(i : Int, scale : Float, paint : Paint) {
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     drawDotEitherExpander(scale, w, h, paint)
 }
+
+class DotEitherExpanderView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
