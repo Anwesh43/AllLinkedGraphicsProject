@@ -219,4 +219,13 @@ class DotEitherExpanderView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DotEitherExpanderView {
+            val view : DotEitherExpanderView = DotEitherExpanderView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
