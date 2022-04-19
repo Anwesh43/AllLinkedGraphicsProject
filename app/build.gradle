@@ -244,5 +244,6 @@ dependencies {
     //implementation project(":linejoindropsquareview")
     //implementation project(":arcgotooppositelineview")
     //implementation project(":rightanglepointerview")
-    implementation project(":doteitherexpanderview")
+    //implementation project(":doteitherexpanderview")
+    implementation project(":shiftstackbarview")
 }

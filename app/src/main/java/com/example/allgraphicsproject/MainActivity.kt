@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.doteitherexpanderview.DotEitherExpanderView
+//import com.example.doteitherexpanderview.DotEitherExpanderView
 
 //import com.example.rightanglepointerview.RightAnglePointerView
 
@@ -602,7 +602,7 @@ class MainActivity : AppCompatActivity() {
         //LineJoinSquareDownView.create(this)
         //ArcGoToOppositeLineView.create(this)
         //RightAnglePointerView.create(this)
-        DotEitherExpanderView.create(this)
+        //DotEitherExpanderView.create(this)
         fullScreen()
     }
 }
