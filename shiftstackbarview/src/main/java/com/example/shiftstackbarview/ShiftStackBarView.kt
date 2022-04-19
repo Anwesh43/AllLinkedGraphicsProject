@@ -183,4 +183,27 @@ class ShiftStackBarView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ShiftStackBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val ssb : ShiftStackBar = ShiftStackBar(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            ssb.draw(canvas, paint)
+            animator.animate {
+                ssb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            ssb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
