@@ -245,5 +245,6 @@ dependencies {
     //implementation project(":arcgotooppositelineview")
     //implementation project(":rightanglepointerview")
     //implementation project(":doteitherexpanderview")
-    implementation project(":shiftstackbarview")
+    //implementation project(":shiftstackbarview")
+    implementation project(":hookrotsiderightview")
 }
