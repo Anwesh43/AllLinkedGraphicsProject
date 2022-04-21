@@ -186,4 +186,27 @@ class HookRotSideRightView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HookRotSideRightView) {
+
+        private val animator : Animator = Animator(view)
+        private val hrsr : HookRotSideRight = HookRotSideRight(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            hrsr.draw(canvas, paint)
+            animator.animate {
+                hrsr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hrsr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
