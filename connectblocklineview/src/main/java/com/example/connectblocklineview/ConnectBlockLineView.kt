@@ -227,4 +227,13 @@ class ConnectBlockLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ConnectBlockLineView {
+            val view : ConnectBlockLineView = ConnectBlockLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
