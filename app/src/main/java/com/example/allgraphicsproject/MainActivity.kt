@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.connectblocklineview.ConnectBlockLineView
+
 //import com.example.hookrotsiderightview.HookRotSideRightView
 
 //import com.example.shiftstackbarview.ShiftStackBarView
@@ -609,6 +611,7 @@ class MainActivity : AppCompatActivity() {
         //DotEitherExpanderView.create(this)
         //ShiftStackBarView.create(this)
         //HookRotSideRightView.create(this)
+        ConnectBlockLineView.create(this)
         fullScreen()
     }
 }
