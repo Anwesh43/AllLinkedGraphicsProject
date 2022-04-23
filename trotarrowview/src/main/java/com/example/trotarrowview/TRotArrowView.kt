@@ -63,3 +63,19 @@ fun Canvas.drawTRANode(scale : Float, i : Int, paint : Paint) {
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     drawTRotArrow(scale, w, h, paint)
 }
+
+class TRotArrowView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
