@@ -190,4 +190,27 @@ class TRotArrowView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TRotArrowView) {
+
+        private val animator : Animator = Animator(view)
+        private val tra : TRotArrow = TRotArrow(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tra.draw(canvas, paint)
+            animator.animate {
+                tra.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tra.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
