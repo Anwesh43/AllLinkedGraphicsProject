@@ -247,5 +247,6 @@ dependencies {
     //implementation project(":doteitherexpanderview")
     //implementation project(":shiftstackbarview")
     //implementation project(":hookrotsiderightview")
-    implementation project(":connectblocklineview")
+    //implementation project(":connectblocklineview")
+    implementation project(":trotarrowview")
 }
