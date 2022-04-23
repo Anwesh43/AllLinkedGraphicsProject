@@ -24,7 +24,7 @@ val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val parts : Int = 4
 val scGap : Float = 0.04f / parts
-val deg : Float = 90f
+val deg : Float = 180f
 val rot : Float = 45f
 
 fun Int.inverse() : Float = 1f / this
