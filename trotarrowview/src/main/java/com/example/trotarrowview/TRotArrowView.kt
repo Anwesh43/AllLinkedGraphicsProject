@@ -215,4 +215,13 @@ class TRotArrowView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TRotArrowView {
+            val view : TRotArrowView = TRotArrowView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
