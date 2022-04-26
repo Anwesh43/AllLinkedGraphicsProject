@@ -212,4 +212,13 @@ class LineSplitBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineSplitBoxView {
+            val view : LineSplitBoxView = LineSplitBoxView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
