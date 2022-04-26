@@ -248,5 +248,6 @@ dependencies {
     //implementation project(":shiftstackbarview")
     //implementation project(":hookrotsiderightview")
     //implementation project(":connectblocklineview")
-    implementation project(":trotarrowview")
+    //implementation project(":trotarrowview")
+    implementation project(":linesplitboxview")
 }

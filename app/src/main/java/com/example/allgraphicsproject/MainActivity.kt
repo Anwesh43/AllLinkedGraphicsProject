@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.trotarrowview.TRotArrowView
+//import com.example.trotarrowview.TRotArrowView
 
 //import com.example.connectblocklineview.ConnectBlockLineView
 
@@ -614,7 +614,7 @@ class MainActivity : AppCompatActivity() {
         //ShiftStackBarView.create(this)
         //HookRotSideRightView.create(this)
         //ConnectBlockLineView.create(this)
-        TRotArrowView.create(this)
+        //TRotArrowView.create(this)
         fullScreen()
     }
 }
