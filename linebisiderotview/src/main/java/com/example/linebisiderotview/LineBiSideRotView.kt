@@ -195,5 +195,28 @@ class LineBiSideRotView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineBiSideRotView) {
+
+        private val animator : Animator = Animator(view)
+        private val lsbr : LineBiSideRot = LineBiSideRot(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lsbr.draw(canvas, paint)
+            animator.animate {
+                lsbr.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lsbr.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
 
