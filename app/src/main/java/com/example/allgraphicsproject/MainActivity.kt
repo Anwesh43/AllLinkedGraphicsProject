@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linebisiderotview.LineBiSideRotView
+
 //import com.example.linesplitboxview.LineSplitBoxView
 
 //import com.example.trotarrowview.TRotArrowView
@@ -618,6 +620,7 @@ class MainActivity : AppCompatActivity() {
         //ConnectBlockLineView.create(this)
         //TRotArrowView.create(this)
         //LineSplitBoxView.create(this)
+        LineBiSideRotView.create(this)
         fullScreen()
     }
 }
