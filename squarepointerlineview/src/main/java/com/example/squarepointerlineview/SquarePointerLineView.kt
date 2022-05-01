@@ -39,7 +39,7 @@ fun Canvas.drawSquarePointerLine(scale : Float, w : Float, h : Float, paint : Pa
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 - (w / 2 + size) * sc4, h / 2)
     save()
     rotate(rot * sc3)
     for (j in 0..1) {
