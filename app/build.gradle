@@ -250,5 +250,6 @@ dependencies {
     //implementation project(":connectblocklineview")
     //implementation project(":trotarrowview")
     //implementation project(":linesplitboxview")
-    implementation project(":linebisiderotview")
+    //implementation project(":linebisiderotview")
+    implementation project(":squarepointerlineview")
 }
