@@ -188,4 +188,27 @@ class SquarePointerLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SquarePointerLineView) {
+
+        private val spl : SquarePointerLine = SquarePointerLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            spl.draw(canvas, paint)
+            animator.animate {
+                spl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            spl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
