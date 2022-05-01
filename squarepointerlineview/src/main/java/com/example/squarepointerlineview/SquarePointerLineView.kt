@@ -213,4 +213,13 @@ class SquarePointerLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquarePointerLineView {
+            val view : SquarePointerLineView = SquarePointerLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
