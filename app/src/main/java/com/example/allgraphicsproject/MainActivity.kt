@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.squarepointerlineview.SquarePointerLineView
+//import com.example.squarepointerlineview.SquarePointerLineView
 
 //import com.example.linebisiderotview.LineBiSideRotView
 
@@ -623,7 +623,7 @@ class MainActivity : AppCompatActivity() {
         //TRotArrowView.create(this)
         //LineSplitBoxView.create(this)
         //LineBiSideRotView.create(this)
-        SquarePointerLineView.create(this)
+        //SquarePointerLineView.create(this)
         fullScreen()
     }
 }
