@@ -181,4 +181,27 @@ class DownRotArrowView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : DownRotArrowView) {
+
+        private val animator : Animator = Animator(view)
+        private val dra : DownRotArrow = DownRotArrow(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            dra.draw(canvas, paint)
+            animator.animate {
+                dra.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            dra.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
