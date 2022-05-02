@@ -28,3 +28,29 @@ val rot : Float = 45f
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
+
+fun Canvas.drawDownRotArrow(scale : Float, w : Float, h : Float, paint : Paint) {
+    val size : Float = Math.min(w, h) / sizeFactor
+    val sc1 : Float = scale.divideScale(0, parts)
+    val sc4 : Float = scale.divideScale(3, parts)
+    save()
+    translate(w / 2, h / 2 + (h / 2 + size) * sc4)
+    for (j in 0..1) {
+        save()
+        rotate(rot * (1f - 2 * j) * scale.divideScale(j + 1, parts))
+        if (sc1 > 0f) {
+            drawLine(0f, 0f, 0f, -size * sc1, paint)
+        }
+        restore()
+    }
+    restore()
+}
+
+fun Canvas.drawDRANode(i : Int, scale : Float, paint : Paint) {
+    val w : Float = width.toFloat()
+    val h : Float = height.toFloat()
+    paint.color = colors[i]
+    paint.strokeCap = Paint.Cap.ROUND
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
+    drawDownRotArrow(scale, w, h, paint)
+}
