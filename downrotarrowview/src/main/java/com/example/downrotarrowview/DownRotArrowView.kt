@@ -206,4 +206,13 @@ class DownRotArrowView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : DownRotArrowView {
+            val view : DownRotArrowView = DownRotArrowView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
