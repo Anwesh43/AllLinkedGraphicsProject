@@ -187,4 +187,27 @@ class PerpAngleSquareView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : PerpAngleSquareView) {
+
+        private val animator : Animator = Animator(view)
+        private val pas : PerpAngleSquare = PerpAngleSquare(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            pas.draw(canvas, paint)
+            animator.animate {
+                pas.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            pas.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
