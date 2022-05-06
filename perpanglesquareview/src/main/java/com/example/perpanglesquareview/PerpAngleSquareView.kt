@@ -212,4 +212,13 @@ class PerpAngleSquareView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : PerpAngleSquareView {
+            val view : PerpAngleSquareView = PerpAngleSquareView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
