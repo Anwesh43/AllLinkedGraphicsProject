@@ -252,5 +252,6 @@ dependencies {
     //implementation project(":linesplitboxview")
     //implementation project(":linebisiderotview")
     //implementation project(":squarepointerlineview")
-    implementation project(":downrotarrowview")
+    //implementation project(":downrotarrowview")
+    implementation project(":perpanglesquareview")
 }
