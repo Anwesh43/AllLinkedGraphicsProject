@@ -39,7 +39,7 @@ fun Canvas.drawBlockShiftLine(scale : Float, w : Float, h : Float, paint : Paint
     val sc5 : Float = scale.divideScale(4, parts)
     val barSize : Float = size / 10
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2, h / 2 + (h / 2 + size) * sc5)
     rotate(rot * sc4)
     drawLine(-size * 0.5f * sc1, 0f, size * 0.5f * sc1, 0f, paint)
     save()
