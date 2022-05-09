@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.perpanglesquareview.PerpAngleSquareView
+//import com.example.perpanglesquareview.PerpAngleSquareView
 
 //import com.example.downrotarrowview.DownRotArrowView
 
@@ -629,7 +629,7 @@ class MainActivity : AppCompatActivity() {
         //LineBiSideRotView.create(this)
         //SquarePointerLineView.create(this)
        // DownRotArrowView.create(this)
-        PerpAngleSquareView.create(this)
+        //PerpAngleSquareView.create(this)
         fullScreen()
     }
 }
