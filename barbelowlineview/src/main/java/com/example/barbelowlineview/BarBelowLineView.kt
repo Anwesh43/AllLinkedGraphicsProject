@@ -211,4 +211,13 @@ class BarBelowLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : BarBelowLineView {
+            val view : BarBelowLineView = BarBelowLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
