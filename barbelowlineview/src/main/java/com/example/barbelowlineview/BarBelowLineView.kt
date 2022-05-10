@@ -186,4 +186,27 @@ class BarBelowLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarBelowLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val bbl : BarBelowLine = BarBelowLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bbl.draw(canvas, paint)
+            animator.animate {
+                bbl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bbl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
