@@ -254,5 +254,6 @@ dependencies {
     //implementation project(":squarepointerlineview")
     //implementation project(":downrotarrowview")
     //implementation project(":perpanglesquareview")
-    implementation project(":blockshiftlineview")
+    //implementation project(":blockshiftlineview")
+    implementation project(":barbelowlineview")
 }

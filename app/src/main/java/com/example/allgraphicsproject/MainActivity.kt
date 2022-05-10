@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.blockshiftlineview.BlockShiftLineView
+//import com.example.blockshiftlineview.BlockShiftLineView
 
 //import com.example.perpanglesquareview.PerpAngleSquareView
 
@@ -632,7 +632,7 @@ class MainActivity : AppCompatActivity() {
         //SquarePointerLineView.create(this)
        // DownRotArrowView.create(this)
         //PerpAngleSquareView.create(this)
-        BlockShiftLineView.create(this)
+        //BlockShiftLineView.create(this)
         fullScreen()
     }
 }
