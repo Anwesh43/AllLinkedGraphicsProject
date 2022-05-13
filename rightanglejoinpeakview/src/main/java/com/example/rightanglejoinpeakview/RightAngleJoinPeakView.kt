@@ -108,6 +108,12 @@ class RightAngleJoinPeakView(ctx : Context) : View(ctx) {
                 view.postInvalidate()
             }
         }
+
+        fun stop() {
+            if (animated) {
+                animated = false
+            }
+        }
     }
 
     data class RAJPNode(var i : Int, val state : State = State()) {
@@ -171,6 +177,29 @@ class RightAngleJoinPeakView(ctx : Context) : View(ctx) {
 
         fun startUpdating(cb : () -> Unit) {
             curr.startUpdating(cb)
+        }
+    }
+
+    data class Renderer(var view : RightAngleJoinPeakView) {
+
+        private val animator : Animator = Animator(view)
+        private val rajp : RightAngleJoinPeak = RightAngleJoinPeak(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rajp.draw(canvas, paint)
+            animator.animate {
+                rajp.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rajp.startUpdating {
+                animator.start()
+            }
         }
     }
 }
