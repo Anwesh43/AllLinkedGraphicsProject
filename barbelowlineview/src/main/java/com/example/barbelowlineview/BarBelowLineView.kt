@@ -19,7 +19,7 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 6
-val scGap : Float = 0.04f / parts
+val scGap : Float = 0.06f / parts
 val delay : Long = 20
 val sizeFactor : Float = 4.9f
 val strokeFactor : Float =  90f
@@ -45,7 +45,9 @@ fun Canvas.drawBarBelowLine(scale : Float, w : Float, h : Float, paint : Paint) 
         scale(1f - 2 * j, 1f)
         translate(-size / 2, 0f)
         drawRect(RectF(0f, -barSize * sc1, barSize, 0f), paint)
-        drawLine(barSize / 2 - (barSize / 2) * sc2, -size / 2, barSize / 2 + (barSize / 2) * sc2, -size / 2, paint)
+        if (sc2 > 0f) {
+            drawLine(barSize / 2 - (barSize / 2) * sc2, -size / 2, barSize / 2 + (barSize / 2) * sc2, -size / 2, paint)
+        }
         restore()
     }
     restore()
