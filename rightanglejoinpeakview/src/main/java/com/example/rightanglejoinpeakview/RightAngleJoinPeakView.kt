@@ -204,4 +204,13 @@ class RightAngleJoinPeakView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RightAngleJoinPeakView {
+            val view : RightAngleJoinPeakView = RightAngleJoinPeakView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
