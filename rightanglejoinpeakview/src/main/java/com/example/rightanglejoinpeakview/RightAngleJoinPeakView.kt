@@ -40,7 +40,7 @@ fun Canvas.drawRightAngleJoinPeak(scale : Float, w : Float, h : Float, paint : P
     rotate(rot * sc3)
     drawLine(0f, 0f, 0f, -size * sc1, paint)
     drawLine(0f, 0f, -size * sc1, 0f, paint)
-    drawLine(-size, 0f, -size + size * sc2, -size + size * sc2, paint)
+    drawLine(-size, 0f, -size + size * sc2, -size * sc2, paint)
     restore()
 }
 
