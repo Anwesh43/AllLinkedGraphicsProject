@@ -3,7 +3,9 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.barbelowlineview.BarBelowLineView
+import com.example.rightanglejoinpeakview.RightAngleJoinPeakView
+
+//import com.example.barbelowlineview.BarBelowLineView
 
 //import com.example.blockshiftlineview.BlockShiftLineView
 
@@ -635,7 +637,8 @@ class MainActivity : AppCompatActivity() {
        // DownRotArrowView.create(this)
         //PerpAngleSquareView.create(this)
         //BlockShiftLineView.create(this)
-        BarBelowLineView.create(this)
+        //BarBelowLineView.create(this)
+        RightAngleJoinPeakView.create(this)
         fullScreen()
     }
 }
