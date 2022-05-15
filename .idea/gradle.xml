@@ -227,6 +227,7 @@
             <option value="$PROJECT_DIR$/vtoupsideview" />
             <option value="$PROJECT_DIR$/wavesweeparcdropview" />
             <option value="$PROJECT_DIR$/wheelarcbarview" />
+            <option value="$PROJECT_DIR$/zigzagsquaredownview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
