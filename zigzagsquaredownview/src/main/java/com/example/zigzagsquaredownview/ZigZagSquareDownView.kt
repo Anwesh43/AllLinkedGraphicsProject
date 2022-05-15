@@ -189,4 +189,27 @@ class ZigZagSquareDownView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : ZigZagSquareDownView) {
+
+        private val animator : Animator = Animator(view)
+        private val zzsd : ZigZagSquareDown = ZigZagSquareDown(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            zzsd.draw(canvas, paint)
+            animator.animate {
+                zzsd.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            zzsd.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
