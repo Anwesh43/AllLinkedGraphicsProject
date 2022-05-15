@@ -214,4 +214,13 @@ class ZigZagSquareDownView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : ZigZagSquareDownView {
+            val view : ZigZagSquareDownView = ZigZagSquareDownView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
