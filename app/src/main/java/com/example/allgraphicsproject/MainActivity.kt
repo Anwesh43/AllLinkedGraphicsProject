@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.linendbindtobarview.LinendBindToBarView
+
 //import com.example.zigzagsquaredownview.ZigZagSquareDownView
 
 //import com.example.rightanglejoinpeakview.RightAngleJoinPeakView
@@ -642,6 +644,7 @@ class MainActivity : AppCompatActivity() {
         //BarBelowLineView.create(this)
         //RightAngleJoinPeakView.create(this)
         //ZigZagSquareDownView.create(this)
+        LinendBindToBarView.create(this)
         fullScreen()
     }
 }
