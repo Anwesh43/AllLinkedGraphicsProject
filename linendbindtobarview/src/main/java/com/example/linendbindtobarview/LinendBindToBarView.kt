@@ -37,7 +37,7 @@ fun Canvas.drawLineEndBindToBar(scale : Float, w : Float, h : Float, paint : Pai
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + size / 2) * sc4, h / 2)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f - 2 * j)
@@ -47,7 +47,7 @@ fun Canvas.drawLineEndBindToBar(scale : Float, w : Float, h : Float, paint : Pai
         rotate(rot * sc2)
         drawLine(0f, 0f, size * 0.1f * sc1.divideScale(1, 2), 0f, paint)
         restore()
-        drawRect(size / 2 - size * sc3, 0f, size * sc3, 0f, paint)
+        drawRect(size * 0.4f - (size * 0.8f + paint.strokeWidth / 2) * sc3, 0f, size * 0.4f , size * 0.1f, paint)
         restore()
     }
     restore()
