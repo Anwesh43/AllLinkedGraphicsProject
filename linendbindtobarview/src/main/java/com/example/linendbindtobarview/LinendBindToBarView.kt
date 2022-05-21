@@ -188,4 +188,27 @@ class LinendBindToBarView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LinendBindToBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val lbtb : LineendBindToBar = LineendBindToBar(0)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lbtb.draw(canvas, paint)
+            animator.animate {
+                lbtb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lbtb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
