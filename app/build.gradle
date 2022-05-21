@@ -257,5 +257,6 @@ dependencies {
     //implementation project(":blockshiftlineview")
     //implementation project(":barbelowlineview")
     //implementation project(":rightanglejoinpeakview")
-    implementation project(":zigzagsquaredownview")
+    //implementation project(":zigzagsquaredownview")
+    implementation project(":linendbindtobarview")
 }
