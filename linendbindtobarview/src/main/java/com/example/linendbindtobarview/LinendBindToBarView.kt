@@ -213,4 +213,13 @@ class LinendBindToBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LinendBindToBarView {
+            val view : LinendBindToBarView = LinendBindToBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
