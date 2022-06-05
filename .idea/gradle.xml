@@ -116,6 +116,7 @@
             <option value="$PROJECT_DIR$/lineballcrusherview" />
             <option value="$PROJECT_DIR$/lineballmidrotview" />
             <option value="$PROJECT_DIR$/linebardropendview" />
+            <option value="$PROJECT_DIR$/linebarsplitdownview" />
             <option value="$PROJECT_DIR$/linebartravellerview" />
             <option value="$PROJECT_DIR$/linebibarview" />
             <option value="$PROJECT_DIR$/linebisiderotview" />
@@ -147,6 +148,7 @@
             <option value="$PROJECT_DIR$/linetomultisquaredownview" />
             <option value="$PROJECT_DIR$/linetotrimoveupview" />
             <option value="$PROJECT_DIR$/linetshiftdownview" />
+            <option value="$PROJECT_DIR$/lineupcirclerotrightview" />
             <option value="$PROJECT_DIR$/linkedcirclerotatorview" />
             <option value="$PROJECT_DIR$/linkedlineboxesview" />
             <option value="$PROJECT_DIR$/llinearcview" />
