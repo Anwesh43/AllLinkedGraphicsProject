@@ -3,6 +3,8 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.rightlinebarupview.RightLineBarUpView
+
 //import com.example.linebarsplitdownview.LineBarSplitDownView
 
 //import com.example.lineupcirclerotrightview.LineUpCircleRotRightView
@@ -651,6 +653,7 @@ class MainActivity : AppCompatActivity() {
         //LinendBindToBarView.create(this)
         //LineUpCircleRotRightView.create(this)
         //LineBarSplitDownView.create(this)
+        RightLineBarUpView.create(this)
         fullScreen()
     }
 }
