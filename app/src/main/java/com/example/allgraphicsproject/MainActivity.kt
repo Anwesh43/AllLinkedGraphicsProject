@@ -3,7 +3,7 @@ package com.example.allgraphicsproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.linebarsplitdownview.LineBarSplitDownView
+//import com.example.linebarsplitdownview.LineBarSplitDownView
 
 //import com.example.lineupcirclerotrightview.LineUpCircleRotRightView
 
@@ -650,7 +650,7 @@ class MainActivity : AppCompatActivity() {
         //ZigZagSquareDownView.create(this)
         //LinendBindToBarView.create(this)
         //LineUpCircleRotRightView.create(this)
-        LineBarSplitDownView.create(this)
+        //LineBarSplitDownView.create(this)
         fullScreen()
     }
 }

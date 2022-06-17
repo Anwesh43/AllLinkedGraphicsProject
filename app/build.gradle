@@ -260,5 +260,6 @@ dependencies {
     //implementation project(":zigzagsquaredownview")
     //implementation project(":linendbindtobarview")
     //implementation project(":lineupcirclerotrightview")
-    implementation project(":linebarsplitdownview")
+    //implementation project(":linebarsplitdownview")
+    implementation project(":rightlinebarupview")
 }
