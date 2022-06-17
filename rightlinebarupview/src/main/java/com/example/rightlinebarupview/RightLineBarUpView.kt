@@ -175,7 +175,7 @@ class RightLineBarUpView(ctx : Context) : View(ctx) {
                 curr = curr.getNext(dir) {
                     dir *= -1
                 }
-                cb()
+                cb(it)
             }
         }
 
