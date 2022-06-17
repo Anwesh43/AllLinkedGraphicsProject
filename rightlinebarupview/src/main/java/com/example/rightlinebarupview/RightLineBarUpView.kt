@@ -208,4 +208,13 @@ class RightLineBarUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RightLineBarUpView {
+            val view : RightLineBarUpView = RightLineBarUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
