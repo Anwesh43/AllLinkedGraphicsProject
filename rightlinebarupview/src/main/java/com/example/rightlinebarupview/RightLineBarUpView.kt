@@ -37,9 +37,9 @@ fun Canvas.drawRightLineBarUp(scale : Float, w : Float, h : Float, paint : Paint
     val sc2 : Float = scale.divideScale(1, parts)
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
-    val barSize : Float = Math.min(w, h) /
+    val barSize : Float = Math.min(w, h) / tSizeFactor
     save()
-    translate(w / 2, h / 2)
+    translate(w / 2 + (w / 2 + paint.strokeWidth) * sc4, h / 2)
     for (j in 0..1) {
         save()
         rotate(-rot * sc2)
@@ -54,6 +54,7 @@ fun Canvas.drawRLBUNode(i : Int, scale : Float, paint : Paint) {
     val w : Float = width.toFloat()
     val h : Float = height.toFloat()
     paint.color = colors[i]
+    paint.strokeWidth = Math.min(w, h) / strokeFactor
     drawRightLineBarUp(scale, w, h, paint)
 }
 
